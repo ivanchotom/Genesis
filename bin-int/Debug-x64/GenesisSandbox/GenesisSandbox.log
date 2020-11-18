@@ -1,3 +1,2 @@
-﻿  Source.cpp
-D:\Work\Genesis\GenesisSandbox\src\Source.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+﻿  SandboxApp.cpp
   GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-x64\GenesisSandbox\GenesisSandbox.exe
