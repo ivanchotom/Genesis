@@ -1,5 +1,8 @@
 #include "Application.h"
 
+#include "Events/AppEvent.h"
+#include "Log.h"
+
 namespace GE {
 
 	Application::Application()
@@ -14,6 +17,10 @@ namespace GE {
 
 	void Application::Run()
 	{
+		WindowResizeEvent e(1280, 720);
+		GE_TRACE(e);
+
+
 		while (true);
 	}
 
