@@ -19,6 +19,8 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	  targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
 	  objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
 
+	  pchheader "PCH.h"
+	  pchsource "GameEngine/src/PCH.cpp"
 
 	  files
 	  {
@@ -26,9 +28,9 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
         	"%{prj.name}/src/**.cpp"
 	  }
 
-	  includedirs
-	  {
-	        "%{prj.name}src
+	  includedirs {
+	  
+	        "%{prj.name}/src",
 			"%{prj.name}/3rdParty/spdlog/include"
 	  }
 

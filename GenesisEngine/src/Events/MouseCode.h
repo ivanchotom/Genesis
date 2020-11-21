@@ -1,7 +1,5 @@
 #pragma once
 
-#include <stdint.h>
-
 namespace GE
 {
 	using MouseCode = uint16_t;

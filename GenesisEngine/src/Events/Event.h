@@ -1,9 +1,6 @@
 #pragma once
-#include <functional>
-
 #include "main/Core.h"
-#include <sstream>
-#include <stdint.h>
+
 
 namespace GE {
 
