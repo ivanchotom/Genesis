@@ -2,14 +2,20 @@ workspace "Genesis"
    architecture "x64"
 
    configurations
-   {
+        {
 		  "Debug",
 		  "Release",
 		  "Dist"
 
-   }
+        }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir ["GLFW"] = "GenesisEngine/3rdParty/GLFW/include"
+
+include "GenesisEngine/3rdParty/GLFW"
 
  project "GenesisEngine"
       location "GenesisEngine"
@@ -23,15 +29,23 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	  pchsource "GameEngine/src/PCH.cpp"
 
 	  files
-	  {
+	    {
 			"%{prj.name}/src/**.h",
         	"%{prj.name}/src/**.cpp"
-	  }
+	    }
 
-	  includedirs {
+	  includedirs 
+	    {
 	  
 	        "%{prj.name}/src",
-			"%{prj.name}/3rdParty/spdlog/include"
+			"%{prj.name}/3rdParty/spdlog/include",
+			"%{IncludeDir.GLFW}"
+	    }
+	  
+	  links
+	  { 
+	  "GLFW",
+	  "opengl32.lib"
 	  }
 
 	  filter "system:windows"
@@ -41,15 +55,15 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 	  
 
 	  defines
-	  {
+	    {
 	       "GS_PLATFORM_WINDOWS",
 	       "GS_BUILD_DLL"
-	  }
+	    }
 
 	  postbuildcommands
-	  {
+	    {
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/GenesisSandbox")
-	  }
+	    }
 
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"
@@ -74,21 +88,21 @@ project "GenesisSandbox"
 
 
 	  files
-	  {
+	    {
 			"%{prj.name}/src/**.h",
 			"%{prj.name}/src/**.cpp"
-	  }
+	    }
 
 	  includedirs
-	  {
+	    {
 			"GenesisEngine/3rdParty/spdlog/include",
 			"GenesisEngine/src"
-	  }
+	    }
 
 	  links
-	  {
+	    {
 	     "GenesisEngine"
-	  }
+	    }
 
 	  filter "system:windows"
 	      cppdialect "C++17"
@@ -97,9 +111,9 @@ project "GenesisSandbox"
 	  
 
 	  defines
-	  {
+	    {
 	       "GS_PLATFORM_WINDOWS"
-	  }
+	    }
 
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"

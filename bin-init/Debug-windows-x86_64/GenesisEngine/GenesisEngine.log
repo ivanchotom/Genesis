@@ -1,14 +1,10 @@
-﻿  PCH.cpp
-  Application.cpp
+﻿  Application.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(17,35): warning C4251: 'GE::Application::m_Window': class 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>' needs to have dll-interface to be used by clients of class 'GE::Application'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(17): message : see declaration of 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>'
 D:\Work\Genesis\GenesisEngine\src\main\Log.h(21,54): warning C4251: 'GE::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GE::Log'
 D:\Work\Genesis\GenesisEngine\3rdParty\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
 D:\Work\Genesis\GenesisEngine\src\main\Log.h(22,56): warning C4251: 'GE::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GE::Log'
 D:\Work\Genesis\GenesisEngine\3rdParty\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-  Log.cpp
-D:\Work\Genesis\GenesisEngine\src\main\Log.h(21,54): warning C4251: 'GE::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GE::Log'
-D:\Work\Genesis\GenesisEngine\3rdParty\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-D:\Work\Genesis\GenesisEngine\src\main\Log.h(22,56): warning C4251: 'GE::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GE::Log'
-D:\Work\Genesis\GenesisEngine\3rdParty\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-  Generating Code...
+D:\Work\Genesis\GenesisEngine\src\main\Application.cpp(24,31): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
      Creating library ..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib and object ..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.exp
   GenesisEngine.vcxproj -> D:\Work\Genesis\GenesisEngine\..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.dll

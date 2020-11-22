@@ -2,3 +2,6 @@
 [submodule "GenesisEngine/3rdParty/spdlog"]
 	path = GenesisEngine/3rdParty/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "GenesisEngine/3rdParty/GLFW"]
+	path = GenesisEngine/3rdParty/GLFW
+	url = https://github.com/TheCherno/GLFW
