@@ -7,6 +7,9 @@
     <Filter Include="main">
       <UniqueIdentifier>{6A7F9A7C-56B6-9B0D-FFA2-8110EBB8170F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Events\AppEvent.h">
@@ -28,6 +31,7 @@
       <Filter>Events</Filter>
     </ClInclude>
     <ClInclude Include="src\PCH.h" />
+    <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\main\Application.h">
       <Filter>main</Filter>
     </ClInclude>
@@ -40,12 +44,17 @@
     <ClInclude Include="src\main\EntryPoint.h">
       <Filter>main</Filter>
     </ClInclude>
+    <ClInclude Include="src\main\Layer.h">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\LayerStack.h">
+      <Filter>main</Filter>
+    </ClInclude>
     <ClInclude Include="src\main\Log.h">
       <Filter>main</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\WindowsWindow.h" />
-    <ClInclude Include="src\Window.h">
-      <Filter>main</Filter>
+    <ClInclude Include="src\platform\WindowsWindow.h">
+      <Filter>platform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +62,17 @@
     <ClCompile Include="src\main\Application.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="src\main\Layer.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main\LayerStack.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
     <ClCompile Include="src\main\Log.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\WindowsWindow.cpp" />
+    <ClCompile Include="src\platform\WindowsWindow.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

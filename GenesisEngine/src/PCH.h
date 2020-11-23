@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "main/Log.h"
+#include "GLFW/glfw3.h"
 
 
 #ifdef GE_PLATFORM_WINDOWS
