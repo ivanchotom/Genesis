@@ -5,3 +5,6 @@
 [submodule "GenesisEngine/3rdParty/GLFW"]
 	path = GenesisEngine/3rdParty/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "GenesisEngine/3rdParty/ImGui"]
+	path = GenesisEngine/3rdParty/ImGui
+	url = https://github.com/TheCherno/imgui

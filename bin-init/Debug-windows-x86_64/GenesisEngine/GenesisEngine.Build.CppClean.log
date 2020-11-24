@@ -4,11 +4,13 @@ d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\vc142.idb
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\pch.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\windowswindow.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\log.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\layerstack.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\layer.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\application.obj
 d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.lib
 d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.exp
-d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.ilk
 d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.dll
+d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.ilk
 d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.pdb
 d:\work\genesis\genesisengine\..\bin\debug-windows-x86_64\genesisengine\genesisengine.dll
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.tlog\cl.command.1.tlog
