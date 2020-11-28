@@ -5,6 +5,8 @@
 #include "Log.h"
 #include <glad/glad.h>
 
+#include "Input.h"
+
 
 namespace GE {
 
@@ -21,6 +23,9 @@ namespace GE {
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -45,7 +50,7 @@ namespace GE {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		GE_CORE_TRACE("{0}", e);
+		//GE_CORE_TRACE("{0}", e);
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{
@@ -67,6 +72,11 @@ namespace GE {
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
+			
 			m_Window->OnUpdate();
 		}
 		

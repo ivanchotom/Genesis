@@ -1,5 +1,6 @@
 workspace "Genesis"
    architecture "x64"
+   startproject "GenesisSandbox"
 
    configurations
         {
@@ -15,12 +16,19 @@ IncludeDir = {}
 IncludeDir ["GLFW"] = "GenesisEngine/3rdParty/GLFW/include"
 IncludeDir ["Glad"] = "GenesisEngine/3rdParty/Glad/include"
 IncludeDir ["ImGui"] = "GenesisEngine/3rdParty/ImGui"
+IncludeDir ["glm"] = "GenesisEngine/3rdParty/glm"
 
 
 
-include "GenesisEngine/3rdParty/GLFW"
-include "GenesisEngine/3rdParty/Glad"
-include "GenesisEngine/3rdParty/ImGui"
+
+
+group "Dependencies"
+      include "GenesisEngine/3rdParty/GLFW"
+      include "GenesisEngine/3rdParty/Glad"
+      include "GenesisEngine/3rdParty/ImGui"
+	  
+	  
+group ""
 
 
  project "GenesisEngine"
@@ -28,7 +36,7 @@ include "GenesisEngine/3rdParty/ImGui"
       kind "SharedLib"
       language "C++"
       cppdialect "C++17"
-      staticruntime "on"
+      staticruntime "off"
 	  
       targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
       objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
@@ -39,7 +47,9 @@ include "GenesisEngine/3rdParty/ImGui"
       files
       {
             "%{prj.name}/src/**.h",
-            "%{prj.name}/src/**.cpp"
+            "%{prj.name}/src/**.cpp",
+			"%{prj.name}/3rdParty/glm/glm/**.hpp",
+			"%{prj.name}/3rdParty/glm/glm/**.inl"
       }
 
       includedirs 
@@ -48,7 +58,8 @@ include "GenesisEngine/3rdParty/ImGui"
             "%{prj.name}/3rdParty/spdlog/include",
             "%{IncludeDir.GLFW}",
             "%{IncludeDir.Glad}",
-			"%{IncludeDir.ImGui}"
+			"%{IncludeDir.ImGui}",
+			"%{IncludeDir.glm}"
       }
 
       links
@@ -72,22 +83,22 @@ include "GenesisEngine/3rdParty/ImGui"
 
 	  postbuildcommands
 	  {
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/GenesisSandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/GenesisSandbox/\"")
 	  }
 
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"
-		 buildoptions "/MDd"
+		 runtime "Debug"
 		 symbols "On"
 
 	  filter "configurations:Release"
 	     defines "GE_RELEASE"
-		 buildoptions "/MD"
+		 runtime "Release"
 		 optimize "On"
 
 	  filter "configurations:Dist"
 	     defines "GE_DIST"
-		 buildoptions "/MD"
+		 runtime "Release"
 		 optimize "On"
 
 
@@ -95,6 +106,7 @@ project "GenesisSandbox"
       location "GenesisSandbox"
 	  kind "ConsoleApp"
 	  language "C++"
+	  staticruntime "off"
 	  
 	  targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
 	  objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
@@ -109,7 +121,8 @@ project "GenesisSandbox"
 	  includedirs
 	  {
             "GenesisEngine/3rdParty/spdlog/include",
-            "GenesisEngine/src"
+            "GenesisEngine/src",
+			"%{IncludeDir.glm}"
 	  }
 
 	  links
@@ -119,7 +132,6 @@ project "GenesisSandbox"
 
 	  filter "system:windows"
 	      cppdialect "C++17"
-		  staticruntime "On"
 		  systemversion "latest"
 	  
 
@@ -130,15 +142,15 @@ project "GenesisSandbox"
 
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"
-		 buildoptions "/MDd"
+		 runtime "Debug"
 		 symbols "On"
 
 	  filter "configurations:Release"
 	     defines "GE_RELEASE"
-		 buildoptions "/MD"
+		 runtime "Release"
 		 optimize "On"
 
 	  filter "configurations:Dist"
 	     defines "GE_DIST"
-		 buildoptions "/MD"
+		 runtime "Release"
 		 optimize "On"

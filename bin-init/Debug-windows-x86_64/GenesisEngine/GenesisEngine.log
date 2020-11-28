@@ -1,23 +1,33 @@
-﻿cl : command line warning D9025: overriding '/MTd' with '/MDd'
-  ImGuiLayer.cpp
-D:\Work\Genesis\GenesisEngine\src\main\Layer.h(21,26): warning C4251: 'GE::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GE::Layer'
+﻿  ImGuiLayer.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Layer.h(22,26): warning C4251: 'GE::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GE::Layer'
+D:\Visualstdio\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+D:\Work\Genesis\GenesisEngine\src\ImGui\ImGuiLayer.cpp(6,1): warning C4005: 'IMGUI_IMPL_API': macro redefinition
+D:\Work\Genesis\GenesisEngine\3rdParty\ImGui\imgui.h(76): message : see previous definition of 'IMGUI_IMPL_API'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(25,31): warning C4251: 'GE::LayerStack::m_Layers': class 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>' needs to have dll-interface to be used by clients of class 'GE::LayerStack'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(21): message : see declaration of 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34,35): warning C4251: 'GE::Application::m_Window': class 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>' needs to have dll-interface to be used by clients of class 'GE::Application'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34): message : see declaration of 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>'
+D:\Work\Genesis\GenesisEngine\src\ImGui\ImGuiLayer.cpp(87,80): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+D:\Work\Genesis\GenesisEngine\src\ImGui\ImGuiLayer.cpp(87,51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  WindowsInput.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Layer.h(22,26): warning C4251: 'GE::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GE::Layer'
 D:\Visualstdio\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(25,31): warning C4251: 'GE::LayerStack::m_Layers': class 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>' needs to have dll-interface to be used by clients of class 'GE::LayerStack'
 D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(21): message : see declaration of 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>'
-D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(26,46): warning C4251: 'GE::LayerStack::m_LayerInsert': class 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>' needs to have dll-interface to be used by clients of class 'GE::LayerStack'
-          with
-          [
-              _Ty=GE::Layer *
-          ]
-D:\Visualstdio\VC\Tools\MSVC\14.27.29110\include\vector(440): message : see declaration of 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>'
-          with
-          [
-              _Ty=GE::Layer *
-          ]
-D:\Work\Genesis\GenesisEngine\src\main\Application.h(32,35): warning C4251: 'GE::Application::m_Window': class 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>' needs to have dll-interface to be used by clients of class 'GE::Application'
-D:\Work\Genesis\GenesisEngine\src\main\Application.h(32): message : see declaration of 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>'
-D:\Work\Genesis\GenesisEngine\src\ImGui\ImGuiLayer.cpp(68,80): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-D:\Work\Genesis\GenesisEngine\src\ImGui\ImGuiLayer.cpp(68,51): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-  WindowsWindow.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34,35): warning C4251: 'GE::Application::m_Window': class 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>' needs to have dll-interface to be used by clients of class 'GE::Application'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34): message : see declaration of 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>'
+  Application.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Layer.h(22,26): warning C4251: 'GE::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GE::Layer'
+D:\Visualstdio\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(25,31): warning C4251: 'GE::LayerStack::m_Layers': class 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>' needs to have dll-interface to be used by clients of class 'GE::LayerStack'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(21): message : see declaration of 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34,35): warning C4251: 'GE::Application::m_Window': class 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>' needs to have dll-interface to be used by clients of class 'GE::Application'
+D:\Work\Genesis\GenesisEngine\src\main\Application.h(34): message : see declaration of 'std::unique_ptr<GE::Window,std::default_delete<GE::Window>>'
+D:\Work\Genesis\GenesisEngine\src\main\Application.cpp(69,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  LayerStack.cpp
+D:\Work\Genesis\GenesisEngine\src\main\Layer.h(22,26): warning C4251: 'GE::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GE::Layer'
+D:\Visualstdio\VC\Tools\MSVC\14.27.29110\include\xstring(4564): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(25,31): warning C4251: 'GE::LayerStack::m_Layers': class 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>' needs to have dll-interface to be used by clients of class 'GE::LayerStack'
+D:\Work\Genesis\GenesisEngine\src\main\LayerStack.h(21): message : see declaration of 'std::vector<GE::Layer *,std::allocator<GE::Layer *>>'
   Generating Code...
   GenesisEngine.vcxproj -> D:\Work\Genesis\GenesisEngine\..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.dll

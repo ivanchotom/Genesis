@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.h"
-#include "MouseCode.h"
+
 
 namespace GE {
 
@@ -52,20 +52,20 @@ namespace GE {
 	class GENESIS_API MouseButtonEvent : public Event
 	{
 	public:
-		MouseCode GetMouseButton() const { return m_Button; }
+		inline int GetMouseButton() const { return m_Button; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput | EventCategoryMouseButton)
 	protected:
-		MouseButtonEvent(const MouseCode button)
+		MouseButtonEvent(int button)
 			: m_Button(button) {}
 
-		MouseCode m_Button;
+		int m_Button;
 	};
 
 	class GENESIS_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(const MouseCode button)
+		MouseButtonPressedEvent(int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
@@ -81,7 +81,7 @@ namespace GE {
 	class GENESIS_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(const MouseCode button)
+		MouseButtonReleasedEvent(int button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override

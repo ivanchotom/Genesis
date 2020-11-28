@@ -1,30 +1,30 @@
 #pragma once
 
 #include "Event.h"
-#include "KeyCodes.h"
+
 
 namespace GE {
 
 	class GENESIS_API KeyEvent : public Event
 	{
 	public:
-		KeyCode GetKeyCode() const { return m_KeyCode; }
+		inline int GetKeyCode() const { return m_KeyCode; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	protected:
-		KeyEvent(const KeyCode keycode)
+		KeyEvent(int keycode)
 			: m_KeyCode(keycode) {}
 
-		KeyCode m_KeyCode;
+		int m_KeyCode;
 	};
 
 	class GENESIS_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(const KeyCode keycode, const uint16_t repeatCount)
+		KeyPressedEvent(int keycode, int repeatCount)
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
-		uint16_t GetRepeatCount() const { return m_RepeatCount; }
+		inline int GetRepeatCount() const { return m_RepeatCount; }
 
 		std::string ToString() const override
 		{
@@ -35,14 +35,14 @@ namespace GE {
 
 		EVENT_CLASS_TYPE(KeyPressed)
 	private:
-		uint16_t m_RepeatCount;
+		int m_RepeatCount;
 	};
 
 
 	class GENESIS_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(const KeyCode keycode)
+		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -58,7 +58,7 @@ namespace GE {
 	class GENESIS_API KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(const KeyCode keycode)
+		KeyTypedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override

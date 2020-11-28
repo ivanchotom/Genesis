@@ -10,6 +10,10 @@
        #error Game Engine only supports Windows!
 #endif // GS_PLATFORM_WINDOWS
 
+//#ifdef GE_DEBUG
+//#define GS_ENABLE_ASSERTS
+//#endif
+
 #ifdef GS_ENABLE_ASSERTS
        #define GS_ASSERT(x, ...) { if(!(x)) { GS_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
        #define GS_CORE_ASSERT(x, ...) { if(!(x)) { GS_CORE_ERROR("Assertion failed:{0}", __VA_ARGS__); __debugbreak(); } }
@@ -19,3 +23,5 @@
 #endif
 
 #define BIT(x) (1 << x)
+
+#define GE_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)

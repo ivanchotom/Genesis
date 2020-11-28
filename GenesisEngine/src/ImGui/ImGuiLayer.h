@@ -2,6 +2,10 @@
 
 #include "main/Layer.h"
 
+#include "Events/AppEvent.h"
+#include "Events/Keyboard.h"
+#include "Events/Mouse.h"
+
 namespace GE {
 
 	class GENESIS_API ImGuiLayer : public Layer
@@ -10,10 +14,13 @@ namespace GE {
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-	    void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event& event);
+		virtual void OnAttach() override;
+	    virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
+
+		void Begin();
+		void End();
+	
 	private:
 		float m_Time = 0.0f;
 	};

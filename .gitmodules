@@ -8,3 +8,6 @@
 [submodule "GenesisEngine/3rdParty/ImGui"]
 	path = GenesisEngine/3rdParty/ImGui
 	url = https://github.com/TheCherno/imgui
+[submodule "GenesisEngine/3rdParty/glm"]
+	path = GenesisEngine/3rdParty/glm
+	url = https://github.com/g-truc/glm
