@@ -33,10 +33,10 @@ group ""
 
  project "GenesisEngine"
       location "GenesisEngine"
-      kind "SharedLib"
+      kind "StaticLib"
       language "C++"
       cppdialect "C++17"
-      staticruntime "off"
+      staticruntime "on"
 	  
       targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
       objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
@@ -51,6 +51,11 @@ group ""
 			"%{prj.name}/3rdParty/glm/glm/**.hpp",
 			"%{prj.name}/3rdParty/glm/glm/**.inl"
       }
+	  
+	  defines 
+	  {
+	        "_CRT_SECURE_NO_WARNINGS"
+	  }
 
       includedirs 
       {
@@ -81,32 +86,29 @@ group ""
 		   "GLFW_INCLUDE_NONE"
       }
 
-	  postbuildcommands
-	  {
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/GenesisSandbox/\"")
-	  }
 
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"
 		 runtime "Debug"
-		 symbols "On"
+		 symbols "on"
 
 	  filter "configurations:Release"
 	     defines "GE_RELEASE"
 		 runtime "Release"
-		 optimize "On"
+		 optimize "on"
 
 	  filter "configurations:Dist"
 	     defines "GE_DIST"
 		 runtime "Release"
-		 optimize "On"
+		 optimize "on"
 
 
 project "GenesisSandbox"
       location "GenesisSandbox"
 	  kind "ConsoleApp"
 	  language "C++"
-	  staticruntime "off"
+	  cppdialect "C++17"
+	  staticruntime "on"
 	  
 	  targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
 	  objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
@@ -122,6 +124,7 @@ project "GenesisSandbox"
 	  {
             "GenesisEngine/3rdParty/spdlog/include",
             "GenesisEngine/src",
+			"GenesisEngine/3rdParty",
 			"%{IncludeDir.glm}"
 	  }
 
@@ -131,7 +134,6 @@ project "GenesisSandbox"
 	  }
 
 	  filter "system:windows"
-	      cppdialect "C++17"
 		  systemversion "latest"
 	  
 
@@ -143,14 +145,14 @@ project "GenesisSandbox"
 	  filter "configurations:Debug"
 	     defines "GE_DEBUG"
 		 runtime "Debug"
-		 symbols "On"
+		 symbols "on"
 
 	  filter "configurations:Release"
 	     defines "GE_RELEASE"
 		 runtime "Release"
-		 optimize "On"
+		 optimize "on"
 
 	  filter "configurations:Dist"
 	     defines "GE_DIST"
 		 runtime "Release"
-		 optimize "On"
+		 optimize "on"

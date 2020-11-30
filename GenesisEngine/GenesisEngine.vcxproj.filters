@@ -34,9 +34,6 @@
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Platform\OpenGL">
-      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
@@ -1335,8 +1332,13 @@
     <ClInclude Include="src\main\Log.h">
       <Filter>src\main</Filter>
     </ClInclude>
+    <ClInclude Include="src\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
+      <Filter>src\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\ImGui\ImGuiLayer.cpp">
       <Filter>src\ImGui</Filter>
     </ClCompile>
@@ -1361,6 +1363,6 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImGui\ImGuiBuild.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

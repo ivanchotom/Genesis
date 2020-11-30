@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ProjectOutputs>D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.dll;D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe</ProjectOutputs>
+  <ProjectOutputs>D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe</ProjectOutputs>
   <ContentFiles></ContentFiles>
   <SatelliteDlls></SatelliteDlls>
   <NonRecipeFileRefs></NonRecipeFileRefs>

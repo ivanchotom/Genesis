@@ -2,6 +2,8 @@
 
 #include "main/Engine.h"
 
+#include "ImGui/imgui.h"
+
 
 class ExampleLayer : public GE::Layer
 {
@@ -19,6 +21,14 @@ public:
 		if (GE::Input::IsKeyPressed(GE_KEY_TAB))
 			GE_TRACE("Tab key is pressed");
 	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+
 
 	void OnEvent(GE::Event& event) override
 	{

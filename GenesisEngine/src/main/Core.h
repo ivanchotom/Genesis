@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef GS_PLATFORM_WINDOWS
+#if GS_DYNAMIC_LINK
        #ifdef GS_BUILD_DLL
               #define GENESIS_API __declspec(dllexport)
        #else
                #define GENESIS_API __declspec(dllimport)
        #endif
+#else 
+       #define GENESIS_API
+#endif
 #else 
        #error Game Engine only supports Windows!
 #endif // GS_PLATFORM_WINDOWS
