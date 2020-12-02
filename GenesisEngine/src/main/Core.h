@@ -14,9 +14,9 @@
        #error Game Engine only supports Windows!
 #endif // GS_PLATFORM_WINDOWS
 
-//#ifdef GE_DEBUG
+
 //#define GS_ENABLE_ASSERTS
-//#endif
+
 
 #ifdef GS_ENABLE_ASSERTS
        #define GS_ASSERT(x, ...) { if(!(x)) { GS_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
