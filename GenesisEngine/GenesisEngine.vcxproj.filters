@@ -1345,6 +1345,8 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Cameras\Camera.h" />
     <ClInclude Include="src\Cameras\OrthographicCamera.h" />
+    <ClInclude Include="src\Renderer\Texture.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
@@ -1385,5 +1387,6 @@
     <ClCompile Include="src\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
     <ClCompile Include="src\Cameras\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Renderer\Texture.cpp" />
   </ItemGroup>
 </Project>
