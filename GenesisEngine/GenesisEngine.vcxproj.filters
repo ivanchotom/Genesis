@@ -1341,6 +1341,10 @@
     <ClInclude Include="src\Renderer\VertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Cameras\Camera.h" />
+    <ClInclude Include="src\Cameras\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
@@ -1378,5 +1382,8 @@
     <ClCompile Include="src\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Cameras\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

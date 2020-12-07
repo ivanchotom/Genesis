@@ -3,6 +3,8 @@
 
 #include <glad/glad.h>
 
+#include <glm/gtc/type_ptr.hpp>
+
 namespace GE {
 
 
@@ -35,7 +37,7 @@ namespace GE {
 			glDeleteShader(vertexShader);
 
 			GE_CORE_ERROR("{0}", infoLog.data());
-			GS_CORE_ASSERT("Vertex shader compilation failure!");
+			GS_CORE_ASSERT(false ,"Vertex shader compilation failure!");
 			return;
 		}
 
@@ -102,7 +104,7 @@ namespace GE {
 			glDeleteShader(fragmentShader);
 
 			GE_CORE_ERROR("{0}", infoLog.data());
-			GS_CORE_ASSERT("Shader link failure!");
+			GS_CORE_ASSERT(false, "Shader link failure!");
 			return;
 		}
 
@@ -124,6 +126,12 @@ namespace GE {
 	void Shader::Unbind() const
 	{
 		glUseProgram(0);
+	}
+
+	void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
 
 }

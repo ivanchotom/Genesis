@@ -13,6 +13,8 @@
 #include "Renderer/Buffer.h"
 #include "Renderer/VertexArray.h"
 
+#include "Cameras/OrthographicCamera.h"
+
 
 namespace GE {
 
@@ -45,6 +47,8 @@ namespace GE {
 		
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

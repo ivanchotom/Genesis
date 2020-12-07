@@ -3,9 +3,11 @@
 
 
 #include "Log.h"
-#include <glad/glad.h>
+
 
 #include "Input.h"
+#include "Renderer/Renderer.h"
+
 
 
 namespace GE {
@@ -15,6 +17,7 @@ namespace GE {
 	 Application* Application::s_Instance = nullptr;
 
 	Application::Application()
+		: m_Camera(-1.6f, 1.6f, -0.9f, 0.9f)
 	{
 		
 		GS_CORE_ASSERT(!s_Instance, "Application already exists!")
@@ -81,6 +84,8 @@ namespace GE {
 
 		layout(location = 0) in vec3 a_Position;
         layout(location = 1) in vec4 a_Color;
+
+        uniform mat4 u_ViewProjection;
         
 		
 		out vec3 v_Position;
@@ -91,7 +96,7 @@ namespace GE {
 		{
 			v_Position = a_Position;
             v_Color = a_Color;
-			gl_Position = vec4(a_Position, 1.0);
+			gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
 			
 		}  
 
@@ -125,7 +130,7 @@ namespace GE {
 
 		layout(location = 0) in vec3 a_Position;
        
-        
+        uniform mat4 u_ViewProjection;
 		
 		out vec3 v_Position;
         
@@ -133,7 +138,7 @@ namespace GE {
 		void main() 
 		{
 			v_Position = a_Position;
-			gl_Position = vec4(a_Position, 1.0);
+			gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
 			
 		}  
 
@@ -199,25 +204,22 @@ namespace GE {
 	{
 		while (m_Running)
 		{
-			glClearColor(0.2f, 0.2f, 0.2f, 0.8f);
-			glClear(GL_COLOR_BUFFER_BIT);
-
-			RenderCommand::SetClearColor();
+			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1});
 			RenderCommand::Clear();
 
-			Renderer::BeginScene();
-			Renderer::Submit();
-			Renderer::EndScene();
+			m_Camera.SetPosition({ 0.5f, 0.5f, 0.0f });
+			m_Camera.SetRotation(45.0f);
 
+			Renderer::BeginScene(m_Camera);
+
+			
+			Renderer::Submit(m_BlueShader, m_SquareVA);
+			Renderer::Submit(m_Shader, m_VertexArray);
+			
+			Renderer::EndScene();
+			
 			//Renderer::Flush;  for multithread
 
-			m_BlueShader->Bind();
-			m_SquareVA->Bind();
-			glDrawElements(GL_TRIANGLES, m_SquareVA->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
-
-			m_Shader->Bind();
-			m_VertexArray->Bind();
-			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
