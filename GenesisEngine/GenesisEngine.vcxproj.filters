@@ -465,5 +465,6 @@
     <ClInclude Include="src\main\Layer.h" />
     <ClInclude Include="src\main\LayerStack.h" />
     <ClInclude Include="src\main\Log.h" />
+    <ClInclude Include="src\main\TimeStep.h" />
   </ItemGroup>
 </Project>

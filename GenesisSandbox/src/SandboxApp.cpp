@@ -148,21 +148,23 @@ public:
 		m_BlueShader.reset(new GE::Shader(blueShadervertexSrc, blueShaderfragmentSrc));
 	    }
 
-	void OnUpdate() override
+	void OnUpdate(GE::Timestep ts) override
 	{
+		GE_TRACE("Delta time: {0}s ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
+
 		if (GE::Input::IsKeyPressed  (GE_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraSpeed;
+			m_CameraPosition.x -= m_CameraSpeed * ts.GetSeconds();
 		else if (GE::Input::IsKeyPressed  (GE_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraSpeed;
+			m_CameraPosition.x += m_CameraSpeed * ts.GetSeconds();
 		 if (GE::Input::IsKeyPressed (GE_KEY_UP))
-			m_CameraPosition.y += m_CameraSpeed;
+			m_CameraPosition.y += m_CameraSpeed * ts.GetSeconds();
 		else if (GE::Input::IsKeyPressed (GE_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraSpeed;
+			m_CameraPosition.y -= m_CameraSpeed * ts.GetSeconds();
 
 		 if (GE::Input::IsKeyPressed(GE_KEY_A))
-			 m_CameraRotation -= m_CameraRotationSpeed;
+			 m_CameraRotation -= m_CameraRotationSpeed * ts.GetSeconds();
 		 if (GE::Input::IsKeyPressed(GE_KEY_D))
-			 m_CameraRotation += m_CameraRotationSpeed;
+			 m_CameraRotation += m_CameraRotationSpeed * ts.GetSeconds() ;
 		
 		
 
@@ -242,9 +244,9 @@ private:
 	glm::vec3 m_CameraPosition;
 
 
-	float m_CameraSpeed = 0.1f;
+	float m_CameraSpeed = 1.0f;
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 0.1f;
+	float m_CameraRotationSpeed = 5.0f;
 };
 
 class Sandbox : public GE::Application
