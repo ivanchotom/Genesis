@@ -1,86 +1,24 @@
-﻿  OpenGLRendererAPI.cpp
-  Application.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,30): error C2039: 'API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,40): error C3646: 'GetAPI': unknown override specifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,41): error C2059: syntax error: ')'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,43): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+﻿  PCH.cpp
+  OrthographicCamera.cpp
+  ImGuiBuild.cpp
+  ImGuiLayer.cpp
+  OpenGLBuffer.cpp
+  OpenGLContext.cpp
+  OpenGLRendererAPI.cpp
+  OpenGLVertexArray.cpp
+D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(67,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+  WindowsInput.cpp
+  WindowsWindow.cpp
   Buffer.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,30): error C2039: 'API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,40): error C3646: 'GetAPI': unknown override specifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,41): error C2059: syntax error: ')'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,43): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(16,21): error C2039: 'GetAPI': is not a member of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(10): message : see declaration of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(16,10): error C3861: 'GetAPI': identifier not found
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(17,3): error C2050: switch expression not integral
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(18,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(18,26): error C2039: 'None': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(18,30): error C2065: 'None': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(19,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(19,26): error C2039: 'OpenGL': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(19,32): error C2065: 'OpenGL': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(18,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(19,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(20,3): warning C4060: switch statement contains no 'case' or 'default' labels
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(28,21): error C2039: 'GetAPI': is not a member of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(10): message : see declaration of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(28,10): error C3861: 'GetAPI': identifier not found
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(29,3): error C2050: switch expression not integral
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(30,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(30,26): error C2039: 'None': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(30,30): error C2065: 'None': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(31,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(31,26): error C2039: 'OpenGL': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(31,32): error C2065: 'OpenGL': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(30,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(31,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.cpp(32,3): warning C4060: switch statement contains no 'case' or 'default' labels
   RenderCommand.cpp
   Renderer.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,30): error C2039: 'API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,40): error C3646: 'GetAPI': unknown override specifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,41): error C2059: syntax error: ')'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,43): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
   RendererAPI.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,15): error C2039: 'API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,32): error C2039: 's_API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,38): error C2146: syntax error: missing ';' before identifier 's_API'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,53): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.cpp(6,58): error C2039: 'OpenGL': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-  Texture.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Texture.cpp(14,83): error C2248: 'GE::OpenGLTexture2D::OpenGLTexture2D': cannot access private member declared in class 'GE::OpenGLTexture2D'
-D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLTexture.h(10): message : see declaration of 'GE::OpenGLTexture2D::OpenGLTexture2D'
-D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLTexture.h(8): message : see declaration of 'GE::OpenGLTexture2D'
+  Shader.cpp
   VertexArray.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,30): error C2039: 'API': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,40): error C3646: 'GetAPI': unknown override specifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,41): error C2059: syntax error: ')'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(19,43): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(11,21): error C2039: 'GetAPI': is not a member of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer.h(10): message : see declaration of 'GE::Renderer'
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(11,10): error C3861: 'GetAPI': identifier not found
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(12,3): error C2050: switch expression not integral
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(13,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(13,26): error C2039: 'None': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(13,30): error C2065: 'None': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(14,21): error C3083: 'API': the symbol to the left of a '::' must be a type
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(14,26): error C2039: 'OpenGL': is not a member of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\RendererAPI.h(17): message : see declaration of 'GE::RendererAPI'
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(14,32): error C2065: 'OpenGL': undeclared identifier
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(13,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(14,2): error C2051: case expression not constant
-D:\Work\Genesis\GenesisEngine\src\Renderer\VertexArray.cpp(15,3): warning C4060: switch statement contains no 'case' or 'default' labels
+  Application.cpp
+  Layer.cpp
+  LayerStack.cpp
+  Log.cpp
   Generating Code...
+D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.h(65): warning C4715: 'GE::BufferElement::GetComponentCount': not all control paths return a value
+  GenesisEngine.vcxproj -> D:\Work\Genesis\GenesisEngine\..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
