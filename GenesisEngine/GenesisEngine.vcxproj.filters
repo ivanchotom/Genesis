@@ -21,6 +21,7 @@
     <ClCompile Include="src\main\Layer.cpp" />
     <ClCompile Include="src\main\LayerStack.cpp" />
     <ClCompile Include="src\main\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3rdParty\glm\glm\common.hpp" />
@@ -466,5 +467,6 @@
     <ClInclude Include="src\main\LayerStack.h" />
     <ClInclude Include="src\main\Log.h" />
     <ClInclude Include="src\main\TimeStep.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
 </Project>

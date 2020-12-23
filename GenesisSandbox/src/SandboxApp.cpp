@@ -1,10 +1,14 @@
-#include "PCH.h"
 
 #include "main/Engine.h"
+
+#include "Platform/OpenGL/OpenGLShader.h"
 
 #include "ImGui/imgui.h"
 
 #include "glm/gtc/matrix_transform.hpp"
+
+#include "glm/gtc/type_ptr.hpp"
+
 
 
 class ExampleLayer : public GE::Layer
@@ -23,7 +27,7 @@ public:
 
 
 
-		std::shared_ptr<GE::VertexBuffer> vertexBuffer;
+		GE::Ref<GE::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(GE::VertexBuffer::Create(vertices, sizeof(vertices)));
 		GE::BufferLayout layout = {
 			{ GE::ShaderDataType::Float3, "a_Position" },
@@ -34,7 +38,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<GE::IndexBuffer> indexBuffer;
+		GE::Ref<GE::IndexBuffer> indexBuffer;
 		indexBuffer.reset(GE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -47,7 +51,7 @@ public:
 			-0.5f,  0.5f, 0.0f,
 		};
 
-		std::shared_ptr<GE::VertexBuffer> squareVB;
+		GE::Ref<GE::VertexBuffer> squareVB;
 		squareVB.reset(GE::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		GE::BufferLayout squareVBlayout = {
 			{ GE::ShaderDataType::Float3, "a_Position" }
@@ -57,7 +61,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<GE::IndexBuffer> squareIB;
+		GE::Ref<GE::IndexBuffer> squareIB;
 		squareIB.reset(GE::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -107,9 +111,9 @@ public:
 
 
 
-		m_Shader.reset(new GE::Shader(vertexSrc, fragmentSrc));
+		m_Shader.reset(GE::Shader::Create(vertexSrc, fragmentSrc));
 
-		std::string blueShadervertexSrc = R"(
+		std::string flatColorShadervertexSrc = R"(
 		
 		#version 330 core
 
@@ -130,26 +134,26 @@ public:
 
 		)";
 
-		std::string blueShaderfragmentSrc = R"(
+		std::string flatColorShaderfragmentSrc = R"(
 		
 		#version 330 core
 
 		layout(location = 0) out vec4 color;
 
 		in vec3 v_Position;
+        
+        uniform vec3 u_Color;
 		
 		void main() 
 		{
-			color = vec4(0.2, 0.3, 0.8, 1.0);
-            
-			
+			color = vec4(u_Color, 1.0);	
 		}  
 
 		)";
 
 
 
-		m_BlueShader.reset(new GE::Shader(blueShadervertexSrc, blueShaderfragmentSrc));
+		m_FlatColorShader.reset(GE::Shader::Create(flatColorShadervertexSrc, flatColorShaderfragmentSrc));
 	    }
 
 	void OnUpdate(GE::Timestep ts) override
@@ -184,13 +188,16 @@ public:
 
 	    glm::mat4 scale = glm::scale(glm::mat4(1.0), glm::vec3(0.1f));
 
+		std::dynamic_pointer_cast<GE::OpenGLShader>(m_FlatColorShader)->Bind();
+		std::dynamic_pointer_cast<GE::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+
 		for (int y = 0; y < 20; y++)
 		{
 			for (int x = 0; x < 20; x++)
 			{
 				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-				GE::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+				GE::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 			}
 		}
 		GE::Renderer::Submit(m_Shader, m_VertexArray);
@@ -206,9 +213,17 @@ public:
 
 	virtual void OnImGuiRender() override
 	{
+		//Test Window
 		ImGui::Begin("Test");
 		ImGui::Text("Hello World");
 		ImGui::End();
+
+		//Color
+		ImGui::Begin("Settings");
+		ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
+		ImGui::End();
+
+
 	}
 
 
@@ -245,19 +260,20 @@ public:
 	}
 	*/
 private:
-	std::shared_ptr<GE::Shader> m_Shader;
-	std::shared_ptr<GE::VertexArray> m_VertexArray;
+	GE::Ref<GE::Shader> m_Shader;
+	GE::Ref<GE::VertexArray> m_VertexArray;
 
-	std::shared_ptr<GE::Shader> m_BlueShader;
-	std::shared_ptr<GE::VertexArray> m_SquareVA;
+	GE::Ref<GE::Shader> m_FlatColorShader;
+	GE::Ref<GE::VertexArray> m_SquareVA;
 
 	GE::OrthographicCamera m_Camera;
+
 	glm::vec3 m_CameraPosition;
-
-
 	float m_CameraMoveSpeed = 5.0f;
 	float m_CameraRotation = 0.0f;
 	float m_CameraRotationSpeed = 25.0f;
+
+	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 
 };
 
