@@ -15,7 +15,8 @@ namespace GE {
 		inline float GetSeconds() const { return m_Time; }
 		inline float GetMilliseconds() const { return m_Time * 1000.0f; }
 
-		operator float() { return m_Time; }
+		// the object can be casted to a float (only returns seconds, if you need miliseconds to object.GetMilisec)
+		operator float() const { return m_Time; } 
 	private:
 		float m_Time;
 	};

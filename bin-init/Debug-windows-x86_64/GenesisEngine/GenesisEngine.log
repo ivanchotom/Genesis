@@ -1,7 +1,6 @@
-﻿  ImGuiLayer.cpp
-  WindowsInput.cpp
+﻿  Buffer.cpp
+  Renderer.cpp
+  VertexArray.cpp
   Application.cpp
-  Layer.cpp
-  LayerStack.cpp
   Generating Code...
   GenesisEngine.vcxproj -> D:\Work\Genesis\GenesisEngine\..\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
