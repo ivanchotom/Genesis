@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "main/Core.h"
 #include "Buffer.h"
 
 

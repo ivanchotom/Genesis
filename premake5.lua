@@ -17,6 +17,7 @@ IncludeDir ["GLFW"] = "GenesisEngine/3rdParty/GLFW/include"
 IncludeDir ["Glad"] = "GenesisEngine/3rdParty/Glad/include"
 IncludeDir ["ImGui"] = "GenesisEngine/3rdParty/ImGui"
 IncludeDir ["glm"] = "GenesisEngine/3rdParty/glm"
+IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
 
 
 
@@ -48,6 +49,8 @@ group ""
       {
             "%{prj.name}/src/**.h",
             "%{prj.name}/src/**.cpp",
+			"%{prj.name}/3rdParty/stb_image/**.h",
+			"%{prj.name}/3rdParty/stb_image/**.cpp",
 			"%{prj.name}/3rdParty/glm/glm/**.hpp",
 			"%{prj.name}/3rdParty/glm/glm/**.inl"
       }
@@ -64,7 +67,8 @@ group ""
             "%{IncludeDir.GLFW}",
             "%{IncludeDir.Glad}",
 			"%{IncludeDir.ImGui}",
-			"%{IncludeDir.glm}"
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.stb_image}"
       }
 
       links
