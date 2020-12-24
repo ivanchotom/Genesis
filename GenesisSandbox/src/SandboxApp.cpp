@@ -152,53 +152,12 @@ public:
 
 		)";
 
-
-
 		m_FlatColorShader.reset(GE::Shader::Create(flatColorShadervertexSrc, flatColorShaderfragmentSrc));
 
-		std::string TextureShaderVertexSrc = R"(
-		
-		#version 330 core
-
-		layout(location = 0) in vec3 a_Position;
-        layout(location = 1) in vec2 a_TexCoord;
-       
-        uniform mat4 u_ViewProjection;
-        uniform mat4 u_Transform;
-
-        out vec2 v_TexCoord;
-		
-		void main() 
-		{
-			v_TexCoord = a_TexCoord;
-			gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
-			
-		}  
-
-		)";
-
-		std::string TextureShaderFragmentSrc = R"(
-		
-		#version 330 core
-
-		layout(location = 0) out vec4 color;
-
-		in vec2 v_TexCoord;
-        
-        uniform sampler2D u_Texture;
-		
-		void main() 
-		{
-			color = texture(u_Texture, v_TexCoord);	
-		}  
-
-		)";
-
-
-
-		m_TextureShader.reset(GE::Shader::Create(TextureShaderVertexSrc, TextureShaderFragmentSrc));
+		m_TextureShader.reset(GE::Shader::Create("assets/shaders/Texture.glsl"));
 
 		m_Texture = GE::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_ChernoLogoTexture = GE::Texture2D::Create("assets/textures/ChernoLogo.png");
 
 		std::dynamic_pointer_cast<GE::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<GE::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -254,6 +213,9 @@ public:
 
 		m_Texture->Bind();
 		GE::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0), glm::vec3(1.5f)));
+
+		m_ChernoLogoTexture->Bind();
+		GE::Renderer::Submit(m_TextureShader, m_SquareVA,  glm::scale(glm::mat4(1.0), glm::vec3(1.5f)));
 
 		//Triangle 
 		//GE::Renderer::Submit(m_Shader, m_VertexArray);
@@ -325,7 +287,7 @@ private:
 	GE::Ref<GE::Shader> m_FlatColorShader, m_TextureShader;
 	GE::Ref<GE::VertexArray> m_SquareVA;
 
-	GE::Ref<GE::Texture2D> m_Texture;
+	GE::Ref<GE::Texture2D> m_Texture, m_ChernoLogoTexture;
 
 	GE::OrthographicCamera m_Camera;
 

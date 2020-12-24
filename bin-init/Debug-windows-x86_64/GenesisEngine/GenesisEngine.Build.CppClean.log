@@ -1,7 +1,5 @@
-d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.pch
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.pdb
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.idb
-d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\pch.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\log.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\layerstack.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\layer.obj
@@ -21,6 +19,12 @@ d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\openglbuffer.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\imguilayer.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\imguibuild.obj
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\orthographiccamera.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\openglshader.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.pch
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\pch.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\stb_image.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\texture.obj
+d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\opengltexture.obj
 d:\work\genesis\bin\debug-windows-x86_64\genesisengine\genesisengine.lib
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.tlog\cl.command.1.tlog
 d:\work\genesis\bin-init\debug-windows-x86_64\genesisengine\genesisengine.tlog\cl.read.1.tlog

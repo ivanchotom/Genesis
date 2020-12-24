@@ -29,6 +29,8 @@ namespace GE {
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 		//m_Window->SetVSync(false);    Set Vsync off 
 
+		Renderer::Init();
+
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
