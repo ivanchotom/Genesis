@@ -21,7 +21,12 @@
 #include "Renderer/Buffer.h"
 #include "Renderer/VertexArray.h"
 #include "Renderer/RenderCommand.h"
+
+
+//--------------Cameras-----------------
 #include "Cameras/OrthographicCamera.h"
+#include "Cameras/OrthographicCameraController.h"
+//--------------------------------------
 
 
 

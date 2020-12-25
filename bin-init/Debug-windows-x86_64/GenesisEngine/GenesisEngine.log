@@ -1,11 +1,2 @@
-﻿  ImGuiLayer.cpp
-  OpenGLShader.cpp
-  WindowsInput.cpp
-  Buffer.cpp
-  Renderer.cpp
-  Shader.cpp
-  Texture.cpp
-  VertexArray.cpp
-  Application.cpp
-  Generating Code...
+﻿  OrthographicCameraController.cpp
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
