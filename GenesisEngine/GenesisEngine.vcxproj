@@ -261,6 +261,8 @@
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_int4x3_sized.hpp" />
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_int4x4.hpp" />
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_int4x4_sized.hpp" />
+    <ClInclude Include="3rdParty\glm\glm\ext\matrix_integer.hpp" />
+    <ClInclude Include="3rdParty\glm\glm\ext\matrix_integer.inl" />
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_projection.hpp" />
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_projection.inl" />
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_relational.hpp" />

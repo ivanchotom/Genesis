@@ -417,6 +417,12 @@
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_int4x4_sized.hpp">
       <Filter>3rdParty\glm\glm\ext</Filter>
     </ClInclude>
+    <ClInclude Include="3rdParty\glm\glm\ext\matrix_integer.hpp">
+      <Filter>3rdParty\glm\glm\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="3rdParty\glm\glm\ext\matrix_integer.inl">
+      <Filter>3rdParty\glm\glm\ext</Filter>
+    </ClInclude>
     <ClInclude Include="3rdParty\glm\glm\ext\matrix_projection.hpp">
       <Filter>3rdParty\glm\glm\ext</Filter>
     </ClInclude>
