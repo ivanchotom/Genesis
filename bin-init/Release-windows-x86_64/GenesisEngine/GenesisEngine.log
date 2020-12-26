@@ -1,0 +1,31 @@
+﻿  PCH.cpp
+  stb_image.cpp
+  OrthographicCamera.cpp
+  OrthographicCameraController.cpp
+  ImGuiBuild.cpp
+  ImGuiLayer.cpp
+  OpenGLBuffer.cpp
+  OpenGLContext.cpp
+  OpenGLRendererAPI.cpp
+  OpenGLShader.cpp
+  OpenGLTexture.cpp
+  OpenGLVertexArray.cpp
+D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(67,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+  WindowsInput.cpp
+  WindowsWindow.cpp
+  Buffer.cpp
+  RenderCommand.cpp
+  Renderer.cpp
+  RendererAPI.cpp
+  Shader.cpp
+  Texture.cpp
+  VertexArray.cpp
+  Generating Code...
+D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.h(65): warning C4715: 'GE::BufferElement::GetComponentCount': not all control paths return a value
+  Compiling...
+  Application.cpp
+  Layer.cpp
+  LayerStack.cpp
+  Log.cpp
+  Generating Code...
+  GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Release-windows-x86_64\GenesisEngine\GenesisEngine.lib
