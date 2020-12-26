@@ -1,7 +1,10 @@
-
-.vs/
+# Binaries
 bin/
 bin-int/
 
-
-*.user
+#Visual studio
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user

@@ -57,7 +57,7 @@ group ""
 	  
 	  defines 
 	  {
-	        "_CRT_SECURE_NO_WARNINGS"
+			"_CRT_SECURE_NO_WARNINGS"
 	  }
 
       includedirs 
@@ -85,24 +85,23 @@ group ""
 
       defines
       {
-	       "GS_PLATFORM_WINDOWS",
 	       "GS_BUILD_DLL",
 		   "GLFW_INCLUDE_NONE"
       }
 
 
 	  filter "configurations:Debug"
-	     defines "GE_DEBUG"
+	     defines "GS_DEBUG"
 		 runtime "Debug"
 		 symbols "on"
 
 	  filter "configurations:Release"
-	     defines "GE_RELEASE"
+	     defines "GS_RELEASE"
 		 runtime "Release"
 		 optimize "on"
 
 	  filter "configurations:Dist"
-	     defines "GE_DIST"
+	     defines "GS_DIST"
 		 runtime "Release"
 		 optimize "on"
 
@@ -140,23 +139,17 @@ project "GenesisSandbox"
 	  filter "system:windows"
 		  systemversion "latest"
 	  
-
-	  defines
-	  {
-	       "GS_PLATFORM_WINDOWS"
-	  }
-
 	  filter "configurations:Debug"
-	     defines "GE_DEBUG"
+	     defines "GS_DEBUG"
 		 runtime "Debug"
 		 symbols "on"
 
 	  filter "configurations:Release"
-	     defines "GE_RELEASE"
+	     defines "GS_RELEASE"
 		 runtime "Release"
 		 optimize "on"
 
 	  filter "configurations:Dist"
-	     defines "GE_DIST"
+	     defines "GS_DIST"
 		 runtime "Release"
 		 optimize "on"

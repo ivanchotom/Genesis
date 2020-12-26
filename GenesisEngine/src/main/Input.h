@@ -21,7 +21,7 @@ namespace GE {
 		virtual float GetMouseYImpl() = 0;
 		virtual std::pair<float,float> GetMousePositionImpl () = 0;
 		
-		static Input* s_Instance;
+		static Scope<Input> s_Instance;
 	};
 
 
