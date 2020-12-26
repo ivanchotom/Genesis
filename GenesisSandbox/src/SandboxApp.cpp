@@ -230,8 +230,6 @@ public:
 	void OnEvent(GE::Event& e) override
 	{
 		m_CameraController.OnEvent(e);
-
-
 		//Event test
 		//GE_TRACE("{0}", event);
 	}
