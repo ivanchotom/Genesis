@@ -1,12 +1,14 @@
 
 #include "main/Engine.h"
-
+#include "main/EntryPoint.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 #include "ImGui/imgui.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
+
+#include "Layers/Sandbox2D.h"
 
 
 class ExampleLayer : public GE::Layer
@@ -15,7 +17,7 @@ public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
 	    {
-		m_VertexArray.reset(GE::VertexArray::Create());
+		m_VertexArray = GE::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f,
@@ -40,7 +42,7 @@ public:
 		indexBuffer.reset(GE::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(GE::VertexArray::Create());
+		m_SquareVA = GE::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -283,7 +285,8 @@ class Sandbox : public GE::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 		//PushOverlay(new GE::ImGuiLayer());
 	}
 
