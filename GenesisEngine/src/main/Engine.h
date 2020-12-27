@@ -15,13 +15,15 @@
 
 #include "ImGui/ImGuiLayer.h"
 
+//----------Renderer--------------
 #include "Renderer/Renderer.h"
+#include "Renderer/Renderer2D.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Texture.h"
 #include "Renderer/Buffer.h"
 #include "Renderer/VertexArray.h"
 #include "Renderer/RenderCommand.h"
-
+//----------------------------------
 
 //--------------Cameras-----------------
 #include "Cameras/OrthographicCamera.h"
