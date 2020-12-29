@@ -16,6 +16,8 @@ namespace GE {
 
 	void OpenGLContext::Init()
 	{
+		GS_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		GS_CORE_ASSERT(status, "Failed to initialize GLAD!")
@@ -37,6 +39,8 @@ namespace GE {
 
 	void OpenGLContext::SwapBuffers()
 	{
+		GS_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

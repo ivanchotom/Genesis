@@ -29,6 +29,8 @@ namespace GE {
 
 	void ImGuiLayer::OnAttach()
 	{
+		GS_PROFILE_FUNCTION();
+
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -61,6 +63,8 @@ namespace GE {
 
 	void ImGuiLayer::OnDetach()
 	{
+		GS_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -76,6 +80,8 @@ namespace GE {
 
 	void ImGuiLayer::Begin()
 	{
+		GS_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
@@ -84,6 +90,8 @@ namespace GE {
 
 	void ImGuiLayer::End()
 	{
+		GS_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

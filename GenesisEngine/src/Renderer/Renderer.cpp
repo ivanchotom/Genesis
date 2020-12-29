@@ -10,6 +10,8 @@ namespace GE {
 
 	void Renderer::Init()
 	{
+		GS_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

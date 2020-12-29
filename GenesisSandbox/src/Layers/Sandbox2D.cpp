@@ -16,24 +16,24 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	GS_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = GE::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
-	
+	GS_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(GE::Timestep ts)
 {
 
-	GS_PROFILE_FUNCTION("Sandbox2D::OnUpdate");
+	GS_PROFILE_FUNCTION();
 	
 	//Update
-	{
-		GS_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
+	
 	//Render Prep
 	{
 		GS_PROFILE_SCOPE("Renderer Prep");

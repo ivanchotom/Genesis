@@ -14,6 +14,7 @@
 
 namespace GE {
 
+	//TODO: REMOVE SINCE USING CORE.H  BIND_EVENT_FUNC
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	 Application* Application::s_Instance = nullptr;
@@ -21,6 +22,8 @@ namespace GE {
 	Application::Application()
 		
 	{
+
+		GS_PROFILE_FUNCTION();
 		
 		GS_CORE_ASSERT(!s_Instance, "Application already exists!")
 		s_Instance = this;
@@ -38,23 +41,30 @@ namespace GE {
 
 	Application::~Application()
 	{
+		GS_PROFILE_FUNCTION();
 
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		GS_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
+		GS_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		GS_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
@@ -71,23 +81,36 @@ namespace GE {
 
 	void Application::Run()
 	{
+		GS_PROFILE_FUNCTION();
+
+
 		while (m_Running)
 		{
+			GS_PROFILE_SCOPE("Run Loop")
+
 			float time = (float) glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
+				{
+					GS_PROFILE_SCOPE("LayerStack Updating")
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					GS_PROFILE_SCOPE("LayerStack ImGuiRender")
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
 			}
-			
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
-			
+
 			m_Window->OnUpdate();
 		}
 		
@@ -101,6 +124,8 @@ namespace GE {
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		GS_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;
