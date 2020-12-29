@@ -15,6 +15,7 @@
 #include <unordered_set>
 
 #include "main/Log.h"
+#include "CodeDebug/Instrumentor.h"
 
 
 #ifdef GE_PLATFORM_WINDOWS

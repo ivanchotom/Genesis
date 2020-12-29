@@ -1,1 +1,7 @@
-﻿  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe
+﻿  Sandbox2D.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(30,2): warning C4002: too many arguments for function-like macro invocation 'GS_PROFILE_FUNCTION'
+  SandboxApp.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  Generating Code...
+  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe

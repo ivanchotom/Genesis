@@ -556,6 +556,7 @@
     <ClInclude Include="3rdParty\stb_image\stb_image.h" />
     <ClInclude Include="src\Cameras\OrthographicCamera.h" />
     <ClInclude Include="src\Cameras\OrthographicCameraController.h" />
+    <ClInclude Include="src\CodeDebug\Instrumentor.h" />
     <ClInclude Include="src\Events\AppEvent.h" />
     <ClInclude Include="src\Events\Event.h" />
     <ClInclude Include="src\Events\KeyCodes.h" />
