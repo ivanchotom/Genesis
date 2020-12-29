@@ -66,6 +66,8 @@ namespace GE {
 		ImGui::DestroyContext();
 	}
 
+	// Demo Window
+
 	void ImGuiLayer::OnImGuiRender()
 	{
 		static bool show = true;
