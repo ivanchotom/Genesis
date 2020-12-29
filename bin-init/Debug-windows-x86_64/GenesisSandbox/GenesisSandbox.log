@@ -1,1 +1,7 @@
-﻿  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe
+﻿  Sandbox2D.cpp
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(68,22): error C2248: 'Timer::Timer': cannot access private member declared in class 'Timer'
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(13): message : see declaration of 'Timer::Timer'
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(11): message : see declaration of 'Timer'
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(68,22): error C2248: 'Timer::~Timer': cannot access private member declared in class 'Timer'
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(19): message : see declaration of 'Timer::~Timer'
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(11): message : see declaration of 'Timer'
