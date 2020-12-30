@@ -1,2 +1,4 @@
-﻿  WindowsWindow.cpp
+﻿  Renderer.cpp
+  Renderer2D.cpp
+  Generating Code...
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
