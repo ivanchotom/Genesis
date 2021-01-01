@@ -8,6 +8,8 @@ namespace GE {
 	{
 	public:
 		OpenGLVertexBuffer(float* vertices, uint32_t size);
+		OpenGLVertexBuffer(uint32_t size);
+
 		virtual ~OpenGLVertexBuffer();
 
 		virtual void Bind() const override;
