@@ -9,6 +9,7 @@
 #include "glm/gtc/type_ptr.hpp"
 
 #include "Layers/Sandbox2D.h"
+#include "Layers/2DGameLayer.h"
 
 
 class ExampleLayer : public GE::Layer
@@ -288,6 +289,7 @@ public:
 		//PushLayer(new ExampleLayer());
 		PushLayer(new Sandbox2D());
 		//PushOverlay(new GE::ImGuiLayer());
+		//PushLayer(new GameLayer());
 	}
 
 	~Sandbox()

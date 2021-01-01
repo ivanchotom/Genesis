@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GS_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\GenesisEngine\3rdParty\spdlog\include;..\GenesisEngine\src;..\GenesisEngine\3rdParty;..\GenesisEngine\3rdParty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\;..\GenesisEngine\3rdParty\spdlog\include;..\GenesisEngine\src;..\GenesisEngine\3rdParty;..\GenesisEngine\3rdParty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -131,6 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\2DGame\Level.cpp" />
+    <ClCompile Include="src\2DGame\ParticleSystem.cpp" />
+    <ClCompile Include="src\2DGame\Player.cpp" />
+    <ClCompile Include="src\2DGame\Random.cpp" />
+    <ClCompile Include="src\Layers\2DGameLayer.cpp" />
     <ClCompile Include="src\Layers\Sandbox2D.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
@@ -140,6 +145,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\2DGame\Colors.h" />
+    <ClInclude Include="src\2DGame\Level.h" />
+    <ClInclude Include="src\2DGame\ParticleSystem.h" />
+    <ClInclude Include="src\2DGame\Player.h" />
+    <ClInclude Include="src\2DGame\Random.h" />
+    <ClInclude Include="src\Layers\2DGameLayer.h" />
     <ClInclude Include="src\Layers\Sandbox2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
