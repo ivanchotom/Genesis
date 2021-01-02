@@ -95,7 +95,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GS_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\GenesisEngine\3rdParty\spdlog\include;..\GenesisEngine\src;..\GenesisEngine\3rdParty;..\GenesisEngine\3rdParty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\;..\GenesisEngine\3rdParty\spdlog\include;..\GenesisEngine\src;..\GenesisEngine\3rdParty;..\GenesisEngine\3rdParty\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

@@ -1,4 +1,5 @@
 ﻿  PCH.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   stb_image.cpp
   OrthographicCamera.cpp
   OrthographicCameraController.cpp
@@ -10,19 +11,21 @@
   OpenGLShader.cpp
   OpenGLTexture.cpp
   OpenGLVertexArray.cpp
-D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(67,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(77,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
   WindowsInput.cpp
   WindowsWindow.cpp
   Buffer.cpp
   RenderCommand.cpp
   Renderer.cpp
+  Renderer2D.cpp
+D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer2D.cpp(136,21): warning C4244: 'initializing': conversion from '__int64' to 'uint32_t', possible loss of data
   RendererAPI.cpp
   Shader.cpp
   Texture.cpp
-  VertexArray.cpp
   Generating Code...
 D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.h(65): warning C4715: 'GE::BufferElement::GetComponentCount': not all control paths return a value
   Compiling...
+  VertexArray.cpp
   Application.cpp
   Layer.cpp
   LayerStack.cpp
