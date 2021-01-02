@@ -246,6 +246,13 @@ namespace GE {
 		UploadUniformInt(name, value);
 	}
 
+	void OpenGLShader::SetIntArray(const std::string& name, int* values, uint32_t count)
+	{
+		GS_PROFILE_FUNCTION();
+
+		UploadUniformIntArray(name, values, count);
+	}
+
 	void OpenGLShader::UploadUniformMat3(const std::string& name, const glm::mat3& matrix)
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
@@ -262,6 +269,12 @@ namespace GE {
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform1i(location, value);
+	}
+
+	void OpenGLShader::UploadUniformIntArray(const std::string& name, int* values, uint32_t count)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1iv(location, count, values);
 	}
 
 	void OpenGLShader::UploadUniformFloat(const std::string& name, float value)
