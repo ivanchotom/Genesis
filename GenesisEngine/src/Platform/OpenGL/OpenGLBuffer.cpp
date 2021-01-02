@@ -35,6 +35,7 @@ namespace GE {
 		glDeleteBuffers(1, &m_RendererID);
 	}
 
+
 	void GE::OpenGLVertexBuffer::Bind() const
 	{
 		GS_PROFILE_FUNCTION();
@@ -48,6 +49,13 @@ namespace GE {
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
+
+	void OpenGLVertexBuffer::SetData(const void* data, uint32_t size)
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
+	}
+
 
 	/////////////////////////////////////////////////////////////////////////
 	//////////////////////// IndexBuffer ////////////////////////////////////
