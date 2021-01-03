@@ -39,8 +39,8 @@ namespace GE {
 	private:
 		float m_AspectRatio;
 		float m_ZoomLevel = 1.0f;
+		OrthographicCameraBounds m_Bounds; // needs to be above m_Camera
 		OrthographicCamera m_Camera;
-		OrthographicCameraBounds m_Bounds;
 
 		bool m_Rotation;
 		glm::vec3 m_CameraPosition = { 0.0f, 0.0f, 0.0f };

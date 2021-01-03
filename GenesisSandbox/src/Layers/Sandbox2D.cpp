@@ -19,6 +19,7 @@ void Sandbox2D::OnAttach()
 	GS_PROFILE_FUNCTION();
 
 	m_CheckerboardTexture = GE::Texture2D::Create("assets/textures/Checkerboard.png");
+	m_SpriteSheet = GE::Texture2D::Create("assets/kenney/rpg/Spritesheet/RPGpack_sheet_2X.png");
 
 	// Particle
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
@@ -53,6 +54,8 @@ void Sandbox2D::OnUpdate(GE::Timestep ts)
 		GE::RenderCommand::Clear();
 	}
 
+
+#if OLD_PATH
 	//Render Draw
 	{
 		static float rotation = 0.0f;
@@ -78,7 +81,7 @@ void Sandbox2D::OnUpdate(GE::Timestep ts)
 		}
 		GE::Renderer2D::EndScene();
 	}
-
+#endif
 	if (GE::Input::IsMouseButtonPressed(GE_MOUSE_BUTTON_LEFT))
 	{
 		auto [x, y] = GE::Input::GetMousePosition();
@@ -96,6 +99,10 @@ void Sandbox2D::OnUpdate(GE::Timestep ts)
 
 	m_ParticleSystem.OnUpdate(ts);
 	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
+
+	GE::Renderer2D::BeginScene(m_CameraController.GetCamera());
+	GE::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_SpriteSheet);
+	GE::Renderer2D::EndScene();
 
 }
 

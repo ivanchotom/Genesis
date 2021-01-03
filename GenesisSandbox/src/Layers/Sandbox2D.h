@@ -22,7 +22,10 @@ private:
 	GE::OrthographicCameraController m_CameraController;
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f};
 	GE::Ref<GE::VertexArray> m_SquareVA;
+
+
 	GE::Ref<GE::Texture2D> m_CheckerboardTexture;
+	GE::Ref<GE::Texture2D> m_SpriteSheet;
 
 	ParticleProps m_Particle;
 	ParticleSystem m_ParticleSystem;
