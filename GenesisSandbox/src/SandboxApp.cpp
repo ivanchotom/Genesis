@@ -9,7 +9,7 @@
 #include "glm/gtc/type_ptr.hpp"
 
 #include "Layers/Sandbox2D.h"
-#include "Layers/2DGameLayer.h"
+//#include "Layers/2DGameLayer.h"
 
 /*
 class ExampleLayer : public GE::Layer

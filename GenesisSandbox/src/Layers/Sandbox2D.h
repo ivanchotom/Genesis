@@ -2,6 +2,8 @@
 
 #include "main/Engine.h"
 
+#include "Testing/ParticleTest.h"
+
 class Sandbox2D : public GE::Layer
 {
 public:
@@ -21,4 +23,8 @@ private:
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f};
 	GE::Ref<GE::VertexArray> m_SquareVA;
 	GE::Ref<GE::Texture2D> m_CheckerboardTexture;
+
+	ParticleProps m_Particle;
+	ParticleSystem m_ParticleSystem;
+
 }; 

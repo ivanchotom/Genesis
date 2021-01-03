@@ -1,3 +1,8 @@
 ﻿  Sandbox2D.cpp
 D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  SandboxApp.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  ParticleTest.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  Generating Code...
   GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Release-windows-x86_64\GenesisSandbox\GenesisSandbox.exe

@@ -131,13 +131,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\2DGame\Level.cpp" />
-    <ClCompile Include="src\2DGame\ParticleSystem.cpp" />
-    <ClCompile Include="src\2DGame\Player.cpp" />
     <ClCompile Include="src\2DGame\Random.cpp" />
-    <ClCompile Include="src\Layers\2DGameLayer.cpp" />
     <ClCompile Include="src\Layers\Sandbox2D.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
+    <ClCompile Include="src\Testing\ParticleTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenesisEngine\GenesisEngine.vcxproj">
@@ -145,13 +142,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\2DGame\Colors.h" />
-    <ClInclude Include="src\2DGame\Level.h" />
-    <ClInclude Include="src\2DGame\ParticleSystem.h" />
-    <ClInclude Include="src\2DGame\Player.h" />
     <ClInclude Include="src\2DGame\Random.h" />
-    <ClInclude Include="src\Layers\2DGameLayer.h" />
     <ClInclude Include="src\Layers\Sandbox2D.h" />
+    <ClInclude Include="src\Testing\ParticleTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
