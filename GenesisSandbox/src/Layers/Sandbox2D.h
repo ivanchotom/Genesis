@@ -26,6 +26,7 @@ private:
 
 	GE::Ref<GE::Texture2D> m_CheckerboardTexture;
 	GE::Ref<GE::Texture2D> m_SpriteSheet;
+	GE::Ref<GE::SubTexture2D> m_TextureStairs, m_TextureBarrel, m_TextureTree;
 
 	ParticleProps m_Particle;
 	ParticleSystem m_ParticleSystem;

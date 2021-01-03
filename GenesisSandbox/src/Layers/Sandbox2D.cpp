@@ -20,6 +20,9 @@ void Sandbox2D::OnAttach()
 
 	m_CheckerboardTexture = GE::Texture2D::Create("assets/textures/Checkerboard.png");
 	m_SpriteSheet = GE::Texture2D::Create("assets/kenney/rpg/Spritesheet/RPGpack_sheet_2X.png");
+	m_TextureStairs = GE::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 7, 6 }, {128, 128} );
+	m_TextureBarrel = GE::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 8, 2 }, { 128, 128 });
+	m_TextureTree = GE::SubTexture2D::CreateFromCoords(m_SpriteSheet, { 2, 1 }, { 128, 128 }, {1, 2});
 
 	// Particle
 	m_Particle.ColorBegin = { 254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f };
@@ -101,7 +104,9 @@ void Sandbox2D::OnUpdate(GE::Timestep ts)
 	m_ParticleSystem.OnRender(m_CameraController.GetCamera());
 
 	GE::Renderer2D::BeginScene(m_CameraController.GetCamera());
-	GE::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_SpriteSheet);
+	GE::Renderer2D::DrawQuad({ 0.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_TextureStairs);
+	GE::Renderer2D::DrawQuad({ 1.0f, 0.0f, 0.5f }, { 1.0f, 1.0f }, m_TextureBarrel);
+	GE::Renderer2D::DrawQuad({ -1.0f, 0.0f, 0.5f }, { 1.0f, 2.0f }, m_TextureTree);
 	GE::Renderer2D::EndScene();
 
 }
