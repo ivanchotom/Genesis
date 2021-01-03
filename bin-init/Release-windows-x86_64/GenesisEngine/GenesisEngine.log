@@ -1,6 +1,2 @@
-﻿  Renderer.cpp
-  Renderer2D.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer2D.cpp(136,21): warning C4244: 'initializing': conversion from '__int64' to 'uint32_t', possible loss of data
-  SubTexture2D.cpp
-  Generating Code...
+﻿  OrthographicCameraController.cpp
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Release-windows-x86_64\GenesisEngine\GenesisEngine.lib
