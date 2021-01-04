@@ -153,3 +153,51 @@ project "GenesisSandbox"
 	     defines "GS_DIST"
 		 runtime "Release"
 		 optimize "on"
+
+project "GenesisEditor"
+      location "GenesisEditor"
+	  kind "ConsoleApp"
+	  language "C++"
+	  cppdialect "C++17"
+	  staticruntime "on"
+	  
+	  targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
+	  objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
+
+
+	  files
+	  {
+			"%{prj.name}/src/**.h",
+			"%{prj.name}/src/**.cpp"
+	  }
+
+	  includedirs
+	  {
+            "GenesisEngine/3rdParty/spdlog/include",
+            "GenesisEngine/src",
+			"GenesisEngine/3rdParty",
+			"%{IncludeDir.glm}"
+	  }
+
+	  links
+	  {
+	     "GenesisEngine"
+	  }
+
+	  filter "system:windows"
+		  systemversion "latest"
+	  
+	  filter "configurations:Debug"
+	     defines "GS_DEBUG"
+		 runtime "Debug"
+		 symbols "on"
+
+	  filter "configurations:Release"
+	     defines "GS_RELEASE"
+		 runtime "Release"
+		 optimize "on"
+
+	  filter "configurations:Dist"
+	     defines "GS_DIST"
+		 runtime "Release"
+		 optimize "on"

@@ -19,6 +19,7 @@
 #include "Renderer/Renderer.h"
 #include "Renderer/Renderer2D.h"
 #include "Renderer/Shader.h"
+#include "Renderer/Framebuffer.h"
 #include "Renderer/Texture.h"
 #include "Renderer/SubTexture2D.h"
 #include "Renderer/Buffer.h"

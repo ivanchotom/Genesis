@@ -31,6 +31,9 @@
     <Filter Include="src\Cameras">
       <UniqueIdentifier>{18ACA91C-8461-2212-0D56-1CE9790A1916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\CodeDebug">
+      <UniqueIdentifier>{1E255421-8AE5-CF57-5320-19D5BF9F1434}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Events">
       <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
     </Filter>
@@ -1302,6 +1305,9 @@
     <ClInclude Include="src\Cameras\OrthographicCameraController.h">
       <Filter>src\Cameras</Filter>
     </ClInclude>
+    <ClInclude Include="src\CodeDebug\Instrumentor.h">
+      <Filter>src\CodeDebug</Filter>
+    </ClInclude>
     <ClInclude Include="src\Events\AppEvent.h">
       <Filter>src\Events</Filter>
     </ClInclude>
@@ -1332,6 +1338,9 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
@@ -1353,6 +1362,9 @@
     <ClInclude Include="src\Renderer\Buffer.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Renderer\Framebuffer.h">
+      <Filter>src\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Renderer\GraphicsContext.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
@@ -1362,10 +1374,16 @@
     <ClInclude Include="src\Renderer\Renderer.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Renderer\Renderer2D.h">
+      <Filter>src\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Renderer\RendererAPI.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Renderer\Shader.h">
+      <Filter>src\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer\SubTexture2D.h">
       <Filter>src\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Renderer\Texture.h">
@@ -1407,9 +1425,6 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
-    <ClInclude Include="src\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\CodeDebug\Instrumentor.h" />
-    <ClInclude Include="src\Renderer\SubTexture2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
@@ -1436,6 +1451,9 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1457,16 +1475,25 @@
     <ClCompile Include="src\Renderer\Buffer.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer\Framebuffer.cpp">
+      <Filter>src\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Renderer\RenderCommand.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Renderer\Renderer.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer\Renderer2D.cpp">
+      <Filter>src\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Renderer\RendererAPI.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Renderer\Shader.cpp">
+      <Filter>src\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer\SubTexture2D.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Renderer\Texture.cpp">
@@ -1487,7 +1514,5 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\Renderer\Renderer2D.cpp" />
-    <ClCompile Include="src\Renderer\SubTexture2D.cpp" />
   </ItemGroup>
 </Project>
