@@ -7,6 +7,8 @@ namespace GE {
 	class GENESIS_API Input
 	{
 	public:
+		virtual ~Input() = default;
+
 		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
 
 		inline static bool IsMouseButtonPressed(int button) { return s_Instance->IsMouseButtonPressedImpl(button); }

@@ -34,7 +34,11 @@ namespace GE {
 		GS_PROFILE_FUNCTION();
 
 		// Update
-		m_CameraController.OnUpdate(ts);
+		if (m_ViewportFocused) 
+		{
+			m_CameraController.OnUpdate(ts);
+		}
+
 
 		// Render
 		GE::Renderer2D::ResetStats();
@@ -151,8 +155,16 @@ namespace GE {
 			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 			ImGui::End();
 
+
+
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 			ImGui::Begin("Viewport");
+			//GE_CORE_WARN("Focused : {0}", ImGui::IsAnyWindowFocused());
+			//GE_CORE_WARN("Hovered : {0}", ImGui::IsAnyWindowHovered());
+			m_ViewportFocused = ImGui::IsWindowFocused();
+			m_ViewportHovered = ImGui::IsWindowHovered();
+			Application::Get().GetImGuiLayer()->SetBlockEvents(!m_ViewportFocused || !m_ViewportHovered);
+		
 			ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 			if (m_ViewportSize != *((glm::vec2*)&viewportPanelSize))
 			{
@@ -168,23 +180,6 @@ namespace GE {
 			ImGui::End();
 			ImGui::PopStyleVar();
 
-			ImGui::End();
-		}
-		else
-		{
-			ImGui::Begin("Settings");
-
-			auto stats = GE::Renderer2D::GetStats();
-			ImGui::Text("Renderer2D Stats:");
-			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
-			ImGui::Text("Quads: %d", stats.QuadCount);
-			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
-			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-
-			ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-
-			uint32_t textureID = m_CheckerboardTexture->GetRendererID();
-			ImGui::Image((void*)textureID, ImVec2{ 1280, 720 }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 			ImGui::End();
 		}
 	}
