@@ -23,7 +23,7 @@ namespace GE {
 	class GENESIS_API Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Genesis");
 		virtual ~Application();
 
 		void Run();
