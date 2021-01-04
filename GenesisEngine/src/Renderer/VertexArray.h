@@ -5,6 +5,8 @@
 #include "Buffer.h"
 
 
+// Past Ivan here : Vertex arrays apparently only exist for OpenGL , If ur doing any other rendering API you should not look for them
+
 namespace GE {
 
 	class VertexArray
