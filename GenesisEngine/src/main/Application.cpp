@@ -61,6 +61,11 @@ namespace GE {
 		layer->OnAttach();
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		GS_PROFILE_FUNCTION();
