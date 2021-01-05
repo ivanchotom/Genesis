@@ -46,6 +46,11 @@ namespace GE {
 
 	}
 
+	entt::entity Scene::CreateEntity()
+	{
+		return m_Registry.create();
+	}
+
 	void Scene::OnUpdate(Timestep ts)
 	{
 

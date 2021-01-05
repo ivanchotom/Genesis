@@ -1426,6 +1426,7 @@
       <Filter>src\main</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\Scene.h" />
+    <ClInclude Include="src\Scene\Component.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
@@ -1519,5 +1520,6 @@
       <Filter>src\main</Filter>
     </ClCompile>
     <ClCompile Include="src\Scene\Scene.cpp" />
+    <ClCompile Include="src\Scene\Component.cpp" />
   </ItemGroup>
 </Project>

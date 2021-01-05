@@ -11,6 +11,8 @@ namespace GE {
 		Scene();
 		~Scene();
 
+		entt::entity CreateEntity();
+
 		void OnUpdate(Timestep ts);
 
 

@@ -24,6 +24,10 @@ namespace GE {
 		m_FrameBuffer = FrameBuffer::Create(fbSpec);
 
 		m_ActiveScene = CreateRef<Scene>();
+
+		auto entity = m_ActiveScene->CreateEntity();
+
+		
 	}
 
 	void EditorLayer::OnDetach()
@@ -40,6 +44,8 @@ namespace GE {
 		{
 			m_CameraController.OnUpdate(ts);
 		}
+		//Update Scene
+		m_ActiveScene->OnUpdate(ts);
 
 
 		// Render
