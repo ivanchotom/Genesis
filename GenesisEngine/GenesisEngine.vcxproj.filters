@@ -1425,6 +1425,7 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scene\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
@@ -1517,5 +1518,6 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scene\Scene.cpp" />
   </ItemGroup>
 </Project>

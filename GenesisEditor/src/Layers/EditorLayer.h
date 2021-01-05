@@ -23,6 +23,7 @@ namespace GE {
 		Ref<FrameBuffer> m_FrameBuffer;
 
 		Ref<Texture2D> m_CheckerboardTexture;
+		Ref<Scene> m_ActiveScene;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
 

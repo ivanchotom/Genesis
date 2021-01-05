@@ -16,12 +16,14 @@ namespace GE {
 	{
 		GS_PROFILE_FUNCTION();
 
-		m_CheckerboardTexture = GE::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
 
-		GE::FrameBufferSpecification fbSpec;
+		FrameBufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		m_FrameBuffer = GE::FrameBuffer::Create(fbSpec);
+		m_FrameBuffer = FrameBuffer::Create(fbSpec);
+
+		m_ActiveScene = CreateRef<Scene>();
 	}
 
 	void EditorLayer::OnDetach()
@@ -29,7 +31,7 @@ namespace GE {
 		GS_PROFILE_FUNCTION();
 	}
 
-	void EditorLayer::OnUpdate(GE::Timestep ts)
+	void EditorLayer::OnUpdate(Timestep ts)
 	{
 		GS_PROFILE_FUNCTION();
 
@@ -41,12 +43,12 @@ namespace GE {
 
 
 		// Render
-		GE::Renderer2D::ResetStats();
+		Renderer2D::ResetStats();
 		{
 			GS_PROFILE_SCOPE("Renderer Prep");
 			m_FrameBuffer->Bind();
-			GE::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-			GE::RenderCommand::Clear();
+			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+			RenderCommand::Clear();
 		}
 
 		{
@@ -54,24 +56,24 @@ namespace GE {
 			rotation += ts * 50.0f;
 
 			GS_PROFILE_SCOPE("Renderer Draw");
-			GE::Renderer2D::BeginScene(m_CameraController.GetCamera());
-			GE::Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, -45.0f, { 0.8f, 0.2f, 0.3f, 1.0f });
-			GE::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-			GE::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
-			GE::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerboardTexture, 10.0f);
-			GE::Renderer2D::DrawRotatedQuad({ -2.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }, rotation, m_CheckerboardTexture, 20.0f);
-			GE::Renderer2D::EndScene();
+			Renderer2D::BeginScene(m_CameraController.GetCamera());
+			Renderer2D::DrawRotatedQuad({ 1.0f, 0.0f }, { 0.8f, 0.8f }, -45.0f, { 0.8f, 0.2f, 0.3f, 1.0f });
+			Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+			Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
+			Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerboardTexture, 10.0f);
+			Renderer2D::DrawRotatedQuad({ -2.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }, rotation, m_CheckerboardTexture, 20.0f);
+			Renderer2D::EndScene();
 
-			GE::Renderer2D::BeginScene(m_CameraController.GetCamera());
+			Renderer2D::BeginScene(m_CameraController.GetCamera());
 			for (float y = -5.0f; y < 5.0f; y += 0.5f)
 			{
 				for (float x = -5.0f; x < 5.0f; x += 0.5f)
 				{
 					glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 5.0f) / 10.0f, 0.7f };
-					GE::Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
+					Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
 				}
 			}
-			GE::Renderer2D::EndScene();
+			Renderer2D::EndScene();
 			m_FrameBuffer->Unbind();
 		}
 	}
@@ -136,7 +138,7 @@ namespace GE {
 					// which we can't undo at the moment without finer window depth/z control.
 					//ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen_persistant);
 
-					if (ImGui::MenuItem("Exit")) GE::Application::Get().Close();
+					if (ImGui::MenuItem("Exit")) Application::Get().Close();
 					ImGui::EndMenu();
 				}
 
@@ -145,7 +147,7 @@ namespace GE {
 
 			ImGui::Begin("Settings");
 
-			auto stats = GE::Renderer2D::GetStats();
+			auto stats = Renderer2D::GetStats();
 			ImGui::Text("Renderer2D Stats:");
 			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
 			ImGui::Text("Quads: %d", stats.QuadCount);
@@ -184,7 +186,7 @@ namespace GE {
 		}
 	}
 
-	void EditorLayer::OnEvent(GE::Event& e)
+	void EditorLayer::OnEvent(Event& e)
 	{
 		m_CameraController.OnEvent(e);
 	}
