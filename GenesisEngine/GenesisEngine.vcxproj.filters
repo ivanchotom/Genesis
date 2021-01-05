@@ -1502,6 +1502,9 @@
     <ClCompile Include="src\Renderer\VertexArray.cpp">
       <Filter>src\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\main\Application.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
@@ -1514,6 +1517,5 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
 </Project>

@@ -22,6 +22,7 @@ IncludeDir ["GLFW"] = "GenesisEngine/3rdParty/GLFW/include"
 IncludeDir ["Glad"] = "GenesisEngine/3rdParty/Glad/include"
 IncludeDir ["ImGui"] = "GenesisEngine/3rdParty/ImGui"
 IncludeDir ["glm"] = "GenesisEngine/3rdParty/glm"
+IncludeDir ["EnTT"] = "GenesisEngine/3rdParty/EnTT/Include"
 IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
 
 
@@ -73,7 +74,8 @@ group ""
             "%{IncludeDir.Glad}",
 			"%{IncludeDir.ImGui}",
 			"%{IncludeDir.glm}",
-			"%{IncludeDir.stb_image}"
+			"%{IncludeDir.stb_image}",
+			"%{IncludeDir.EnTT}"
       }
 
       links
@@ -132,8 +134,10 @@ project "GenesisSandbox"
 	  {
             "GenesisEngine/3rdParty/spdlog/include",
             "GenesisEngine/src",
+			"GenesisSandbox/src",
 			"GenesisEngine/3rdParty",
-			"%{IncludeDir.glm}"
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.EnTT}"
 	  }
 
 	  links
@@ -180,8 +184,10 @@ project "GenesisEditor"
 	  {
             "GenesisEngine/3rdParty/spdlog/include",
             "GenesisEngine/src",
+			"GenesisEditor/src",
 			"GenesisEngine/3rdParty",
-			"%{IncludeDir.glm}"
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.EnTT}"
 	  }
 
 	  links

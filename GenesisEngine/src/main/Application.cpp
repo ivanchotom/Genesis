@@ -30,7 +30,7 @@ namespace GE {
 
 		m_Window = Window::Create(WindowProps(name));
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
-		//m_Window->SetVSync(false);    Set Vsync off 
+		//m_Window->SetVSync(false);    //Set Vsync off 
 
 		Renderer::Init();
 
