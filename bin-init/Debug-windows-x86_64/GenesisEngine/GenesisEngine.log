@@ -1,3 +1,37 @@
-﻿  Scene.cpp
+﻿  PCH.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  stb_image.cpp
+  OrthographicCamera.cpp
+  OrthographicCameraController.cpp
+  ImGuiBuild.cpp
+  ImGuiLayer.cpp
+  OpenGLBuffer.cpp
+  OpenGLContext.cpp
+  OpenGLFramebuffer.cpp
+  OpenGLRendererAPI.cpp
+  OpenGLShader.cpp
+  OpenGLTexture.cpp
+  OpenGLVertexArray.cpp
+D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(77,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
+D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.h(65): warning C4715: 'GE::BufferElement::GetComponentCount': not all control paths return a value
+  WindowsInput.cpp
+  WindowsWindow.cpp
+  Buffer.cpp
+  Framebuffer.cpp
+  RenderCommand.cpp
+  Renderer.cpp
+  Renderer2D.cpp
+  RendererAPI.cpp
+  Shader.cpp
+D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer2D.cpp(136,21): warning C4244: 'initializing': conversion from '__int64' to 'uint32_t', possible loss of data
+  SubTexture2D.cpp
+  Texture.cpp
+  VertexArray.cpp
+  Component.cpp
+  Scene.cpp
+  Window.cpp
   Application.cpp
+  Layer.cpp
+  LayerStack.cpp
+  Log.cpp
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
