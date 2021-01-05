@@ -24,7 +24,7 @@ namespace GE {
 
 		Ref<Texture2D> m_CheckerboardTexture;
 		Ref<Scene> m_ActiveScene;
-		entt::entity m_SqareEntity;
+		Entity m_SqareEntity;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
 

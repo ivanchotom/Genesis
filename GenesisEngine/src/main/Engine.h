@@ -16,8 +16,9 @@
 #include "ImGui/ImGuiLayer.h"
 //-----------------------------
 
-//----------Scene--------------
+//----------ECS--------------
 #include "Scene/Scene.h"
+#include "Scene/Entity.h"
 #include "Scene/Component.h"
 //-----------------------------
 
