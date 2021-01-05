@@ -18,9 +18,8 @@
 
 //----------Scene--------------
 #include "Scene/Scene.h"
+#include "Scene/Component.h"
 //-----------------------------
-
-
 
 //----------Renderer--------------
 #include "Renderer/Renderer.h"
