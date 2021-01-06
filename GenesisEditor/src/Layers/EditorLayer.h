@@ -26,6 +26,9 @@ namespace GE {
 		Ref<Scene> m_ActiveScene;
 		Entity m_SqareEntity;
 		Entity m_CameraEntity;
+		Entity m_SecondCamera;
+
+		bool m_PrimaryCamera = true;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
 

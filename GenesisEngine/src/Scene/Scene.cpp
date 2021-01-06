@@ -38,8 +38,9 @@ namespace GE {
 	void Scene::OnUpdate(Timestep ts)
 	{
 
-		//Render 
+		//Render Loop .v2.0
 		Camera* mainCamera = nullptr;
+		glm::mat4* cameraTransform = nullptr;
 		{
 			auto group = m_Registry.view<TransformComponent, CameraComponent>();
 			for (auto entity : group)
@@ -49,6 +50,7 @@ namespace GE {
 				if (camera.Primary)
 				{
 					mainCamera = &camera.Camera;
+					cameraTransform = &transform.Transform;
 					break;
 				}
 			}
@@ -56,6 +58,8 @@ namespace GE {
 
 		if (mainCamera)
 		{
+			Renderer2D::BeginScene(mainCamera->GetProjection(), *cameraTransform);
+
 			auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
 			for (auto entity : group)
 			{
@@ -63,6 +67,8 @@ namespace GE {
 
 				Renderer2D::DrawQuad(transform, sprite.Color);
 			}
+
+			Renderer2D::EndScene();
 		}
 	}
 

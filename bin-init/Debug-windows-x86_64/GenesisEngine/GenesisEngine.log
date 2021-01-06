@@ -1,4 +1,8 @@
-﻿  Entity.cpp
+﻿  Camera.cpp
+  Renderer.cpp
+  Renderer2D.cpp
+  Component.cpp
+D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer2D.cpp(151,21): warning C4244: 'initializing': conversion from '__int64' to 'uint32_t', possible loss of data
   Scene.cpp
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const'
@@ -6,14 +10,43 @@ D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : wh
           [
               Entity=entt::entity
           ] (compiling source file src\Scene\Scene.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(41): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(64): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
           with
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(40): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(63): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
           with
           [
               Entity=entt::entity
           ]
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4131): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::sparse_set<Entity>::begin(void) noexcept const'
+          with
+          [
+              Entity=entt::entity
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(6943): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::sparse_set<Entity>::begin(void) noexcept const' being compiled
+          with
+          [
+              Entity=entt::entity
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4491): message : see reference to class template instantiation 'entt::sparse_set<Entity>' being compiled
+          with
+          [
+              Entity=entt::entity
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7601): message : see reference to class template instantiation 'entt::storage<Entity,Component,void>' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Component=GE::TransformComponent
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8192): message : see reference to class template instantiation 'entt::basic_registry<entt::entity>::pool_handler<Component>' being compiled
+          with
+          [
+              Component=GE::TransformComponent
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(18): message : see reference to function template instantiation 'GE::TransformComponent &entt::basic_registry<entt::entity>::emplace<GE::TransformComponent,glm::mat4>(const entt::entity,glm::mat4 &&)' being compiled
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'const entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib

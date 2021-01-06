@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Cameras/OrthographicCamera.h"
+#include "Cameras/Camera.h"
 
 #include "Texture.h"
 #include "SubTexture2D.h"
@@ -14,6 +15,7 @@ namespace GE {
 		static void Shutdown();
 
 		static void BeginScene(const OrthographicCamera& camera);
+		static void BeginScene(const Camera& camera, glm::mat4& transform);
 		static void EndScene();
 		static void Flush();
 
