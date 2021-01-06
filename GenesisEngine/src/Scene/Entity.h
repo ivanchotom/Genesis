@@ -70,14 +70,4 @@ namespace GE {
 
 	};
 
-	class ScriptableEntity
-	{
-	public:
-
-
-	private:
-
-	};
-
-
 }

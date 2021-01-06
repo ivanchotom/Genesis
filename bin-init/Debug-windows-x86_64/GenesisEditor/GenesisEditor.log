@@ -1,4 +1,6 @@
-﻿  EditorLayer.cpp
-D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\Work\Genesis\GenesisEditor\src\Layers\EditorLayer.cpp(204,33): warning C4312: 'type cast': conversion from 'uint32_t' to 'void *' of greater size
+﻿  EditorApp.cpp
+  EditorLayer.cpp
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\EditorApp.cpp)
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\Layers\EditorLayer.cpp)
+D:\Work\Genesis\GenesisEditor\src\Layers\EditorLayer.cpp(225,33): warning C4312: 'type cast': conversion from 'uint32_t' to 'void *' of greater size
   GenesisEditor.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEditor\GenesisEditor.exe

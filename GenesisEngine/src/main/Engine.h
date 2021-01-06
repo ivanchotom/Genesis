@@ -2,15 +2,21 @@
 
 // For use in Applications using the GameEngine.dll/lib
 
+
+//---------Core/main--------
 #include "Application.h"
 #include "Layer.h"
 #include "Log.h"
-
 #include "main/TimeStep.h"
+//--------------------------
 
+
+//---------Input---------------
 #include "Input.h"
 #include "Events/KeyCodes.h"
 #include "Events/MouseCode.h"
+//-----------------------------
+
 
 //------------UI---------------
 #include "ImGui/ImGuiLayer.h"
@@ -19,6 +25,7 @@
 //----------ECS--------------
 #include "Scene/Scene.h"
 #include "Scene/Entity.h"
+#include "Scene/ScriptableEntity.h"
 #include "Scene/Component.h"
 //-----------------------------
 

@@ -1,5 +1,4 @@
-﻿  SceneCamera.cpp
-  Component.cpp
+﻿  Component.cpp
   Scene.cpp
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const'

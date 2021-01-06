@@ -5,7 +5,7 @@
 //#include "Cameras/OrthographicCamera.h"
 //#include "Cameras/Camera.h"
 #include "Cameras/SceneCamera.h"
-
+#include "ScriptableEntity.h"
 
 namespace GE {
 
@@ -58,5 +58,24 @@ namespace GE {
 	{
 		ScriptableEntity* Instance = nullptr;
 
+		std::function<void()> InstanciateFunction;
+		std::function<void()> DestroyInstanceFunction;
+
+
+		std::function<void(ScriptableEntity*)> OnCreateFunction;
+		std::function<void(ScriptableEntity*, Timestep)> OnUpdateFunction;
+		std::function<void(ScriptableEntity*)> OnDestroyFunction;
+
+
+		template<typename T>
+		void Bind()
+		{
+			InstanciateFunction = [&]() { Instance = new T(); };
+			DestroyInstanceFunction = [&]() {delete (T*)Instance; Instance = nullptr; };
+
+			OnCreateFunction = [](ScriptableEntity* Instance) { ((T*)Instance)->OnCreate(); };
+			OnUpdateFunction = [](ScriptableEntity* Instance, Timestep ts) { ((T*)Instance)->OnUpdate(ts); };
+			OnDestroyFunction = [](ScriptableEntity* Instance) { ((T*)Instance)->OnDestroy(); };
+		}
 	};
 }

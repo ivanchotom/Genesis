@@ -1,31 +1,8 @@
 ﻿  Sandbox2D.cpp
   SandboxApp.cpp
   ParticleTest.cpp
-D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\Layers\Sandbox2D.cpp)
 D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\SandboxApp.cpp)
+D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\Layers\Sandbox2D.cpp)
 D:\Work\Genesis\GenesisEngine\src\CodeDebug\Instrumentor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,59): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,54): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,26): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,71): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,66): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,38): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\Layers\Sandbox2D.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,59): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,54): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,26): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,59): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,54): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(45,26): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,71): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,66): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,38): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\SandboxApp.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,71): error C2065: 'TransformComponent': undeclared identifier (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,66): error C2672: 'entt::basic_registry<entt::entity>::get': no matching overloaded function found (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Entity.h(46,38): error C2974: 'entt::basic_registry<entt::entity>::get': invalid template argument for 'Component', type expected (compiling source file src\Testing\ParticleTest.cpp)
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8478): message : see declaration of 'entt::basic_registry<entt::entity>::get' (compiling source file src\Testing\ParticleTest.cpp)
 D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(49,47): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe

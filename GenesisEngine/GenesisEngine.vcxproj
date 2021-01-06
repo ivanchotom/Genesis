@@ -594,6 +594,7 @@
     <ClInclude Include="src\Scene\Entity.h" />
     <ClInclude Include="src\Scene\Scene.h" />
     <ClInclude Include="src\Cameras\SceneCamera.h" />
+    <ClInclude Include="src\Scene\ScriptableEntity.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\glfw3.h" />
     <ClInclude Include="src\main\Application.h" />
@@ -639,6 +640,7 @@
     <ClCompile Include="src\Scene\Entity.cpp" />
     <ClCompile Include="src\Scene\Scene.cpp" />
     <ClCompile Include="src\Cameras\SceneCamera.cpp" />
+    <ClCompile Include="src\Scene\ScriptableEntity.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\main\Application.cpp" />
     <ClCompile Include="src\main\Layer.cpp" />
