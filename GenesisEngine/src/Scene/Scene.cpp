@@ -37,6 +37,28 @@ namespace GE {
 
 	void Scene::OnUpdate(Timestep ts)
 	{
+		// Update Scripts
+		{
+			m_Registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc)
+			{
+					if (!nsc.Instance)
+					{
+						nsc.InstanciateFunction();
+						nsc.Instance->m_Entity = Entity(entity, this);
+						if (nsc.OnCreateFunction)
+						{
+							nsc.OnCreateFunction(nsc.Instance);
+						}
+					}
+					if (nsc.OnUpdateFunction)
+					{
+						nsc.OnUpdateFunction(nsc.Instance, ts);
+					}
+
+			});
+		}
+
+
 
 		//Render Loop .v2.0
 		Camera* mainCamera = nullptr;

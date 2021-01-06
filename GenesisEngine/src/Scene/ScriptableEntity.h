@@ -14,7 +14,10 @@ namespace GE {
 			return m_Entity.GetComponent<T>();
 		}
 
-
+	protected:
+		virtual void OnCreate() {}
+		virtual void OnUpdate() {}
+		virtual void OnDestroy() {}
 
 
 	private:

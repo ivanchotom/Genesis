@@ -42,7 +42,8 @@ namespace GE {
 		public:
 			void OnCreate()
 			{
-				GetComponent<TransformComponent>();
+				//Test
+				//std::cout << "CameraController::OnCreate!" << std::endl;
 			}
 
 			void OnDestroy()
@@ -52,7 +53,28 @@ namespace GE {
 
 			void OnUpdate(Timestep ts)
 			{
+				auto& transform = GetComponent<TransformComponent>().Transform;
+				float speed = 5.0f;
 
+				if (Input::IsKeyPressed(GE_KEY_A))
+				{
+					transform[3][0] -= speed * ts;
+				}
+				if (Input::IsKeyPressed(GE_KEY_D))
+				{
+					transform[3][0] += speed * ts;
+				}
+				if (Input::IsKeyPressed(GE_KEY_W))
+				{
+					transform[3][1] += speed * ts;
+				}
+				if (Input::IsKeyPressed(GE_KEY_S))
+				{
+					transform[3][1] -= speed * ts;
+				}
+
+				//Test
+				//std::cout << "Timestep:" << ts << std::endl;
 			}
 		};
 
