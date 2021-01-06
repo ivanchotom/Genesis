@@ -1,54 +1,18 @@
-﻿  PCH.cpp
-  stb_image.cpp
-  Camera.cpp
-  OrthographicCamera.cpp
-  OrthographicCameraController.cpp
-  ImGuiBuild.cpp
-  ImGuiLayer.cpp
-  OpenGLBuffer.cpp
-  OpenGLContext.cpp
-  OpenGLFramebuffer.cpp
-  OpenGLRendererAPI.cpp
-  OpenGLShader.cpp
-  OpenGLTexture.cpp
-  OpenGLVertexArray.cpp
-D:\Work\Genesis\GenesisEngine\src\Platform\OpenGL\OpenGLVertexArray.cpp(77,32): warning C4312: 'type cast': conversion from 'const uint32_t' to 'const void *' of greater size
-D:\Work\Genesis\GenesisEngine\src\Renderer\Buffer.h(65): warning C4715: 'GE::BufferElement::GetComponentCount': not all control paths return a value
-  WindowsInput.cpp
-  WindowsWindow.cpp
-  Buffer.cpp
-  Framebuffer.cpp
-  RenderCommand.cpp
-  Renderer.cpp
-  Renderer2D.cpp
-  RendererAPI.cpp
-  Shader.cpp
-D:\Work\Genesis\GenesisEngine\src\Renderer\Renderer2D.cpp(151,21): warning C4244: 'initializing': conversion from '__int64' to 'uint32_t', possible loss of data
-  SubTexture2D.cpp
-  Texture.cpp
-  VertexArray.cpp
-  Component.cpp
-  Entity.cpp
+﻿  Component.cpp
   Scene.cpp
-  SceneCamera.cpp
   ScriptableEntity.cpp
-  Window.cpp
-  Application.cpp
-  Layer.cpp
-  LayerStack.cpp
-  Log.cpp
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const'
           with
           [
               Entity=entt::entity
           ] (compiling source file src\Scene\Scene.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(86): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(79): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
           with
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(85): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(78): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
           with
           [
               Entity=entt::entity

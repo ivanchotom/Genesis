@@ -58,24 +58,15 @@ namespace GE {
 	{
 		ScriptableEntity* Instance = nullptr;
 
-		std::function<void()> InstanciateFunction;
-		std::function<void()> DestroyInstanceFunction;
-
-
-		std::function<void(ScriptableEntity*)> OnCreateFunction;
-		std::function<void(ScriptableEntity*, Timestep)> OnUpdateFunction;
-		std::function<void(ScriptableEntity*)> OnDestroyFunction;
+		ScriptableEntity*(*InstanciateScript)();
+		void (*DestroyScript)(NativeScriptComponent*);
 
 
 		template<typename T>
 		void Bind()
 		{
-			InstanciateFunction = [&]() { Instance = new T(); };
-			DestroyInstanceFunction = [&]() {delete (T*)Instance; Instance = nullptr; };
-
-			OnCreateFunction = [](ScriptableEntity* Instance) { ((T*)Instance)->OnCreate(); };
-			OnUpdateFunction = [](ScriptableEntity* Instance, Timestep ts) { ((T*)Instance)->OnUpdate(ts); };
-			OnDestroyFunction = [](ScriptableEntity* Instance) { ((T*)Instance)->OnDestroy(); };
+			InstanciateScript = []() { return static_cast<ScriptableEntity*>(new T()); };
+			DestroyScript = [](NativeScriptComponent* nsc) {delete nsc->Instance; nsc->Instance = nullptr; };
 		}
 	};
 }

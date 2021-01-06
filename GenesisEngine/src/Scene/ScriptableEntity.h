@@ -7,6 +7,8 @@ namespace GE {
 	class ScriptableEntity
 	{
 	public:
+		virtual ~ScriptableEntity() {}
+
 
 		template<typename T>
 		T& GetComponent()
@@ -16,7 +18,7 @@ namespace GE {
 
 	protected:
 		virtual void OnCreate() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnDestroy() {}
 
 
