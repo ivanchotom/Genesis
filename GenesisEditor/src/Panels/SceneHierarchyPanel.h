@@ -19,6 +19,7 @@ namespace GE {
 		void OnImGuiRender();
 	private:
 		void DrawEntityNode(Entity entity);
+		void DrawComponents(Entity entity);
 
 		Ref<Scene> m_Cotext;
 		Entity m_SelectionContext;

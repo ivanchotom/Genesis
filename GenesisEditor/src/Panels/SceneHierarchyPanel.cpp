@@ -3,6 +3,8 @@
 #include "ImGui/imgui.h"
 #include "Scene/Component.h"
 
+#include "glm/gtc/type_ptr.hpp"
+
 namespace GE {
 
 	SceneHierarchyPanel::SceneHierarchyPanel(const Ref<Scene>& context)
@@ -25,6 +27,14 @@ namespace GE {
 				DrawEntityNode(entity);
 		});
 
+		ImGui::End();
+
+		ImGui::Begin("Properties");
+
+		if (m_SelectionContext) // gives error if not in if statement
+		{
+			DrawComponents(m_SelectionContext);
+		}
 		ImGui::End();
 	}
 
@@ -51,6 +61,33 @@ namespace GE {
 			ImGui::TreePop();
 		}
 
+	}
+
+	void SceneHierarchyPanel::DrawComponents(Entity entity)
+	{
+		if (entity.HasComponent<TagComponent>())
+		{
+			auto& tag = entity.GetComponent<TagComponent>().Tag;
+		
+			char buffer[256];
+			memset(buffer, 0, sizeof(buffer));
+			strcpy_s(buffer, sizeof(buffer), tag.c_str());
+			if (ImGui::InputText("Tag", buffer, sizeof(buffer)))
+			{
+				tag = std::string(buffer);
+			}
+		}
+
+
+
+		if (entity.HasComponent<TransformComponent>())
+		{
+			auto& transform = entity.GetComponent<TransformComponent>().Transform;
+			if (ImGui::DragFloat3("Position", glm::value_ptr(transform[3]), 0.5f))
+			{
+
+			}
+		}
 	}
 
 }

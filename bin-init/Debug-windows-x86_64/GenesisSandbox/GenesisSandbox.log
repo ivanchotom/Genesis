@@ -1,1 +1,6 @@
-﻿  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe
+﻿  Random.cpp
+  Sandbox2D.cpp
+  SandboxApp.cpp
+  ParticleTest.cpp
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(49,47): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  GenesisSandbox.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisSandbox\GenesisSandbox.exe
