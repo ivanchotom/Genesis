@@ -12,13 +12,7 @@ namespace GE {
 
 	Scene::Scene()
 	{
-		//entt::entity is literally an id of type uint32_t
-		entt::entity entity = m_Registry.create();
-
-	    m_Registry.emplace<TransformComponent>(entity, glm::mat4(1.0f));
-
-
-		TransformComponent& transform = m_Registry.get<TransformComponent>(entity);
+	
 	}
 
 	Scene::~Scene()
@@ -60,7 +54,7 @@ namespace GE {
 			auto view = m_Registry.view<TransformComponent, CameraComponent>();
 			for (auto entity : view)
 			{
-				auto& [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
+				auto [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
 
 				if (camera.Primary)
 				{
@@ -78,7 +72,7 @@ namespace GE {
 			auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
 			for (auto entity : group)
 			{
-				auto& [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
 				Renderer2D::DrawQuad(transform, sprite.Color);
 			}

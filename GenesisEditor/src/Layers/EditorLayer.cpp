@@ -42,6 +42,9 @@ namespace GE {
 		public:
 			void OnCreate()
 			{
+				auto& transform = GetComponent<TransformComponent>().Transform;
+				transform[3][0] = rand() % 10 - 5.0f;
+
 				//Test
 				//std::cout << "CameraController::OnCreate!" << std::endl;
 			}
