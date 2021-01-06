@@ -1435,6 +1435,7 @@
       <Filter>src\main</Filter>
     </ClInclude>
     <ClInclude Include="src\Scene\Entity.h" />
+    <ClInclude Include="src\Cameras\Camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
@@ -1534,5 +1535,6 @@
       <Filter>src\main</Filter>
     </ClCompile>
     <ClCompile Include="src\Scene\Entity.cpp" />
+    <ClCompile Include="src\Cameras\Camera.cpp" />
   </ItemGroup>
 </Project>

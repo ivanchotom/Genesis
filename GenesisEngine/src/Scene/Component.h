@@ -2,6 +2,8 @@
 
 #include <glm/glm.hpp>
 
+//#include "Cameras/OrthographicCamera.h"
+#include "Cameras/Camera.h"
 
 namespace GE {
 
@@ -38,6 +40,17 @@ namespace GE {
 		TagComponent(const TagComponent&) = default;
 		TagComponent(const std::string& tag)
 			: Tag(tag) {}
+	};
+
+	struct CameraComponent
+	{
+		GE::Camera Camera;
+		bool Primary = true; // move to scene
+
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
+		CameraComponent(const glm::mat4& projection)
+			: Camera(projection) {}
 	};
 
 
