@@ -83,6 +83,8 @@ namespace GE {
 
 		m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+
+		m_SHPanel.SetContext(m_ActiveScene);
 	}
 
 	void EditorLayer::OnDetach()
@@ -193,6 +195,8 @@ namespace GE {
 
 				ImGui::EndMenuBar();
 			}
+
+			m_SHPanel.OnImGuiRender();
 
 			ImGui::Begin("Settings");
 

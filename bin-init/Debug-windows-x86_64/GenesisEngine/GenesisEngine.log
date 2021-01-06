@@ -1,10 +1,13 @@
-﻿  Scene.cpp
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+﻿  Component.cpp
+  Entity.cpp
+  Scene.cpp
+  ScriptableEntity.cpp
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const'
           with
           [
               Entity=entt::entity
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(73): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
           with
           [
@@ -15,48 +18,48 @@ D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(72): message : see reference t
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'entt::entt_traits<uint32_t,void>::difference_type', possible loss of data
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4131): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::sparse_set<Entity>::begin(void) noexcept const'
           with
           [
               Entity=entt::entity
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7379): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::sparse_set<Entity>::begin(void) noexcept const' being compiled
           with
           [
               Entity=entt::entity
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7314): message : see reference to class template instantiation 'entt::sparse_set<Entity>' being compiled
           with
           [
               Entity=entt::entity
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference to class template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent>' being compiled
           with
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'const entt::entt_traits<uint32_t,void>::difference_type', possible loss of data
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4677,1): warning C4267: 'initializing': conversion from 'size_t' to 'entt::entt_traits<uint32_t,void>::difference_type', possible loss of data
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4132,1): warning C4267: 'initializing': conversion from 'size_t' to 'const entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4677,1): warning C4267: 'initializing': conversion from 'size_t' to 'entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4676): message : while compiling class template member function 'entt::storage<Entity,Type,void>::storage_iterator<false> entt::storage<Entity,Type,void>::begin(void) noexcept'
           with
           [
               Entity=entt::entity,
               Type=GE::NativeScriptComponent
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7545): message : see reference to function template instantiation 'entt::storage<Entity,Type,void>::storage_iterator<false> entt::storage<Entity,Type,void>::begin(void) noexcept' being compiled
           with
           [
               Entity=entt::entity,
               Type=GE::NativeScriptComponent
-          ]
+          ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7601): message : see reference to class template instantiation 'entt::storage<Entity,Type,void>' being compiled
           with
           [
               Entity=entt::entity,
               Type=GE::NativeScriptComponent
-          ]
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8756): message : see reference to class template instantiation 'entt::basic_registry<entt::entity>::pool_handler<GE::NativeScriptComponent>' being compiled
+          ] (compiling source file src\Scene\Scene.cpp)
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8756): message : see reference to class template instantiation 'entt::basic_registry<entt::entity>::pool_handler<GE::NativeScriptComponent>' being compiled (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference to function template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent> entt::basic_registry<Entity>::view<GE::NativeScriptComponent,>(entt::exclude_t<>)' being compiled
           with
           [
@@ -67,5 +70,5 @@ D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference t
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4677,1): warning C4267: 'initializing': conversion from 'size_t' to 'const entt::entt_traits<uint32_t,void>::difference_type', possible loss of data
+D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(4677,1): warning C4267: 'initializing': conversion from 'size_t' to 'const entt::entt_traits<uint32_t,void>::difference_type', possible loss of data (compiling source file src\Scene\Scene.cpp)
   GenesisEngine.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEngine\GenesisEngine.lib
