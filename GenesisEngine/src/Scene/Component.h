@@ -3,7 +3,9 @@
 #include <glm/glm.hpp>
 
 //#include "Cameras/OrthographicCamera.h"
-#include "Cameras/Camera.h"
+//#include "Cameras/Camera.h"
+#include "Cameras/SceneCamera.h"
+
 
 namespace GE {
 
@@ -44,14 +46,17 @@ namespace GE {
 
 	struct CameraComponent
 	{
-		GE::Camera Camera;
+		SceneCamera Camera;
 		bool Primary = true; // move to scene
+		bool FixedAspectRatio = false;
 
 		CameraComponent() = default;
 		CameraComponent(const CameraComponent&) = default;
-		CameraComponent(const glm::mat4& projection)
-			: Camera(projection) {}
 	};
 
+	struct NativeScriptComponent
+	{
+		ScriptableEntity* Instance = nullptr;
 
+	};
 }

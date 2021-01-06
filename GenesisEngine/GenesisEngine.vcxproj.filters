@@ -1436,6 +1436,7 @@
     </ClInclude>
     <ClInclude Include="src\Scene\Entity.h" />
     <ClInclude Include="src\Cameras\Camera.h" />
+    <ClInclude Include="src\Cameras\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
@@ -1536,5 +1537,6 @@
     </ClCompile>
     <ClCompile Include="src\Scene\Entity.cpp" />
     <ClCompile Include="src\Cameras\Camera.cpp" />
+    <ClCompile Include="src\Cameras\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
