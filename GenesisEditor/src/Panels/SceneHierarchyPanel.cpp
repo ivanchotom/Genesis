@@ -27,6 +27,11 @@ namespace GE {
 				DrawEntityNode(entity);
 		});
 
+		if (ImGui::IsMouseDown(0) && ImGui::IsWindowHovered())
+		{
+			m_SelectionContext = {};
+		}
+
 		ImGui::End();
 
 		ImGui::Begin("Properties");
@@ -82,12 +87,88 @@ namespace GE {
 
 		if (entity.HasComponent<TransformComponent>())
 		{
-			auto& transform = entity.GetComponent<TransformComponent>().Transform;
-			if (ImGui::DragFloat3("Position", glm::value_ptr(transform[3]), 0.5f))
+			if (ImGui::TreeNodeEx((void*)typeid(TransformComponent).hash_code(),
+				ImGuiTreeNodeFlags_DefaultOpen, "Transform"))
 			{
+				auto& transform = entity.GetComponent<TransformComponent>().Transform;
+				ImGui::DragFloat3("Position", glm::value_ptr(transform[3]), 0.05f);
 
+				ImGui::TreePop();
 			}
+			
 		}
+
+
+		if (entity.HasComponent<CameraComponent>())
+		{
+			if (ImGui::TreeNodeEx((void*)typeid(CameraComponent).hash_code(),
+				ImGuiTreeNodeFlags_DefaultOpen, "Camera"))
+			{
+				auto& cameraComponent = entity.GetComponent<CameraComponent>();
+				auto& camera = cameraComponent.Camera; // easier to read bellow
+
+				const char* projectionTypeString[] = { "Perspective", "Orthographic" };
+				const char* currentProjectionTypeString = projectionTypeString[(int)camera.GetProjectionType()];
+
+				if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
+				{
+
+					for (int i = 0; i < 2; i++)
+					{
+						bool IsSelected = currentProjectionTypeString == projectionTypeString[i];
+						if (ImGui::Selectable(projectionTypeString[i], IsSelected))
+						{
+							currentProjectionTypeString = projectionTypeString[i];
+							camera.SetProjectionType((SceneCamera::ProjectionType)i);
+
+						}
+
+						if (IsSelected)
+						{
+							ImGui::SetItemDefaultFocus();
+						}
+					}
+
+
+					ImGui::EndCombo();
+				}
+
+				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Orthographic)
+				{
+
+					float orthoSize = camera.GetOrthographicSize();
+					if (ImGui::DragFloat("Size", &orthoSize))
+					{
+						camera.SetOrthographicSize(orthoSize);
+					}
+
+					float nearClip = camera.GetOrthographicNearClip();
+					if (ImGui::DragFloat("Near", &nearClip))
+					{
+						camera.SetOrthographicNearClip(nearClip);
+					}
+
+					float farClip = camera.GetOrthographicFarClip();
+					if (ImGui::DragFloat("Far", &farClip))
+					{
+						camera.SetOrthographicFarClip(farClip);
+					}
+				}
+
+				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
+				{
+
+				}
+
+
+				ImGui::TreePop();
+			}
+
+		}
+
+
+
+
 	}
 
 }
