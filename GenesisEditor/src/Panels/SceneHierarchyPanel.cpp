@@ -90,8 +90,8 @@ namespace GE {
 			if (ImGui::TreeNodeEx((void*)typeid(TransformComponent).hash_code(),
 				ImGuiTreeNodeFlags_DefaultOpen, "Transform"))
 			{
-				auto& transform = entity.GetComponent<TransformComponent>().Transform;
-				ImGui::DragFloat3("Position", glm::value_ptr(transform[3]), 0.05f);
+				auto& tc = entity.GetComponent<TransformComponent>();
+				ImGui::DragFloat3("Position", glm::value_ptr(tc.Translation), 0.05f);
 
 				ImGui::TreePop();
 			}
@@ -106,6 +106,10 @@ namespace GE {
 			{
 				auto& cameraComponent = entity.GetComponent<CameraComponent>();
 				auto& camera = cameraComponent.Camera; // easier to read bellow
+
+				ImGui::Checkbox("Primary", &cameraComponent.Primary);
+				
+
 
 				const char* projectionTypeString[] = { "Perspective", "Orthographic" };
 				const char* currentProjectionTypeString = projectionTypeString[(int)camera.GetProjectionType()];
@@ -153,6 +157,9 @@ namespace GE {
 					{
 						camera.SetOrthographicFarClip(farClip);
 					}
+
+
+					ImGui::Checkbox("Fixed Aspect Ratio", &cameraComponent.FixedAspectRatio);
 				}
 
 				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
@@ -184,7 +191,26 @@ namespace GE {
 
 
 
+		if (entity.HasComponent<SpriteRendererComponent>())
+		{
+			if (ImGui::TreeNodeEx((void*)typeid(SpriteRendererComponent).hash_code(),
+				ImGuiTreeNodeFlags_DefaultOpen, "Sprite Renderer"))
+			{
+
+				auto& clr = entity.GetComponent<SpriteRendererComponent>();
+				ImGui::ColorEdit4("Color", glm::value_ptr(clr.Color));
+
+				ImGui::TreePop();
+			}
+
+		}
+
+
+
 
 	}
+
+
+
 
 }

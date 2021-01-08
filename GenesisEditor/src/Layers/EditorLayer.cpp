@@ -35,10 +35,10 @@ namespace GE {
 		m_SqareEntity = square;
 
 
-		m_CameraEntity = m_ActiveScene->CreateEntity("Camera Entity");
+		m_CameraEntity = m_ActiveScene->CreateEntity("Camera A");
 		m_CameraEntity.AddComponent<CameraComponent>();
 
-		m_SecondCamera = m_ActiveScene->CreateEntity("Clip-Space Camera ");
+		m_SecondCamera = m_ActiveScene->CreateEntity("Camera B");
 		auto cc = m_SecondCamera.AddComponent<CameraComponent>();
 		cc.Primary = false;
 
@@ -47,8 +47,8 @@ namespace GE {
 		public:
 			void OnCreate()
 			{
-				auto& transform = GetComponent<TransformComponent>().Transform;
-				transform[3][0] = rand() % 10 - 5.0f;
+				auto& translation = GetComponent<TransformComponent>().Translation;
+				translation.x = rand() % 10 - 5.0f;
 
 				//Test
 				//std::cout << "CameraController::OnCreate!" << std::endl;
@@ -61,24 +61,24 @@ namespace GE {
 
 			void OnUpdate(Timestep ts)
 			{
-				auto& transform = GetComponent<TransformComponent>().Transform;
+				auto& translation = GetComponent<TransformComponent>().Translation;
 				float speed = 5.0f;
 
 				if (Input::IsKeyPressed(GE_KEY_A))
 				{
-					transform[3][0] -= speed * ts;
+					translation.x -= speed * ts;
 				}
 				if (Input::IsKeyPressed(GE_KEY_D))
 				{
-					transform[3][0] += speed * ts;
+					translation.x += speed * ts;
 				}
 				if (Input::IsKeyPressed(GE_KEY_W))
 				{
-					transform[3][1] += speed * ts;
+					translation.y += speed * ts;
 				}
 				if (Input::IsKeyPressed(GE_KEY_S))
 				{
-					transform[3][1] -= speed * ts;
+					translation.y -= speed * ts;
 				}
 
 				//Test
@@ -203,7 +203,7 @@ namespace GE {
 
 			m_SHPanel.OnImGuiRender();
 
-			ImGui::Begin("Settings");
+			ImGui::Begin("Stats");
 
 			auto stats = Renderer2D::GetStats();
 			ImGui::Text("Renderer2D Stats:");
@@ -213,38 +213,37 @@ namespace GE {
 			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
 
 
-			
-			if (m_SqareEntity)
-			{
-				ImGui::Separator();
-				ImGui::Text("%s", m_SqareEntity.GetComponent<TagComponent>().Tag.c_str());
-
-				auto& squareColor = m_SqareEntity.GetComponent<SpriteRendererComponent>().Color;
-				ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
-				ImGui::Separator();
-			}
-
-			ImGui::DragFloat3("Camera Transform",
-				glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
-
-			if (ImGui::Checkbox("Camera A", &m_PrimaryCamera))
-			{
-				m_CameraEntity.GetComponent<CameraComponent>().Primary = m_PrimaryCamera;
-				m_SecondCamera.GetComponent<CameraComponent>().Primary = !m_PrimaryCamera;
-			}
-
-			{
-				auto& camera = m_SecondCamera.GetComponent<CameraComponent>().Camera;
-				float orthoSize = camera.GetOrthographicSize();
-				if (ImGui::DragFloat("Second Camera Ortho Size", &orthoSize))
-					camera.SetOrthographicSize(orthoSize);
-			}
-
-
+			//------------Legacy Reference----------
+			//if (m_SqareEntity)
+			//{
+			//	ImGui::Separator();
+			//	ImGui::Text("%s", m_SqareEntity.GetComponent<TagComponent>().Tag.c_str());
+			//
+			//	auto& squareColor = m_SqareEntity.GetComponent<SpriteRendererComponent>().Color;
+			//	ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
+			//	ImGui::Separator();
+			//}
+			//ImGui::DragFloat3("Camera Transform",
+			//	glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
+			//if (ImGui::Checkbox("Camera A", &m_PrimaryCamera))
+			//{
+			//	m_CameraEntity.GetComponent<CameraComponent>().Primary = m_PrimaryCamera;
+			//	m_SecondCamera.GetComponent<CameraComponent>().Primary = !m_PrimaryCamera;
+			//}
+			//
+			//{
+			//	auto& camera = m_SecondCamera.GetComponent<CameraComponent>().Camera;
+			//	float orthoSize = camera.GetOrthographicSize();
+			//	if (ImGui::DragFloat("Second Camera Ortho Size", &orthoSize))
+			//		camera.SetOrthographicSize(orthoSize);
+			//}
 			ImGui::End();
+
+
 
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 			ImGui::Begin("Viewport");
+            //------------Debug----------------------------
 			//GE_CORE_WARN("Focused : {0}", ImGui::IsAnyWindowFocused());
 			//GE_CORE_WARN("Hovered : {0}", ImGui::IsAnyWindowHovered());
 			m_ViewportFocused = ImGui::IsWindowFocused();
