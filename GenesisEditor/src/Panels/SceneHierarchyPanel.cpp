@@ -157,7 +157,23 @@ namespace GE {
 
 				if (camera.GetProjectionType() == SceneCamera::ProjectionType::Perspective)
 				{
+					float verticalFOV = glm::degrees(camera.GetPerspectiveVerticalFOV());
+					if (ImGui::DragFloat("FOV", &verticalFOV))
+					{
+						camera.SetPerspectiveVerticalFOV(glm::radians(verticalFOV));
+					}
 
+					float nearClip = camera.GetPerspectiveNearClip();
+					if (ImGui::DragFloat("Near", &nearClip))
+					{
+						camera.SetPerspectiveNearClip(nearClip);
+					}
+
+					float farClip = camera.GetPerspectiveFarClip();
+					if (ImGui::DragFloat("Far", &farClip))
+					{
+						camera.SetPerspectiveFarClip(farClip);
+					}
 				}
 
 
