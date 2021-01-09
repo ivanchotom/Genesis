@@ -1,2 +1,4 @@
-﻿  SceneHierarchyPanel.cpp
+﻿  EditorApp.cpp
+  EditorLayer.cpp
+D:\Work\Genesis\GenesisEditor\src\Layers\EditorLayer.cpp(264,33): warning C4312: 'type cast': conversion from 'uint32_t' to 'void *' of greater size
   GenesisEditor.vcxproj -> D:\Work\Genesis\bin\Debug-windows-x86_64\GenesisEditor\GenesisEditor.exe
