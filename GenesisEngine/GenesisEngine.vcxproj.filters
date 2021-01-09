@@ -1302,10 +1302,16 @@
     <ClInclude Include="3rdParty\stb_image\stb_image.h">
       <Filter>3rdParty\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cameras\Camera.h">
+      <Filter>src\Cameras</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cameras\OrthographicCamera.h">
       <Filter>src\Cameras</Filter>
     </ClInclude>
     <ClInclude Include="src\Cameras\OrthographicCameraController.h">
+      <Filter>src\Cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cameras\SceneCamera.h">
       <Filter>src\Cameras</Filter>
     </ClInclude>
     <ClInclude Include="src\CodeDebug\Instrumentor.h">
@@ -1398,7 +1404,13 @@
     <ClInclude Include="src\Scene\Component.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\Scene\Entity.h">
+      <Filter>src\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\Scene\Scene.h">
+      <Filter>src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene\ScriptableEntity.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Window.h">
@@ -1434,27 +1446,21 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene\Entity.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cameras\SceneCamera.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene\ScriptableEntity.h">
-      <Filter>src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Cameras\Camera.h">
-      <Filter>src\Cameras</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
       <Filter>3rdParty\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cameras\Camera.cpp">
+      <Filter>src\Cameras</Filter>
+    </ClCompile>
     <ClCompile Include="src\Cameras\OrthographicCamera.cpp">
       <Filter>src\Cameras</Filter>
     </ClCompile>
     <ClCompile Include="src\Cameras\OrthographicCameraController.cpp">
+      <Filter>src\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cameras\SceneCamera.cpp">
       <Filter>src\Cameras</Filter>
     </ClCompile>
     <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
@@ -1526,7 +1532,13 @@
     <ClCompile Include="src\Scene\Component.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Scene\Entity.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Scene\Scene.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\ScriptableEntity.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Window.cpp">
@@ -1543,18 +1555,6 @@
     </ClCompile>
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\Entity.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Cameras\SceneCamera.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene\ScriptableEntity.cpp">
-      <Filter>src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Cameras\Camera.cpp">
-      <Filter>src\Cameras</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

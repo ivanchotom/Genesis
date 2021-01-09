@@ -1,6 +1,6 @@
 workspace "Genesis"
    architecture "x64"
-   startproject "GenesisSandbox"
+   startproject "GenesisEditor"
 
    configurations
         {
