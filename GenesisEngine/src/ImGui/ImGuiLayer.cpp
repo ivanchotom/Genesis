@@ -41,6 +41,9 @@ namespace GE {
 		//io.ConfigViewportsNoAutoMerge = true;
 		//io.ConfigViewportsNoTaskBarIcon = true;
 
+		io.Fonts->AddFontFromFileTTF("assets/Fonts/Ubuntu_Mono/UbuntuMono-Bold.ttf", 17.0f);
+		io.FontDefault = io.Fonts->AddFontFromFileTTF("assets/Fonts/Ubuntu/Ubuntu-Medium.ttf", 15.0f);
+
 		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
 		//ImGui::StyleColorsClassic();
