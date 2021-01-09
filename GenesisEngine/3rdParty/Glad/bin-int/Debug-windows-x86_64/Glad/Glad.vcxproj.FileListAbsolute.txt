@@ -1,0 +1,2 @@
+D:\Work\Genesis\GenesisEngine\3rdParty\Glad\bin\Debug-windows-x86_64\Glad\Glad.pdb
+D:\Work\Genesis\GenesisEngine\3rdParty\Glad\bin-int\Debug-windows-x86_64\Glad\Glad.pdb
