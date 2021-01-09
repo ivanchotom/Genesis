@@ -34,6 +34,17 @@ namespace GE {
 			m_SelectionContext = {};
 		}
 
+		// Right click on blank space
+		if (ImGui::BeginPopupContextWindow(0, 1, false))
+		{
+			if (ImGui::MenuItem("Create Empty Entity"))
+			{
+				m_Cotext->CreateEntity("Empty Entity");
+			}
+
+			ImGui::EndPopup();
+		}
+
 		ImGui::End();
 
 		ImGui::Begin("Properties");
@@ -57,6 +68,18 @@ namespace GE {
 			m_SelectionContext = entity;
 		}
 
+		bool entityDeleted = false;
+		if (ImGui::BeginPopupContextItem())
+		{
+			if (ImGui::MenuItem("Delete Entity"))
+			{
+				entityDeleted = true;
+			}
+
+			ImGui::EndPopup();
+		}
+
+		  
 		if (opened)
 		{
 			ImGuiTreeNodeFlags flags = ((m_SelectionContext == entity) ? ImGuiTreeNodeFlags_Selected : 0) | ImGuiTreeNodeFlags_OpenOnArrow;
@@ -66,6 +89,16 @@ namespace GE {
 				ImGui::TreePop();
 			}
 			ImGui::TreePop();
+		}
+
+		if (entityDeleted)
+		{
+			m_Cotext->DestroyEntity(entity);
+
+			if (m_SelectionContext == entity)
+			{
+				m_SelectionContext = {};
+			}
 		}
 
 	}

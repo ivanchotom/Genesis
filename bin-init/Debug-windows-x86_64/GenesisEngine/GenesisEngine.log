@@ -1,17 +1,19 @@
 ﻿  Component.cpp
+  Entity.cpp
   Scene.cpp
+  ScriptableEntity.cpp
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(5973): message : while compiling class template member function 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const'
           with
           [
               Entity=entt::entity
           ] (compiling source file src\Scene\Scene.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(73): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(78): message : see reference to function template instantiation 'entt::sparse_set<Entity>::sparse_set_iterator entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>::begin(void) noexcept const' being compiled
           with
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(72): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(77): message : see reference to class template instantiation 'entt::basic_group<Entity,entt::exclude_t<>,entt::get_t<GE::SpriteRendererComponent>,GE::TransformComponent>' being compiled
           with
           [
               Entity=entt::entity
@@ -32,7 +34,7 @@ D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7314): message : se
           [
               Entity=entt::entity
           ] (compiling source file src\Scene\Scene.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference to class template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent>' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(41): message : see reference to class template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent>' being compiled
           with
           [
               Entity=entt::entity
@@ -58,12 +60,12 @@ D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(7601): message : se
               Type=GE::NativeScriptComponent
           ] (compiling source file src\Scene\Scene.cpp)
 D:\Work\Genesis\GenesisEngine\3rdParty\EnTT\Include\entt.hpp(8756): message : see reference to class template instantiation 'entt::basic_registry<entt::entity>::pool_handler<GE::NativeScriptComponent>' being compiled (compiling source file src\Scene\Scene.cpp)
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference to function template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent> entt::basic_registry<Entity>::view<GE::NativeScriptComponent,>(entt::exclude_t<>)' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(41): message : see reference to function template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent> entt::basic_registry<Entity>::view<GE::NativeScriptComponent,>(entt::exclude_t<>)' being compiled
           with
           [
               Entity=entt::entity
           ]
-D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(36): message : see reference to function template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent> entt::basic_registry<Entity>::view<GE::NativeScriptComponent,>(entt::exclude_t<>)' being compiled
+D:\Work\Genesis\GenesisEngine\src\Scene\Scene.cpp(41): message : see reference to function template instantiation 'entt::basic_view<Entity,entt::exclude_t<>,GE::NativeScriptComponent> entt::basic_registry<Entity>::view<GE::NativeScriptComponent,>(entt::exclude_t<>)' being compiled
           with
           [
               Entity=entt::entity
