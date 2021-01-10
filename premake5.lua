@@ -24,6 +24,7 @@ IncludeDir ["ImGui"] = "GenesisEngine/3rdParty/ImGui"
 IncludeDir ["glm"] = "GenesisEngine/3rdParty/glm"
 IncludeDir ["EnTT"] = "GenesisEngine/3rdParty/EnTT/Include"
 IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
+IncludeDir ["yaml_cpp"] = "GenesisEngine/3rdParty/yaml-cpp/include"
 
 
 
@@ -33,7 +34,7 @@ group "Dependencies"
       include "GenesisEngine/3rdParty/GLFW"
       include "GenesisEngine/3rdParty/Glad"
       include "GenesisEngine/3rdParty/ImGui"
-	  
+	  include "GenesisEngine/3rdParty/yaml-cpp"
 	  
 group ""
 
@@ -52,14 +53,14 @@ group ""
       pchsource "GenesisEngine/src/PCH.cpp"
 
       files
-      {
+        {
             "%{prj.name}/src/**.h",
             "%{prj.name}/src/**.cpp",
 			"%{prj.name}/3rdParty/stb_image/**.h",
 			"%{prj.name}/3rdParty/stb_image/**.cpp",
 			"%{prj.name}/3rdParty/glm/glm/**.hpp",
 			"%{prj.name}/3rdParty/glm/glm/**.inl"
-      }
+        }
 	  
 	  defines 
 	  {
@@ -67,7 +68,7 @@ group ""
 	  }
 
       includedirs 
-      {
+        {
             "%{prj.name}/src",
             "%{prj.name}/3rdParty/spdlog/include",
             "%{IncludeDir.GLFW}",
@@ -75,16 +76,19 @@ group ""
 			"%{IncludeDir.ImGui}",
 			"%{IncludeDir.glm}",
 			"%{IncludeDir.stb_image}",
-			"%{IncludeDir.EnTT}"
-      }
+			"%{IncludeDir.EnTT}",
+			"%{IncludeDir.yaml_cpp}"
+        }
 
       links
-      { 
+        { 
           "GLFW",
-          "Glad",
+		  "Glad",
+		  "yaml-cpp",
 		  "ImGui",
-          "opengl32.lib"
-      }
+		  "opengl32.lib"
+		  
+        }
 
       filter "system:windows"
           systemversion "latest"

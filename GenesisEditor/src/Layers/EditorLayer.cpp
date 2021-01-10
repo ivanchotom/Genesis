@@ -5,6 +5,8 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
+#include "Scene/SceneSerializer.h"
+
 namespace GE {
 
 	EditorLayer::EditorLayer()
@@ -90,6 +92,9 @@ namespace GE {
 		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 
 		m_SHPanel.SetContext(m_ActiveScene);
+
+		SceneSerializer serializer(m_ActiveScene);
+		serializer.Serialize("assets/Scenes/test.gs");
 	}
 
 	void EditorLayer::OnDetach()

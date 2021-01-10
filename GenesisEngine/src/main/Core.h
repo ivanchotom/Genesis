@@ -72,11 +72,11 @@
 #endif
 
 #ifdef GS_ENABLE_ASSERTS
-       #define GS_ASSERT(x, ...) { if(!(x)) { GE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-       #define GS_CORE_ASSERT(x, ...) { if(!(x)) { GE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#define GS_ASSERT(x, ...) { if(!(x)) { GE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#define GS_CORE_ASSERT(x, ...) { if(!(x)) { GE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
-       #define GS_ASSERT(x, ...)
-       #define GS_CORE_ASSERT(x, ...)
+#define GS_ASSERT(x, ...)
+#define GS_CORE_ASSERT(x, ...)
 #endif
 //-----------------------------------------------------
 
