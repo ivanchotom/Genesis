@@ -199,7 +199,8 @@ project "GenesisEditor"
 			"GenesisEditor/src",
 			"GenesisEngine/3rdParty",
 			"%{IncludeDir.glm}",
-			"%{IncludeDir.EnTT}"
+			"%{IncludeDir.EnTT}",
+			"%{IncludeDir.ImGuizmo}"
 	  }
 
 	  links

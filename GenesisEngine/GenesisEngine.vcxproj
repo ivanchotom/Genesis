@@ -570,6 +570,7 @@
     <ClInclude Include="src\Events\Keyboard.h" />
     <ClInclude Include="src\Events\Mouse.h" />
     <ClInclude Include="src\Events\MouseCode.h" />
+    <ClInclude Include="src\Guizmo\GuizmoMath.h" />
     <ClInclude Include="src\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\PCH.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
@@ -619,6 +620,7 @@
     <ClCompile Include="src\Cameras\OrthographicCamera.cpp" />
     <ClCompile Include="src\Cameras\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Cameras\SceneCamera.cpp" />
+    <ClCompile Include="src\Guizmo\GuizmoMath.cpp" />
     <ClCompile Include="src\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\PCH.cpp">

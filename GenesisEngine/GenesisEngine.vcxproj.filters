@@ -1461,6 +1461,7 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
+    <ClInclude Include="src\Guizmo\GuizmoMath.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\ImGuizmo\ImGuizmo.cpp">
@@ -1580,5 +1581,6 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
+    <ClCompile Include="src\Guizmo\GuizmoMath.cpp" />
   </ItemGroup>
 </Project>

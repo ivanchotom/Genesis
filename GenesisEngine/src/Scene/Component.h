@@ -2,8 +2,10 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-//#include "Cameras/OrthographicCamera.h"
-//#include "Cameras/Camera.h"
+
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/quaternion.hpp>
+
 #include "Cameras/SceneCamera.h"
 #include "ScriptableEntity.h"
 
@@ -31,9 +33,12 @@ namespace GE {
 		{
 			glm::mat4 translation = glm::translate(glm::mat4(1.0f), Translation);
 
-			glm::mat4 rotation = glm::rotate(glm::mat4(1.0f), Rotation.x, { 1, 0, 0 })
-				* glm::rotate(glm::mat4(1.0f), Rotation.y, { 0, 1, 0 })
-				* glm::rotate(glm::mat4(1.0f), Rotation.z, { 0, 0, 1 });
+			// Legacy rotation calculations without quatonions
+			//glm::mat4 rotation = glm::rotate(glm::mat4(1.0f), Rotation.x, { 1, 0, 0 })
+			//	* glm::rotate(glm::mat4(1.0f), Rotation.y, { 0, 1, 0 })
+			//	* glm::rotate(glm::mat4(1.0f), Rotation.z, { 0, 0, 1 });
+
+			glm::mat4 rotation = glm::toMat4(glm::quat(Rotation));
 
 			glm::mat4 scale = glm::scale(glm::mat4(1.0f), Scale);
 
@@ -41,10 +46,6 @@ namespace GE {
 
 			return transform;
 
-
-			//return glm::translate(glm::mat4(1.0f), Translation)
-			//	* rotation
-			//	* glm::scale(glm::mat4(1.0f), Scale);
 		}
 
 		// Done so u can do Example(Translate) instead of Example(translate.Translate)
