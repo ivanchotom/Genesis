@@ -17,6 +17,7 @@ namespace GE {
 	void SceneHierarchyPanel::SetContext(const Ref<Scene>& context)
 	{
 		m_Cotext = context;
+		m_SelectionContext = {};
 	}
 
 	void SceneHierarchyPanel::OnImGuiRender()

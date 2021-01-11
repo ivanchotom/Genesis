@@ -1563,5 +1563,6 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Utility\PlatformUtility.cpp" />
   </ItemGroup>
 </Project>

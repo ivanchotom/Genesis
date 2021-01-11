@@ -28,7 +28,9 @@ namespace GE {
 		Entity m_SqareEntity;
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
+		SceneHierarchyPanel m_SHPanel;
 
+	private:
 		bool m_PrimaryCamera = true;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
@@ -37,9 +39,15 @@ namespace GE {
 
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
+	private:
+		bool OnKeyPressed(KeyPressedEvent& e);
 
-		//Panels
-		SceneHierarchyPanel m_SHPanel;
+		void NewScene();
+
+		void OpenScene();
+
+		void SaveSceneAs();
+		
 
 	};
 }
