@@ -146,9 +146,7 @@ namespace GE {
 		GS_PROFILE_FUNCTION();
 
 		// Note: Switch this to true to enable dockspace
-		static bool dockingEnabled = true;
-		if (dockingEnabled)
-		{
+
 			static bool dockspaceOpen = true;
 			static bool opt_fullscreen_persistant = true;
 			bool opt_fullscreen = opt_fullscreen_persistant;
@@ -284,13 +282,13 @@ namespace GE {
 
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 			ImGui::Begin("Viewport");
-            //------------Debug----------------------------
+			//------------Debug----------------------------
 			//GE_CORE_WARN("Focused : {0}", ImGui::IsAnyWindowFocused());
 			//GE_CORE_WARN("Hovered : {0}", ImGui::IsAnyWindowHovered());
 			m_ViewportFocused = ImGui::IsWindowFocused();
 			m_ViewportHovered = ImGui::IsWindowHovered();
-			Application::Get().GetImGuiLayer()->SetBlockEvents(!m_ViewportFocused || !m_ViewportHovered);
-		
+			Application::Get().GetImGuiLayer()->SetBlockEvents(!m_ViewportFocused && !m_ViewportHovered);
+
 			ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
 			m_ViewportSize = { viewportPanelSize.x, viewportPanelSize.y };
 
@@ -299,12 +297,13 @@ namespace GE {
 			uint32_t textureID = m_FrameBuffer->GetColorAttachmentRendererID();
 			ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 
-			//Gizmo
+			// Gizmos
 			Entity selectedEntity = m_SHPanel.GetSelectedEntity();
-			if (selectedEntity)
+			if (selectedEntity && m_GuizmoType != -1)
 			{
 				ImGuizmo::SetOrthographic(false);
 				ImGuizmo::SetDrawlist();
+
 				float windowWidth = (float)ImGui::GetWindowWidth();
 				float windowHeight = (float)ImGui::GetWindowHeight();
 				ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y, windowWidth, windowHeight);
@@ -315,30 +314,42 @@ namespace GE {
 				const glm::mat4& cameraProjection = camera.GetProjection();
 				glm::mat4 cameraView = glm::inverse(cameraEntity.GetComponent<TransformComponent>().GetTransform());
 
-
-			   //Transform
+				// Entity transform
 				auto& tc = selectedEntity.GetComponent<TransformComponent>();
 				glm::mat4 transform = tc.GetTransform();
 
+				// Snapping
+				bool snap = Input::IsKeyPressed(GE_KEY_LEFT_CONTROL);
+				float snapValue = 0.5f; // Snap to 0.5m for translation/scale
+				// Snap to 45 degrees for rotation
+				if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
+					snapValue = 45.0f;
+
+				float snapValues[3] = { snapValue, snapValue, snapValue };
+
 				ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-					ImGuizmo::OPERATION::TRANSLATE, ImGuizmo::LOCAL, glm::value_ptr(transform));
+					(ImGuizmo::OPERATION)m_GuizmoType, ImGuizmo::LOCAL, glm::value_ptr(transform),
+					nullptr, snap ? snapValues : nullptr);
 
 				if (ImGuizmo::IsUsing())
 				{
-
 					glm::vec3 translation, rotation, scale;
 					Math::DecomposeTransform(transform, translation, rotation, scale);
 
-					tc.Translation = glm::vec3(transform[3]);
-					
+					glm::vec3 deltaRotation = rotation - tc.Rotation;
+					tc.Translation = translation;
+					tc.Rotation += deltaRotation;
+					tc.Scale = scale;
 				}
-			} 
+
+
+			}
 
 			ImGui::End();
 			ImGui::PopStyleVar();
 
 			ImGui::End();
-		}
+		
 	}
 
 	void EditorLayer::OnEvent(Event& e)
@@ -359,27 +370,49 @@ namespace GE {
 		bool shift = Input::IsKeyPressed(GE_KEY_LEFT_SHIFT) || Input::IsKeyPressed(GE_KEY_RIGHT_SHIFT);
 		switch (e.GetKeyCode())
 		{
-		case GE_KEY_N:
-		{
-			if (control)
-				NewScene();
-
-			break;
-		}
-		case GE_KEY_O:
-		{
-			if (control)
-				OpenScene();
-
-			break;
-		}
-		case GE_KEY_S:
-		{
-			if (control && shift)
-				SaveSceneAs();
-
-			break;
-		}
+		  case GE_KEY_N:
+		  {
+		  	if (control)
+		  		NewScene();
+		  
+		  	break;
+		  }
+		  case GE_KEY_O:
+		  {
+		  	if (control)
+		  		OpenScene();
+		  
+		  	break;
+		  }
+		  case GE_KEY_S:
+		  {
+		  	if (control && shift)
+		  		SaveSceneAs();
+		  
+		  	break;
+		  }
+		  
+		  // Gizmos
+		  case GE_KEY_Q:
+		  {
+		  	m_GuizmoType = -1;
+		  	break;
+		  }
+		  case GE_KEY_W:
+		  {
+		  	m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
+		  	break;
+		  }
+		  case GE_KEY_E:
+		  {
+		  	m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+		  	break;
+		  }
+		  case GE_KEY_R:
+		  {
+		  	m_GuizmoType = ImGuizmo::OPERATION::SCALE;
+		  	break;
+		  }
 		}
 	}
 
