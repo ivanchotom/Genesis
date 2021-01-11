@@ -4,6 +4,9 @@
     <Filter Include="3rdParty">
       <UniqueIdentifier>{1E6D62C3-0A3A-BDCE-3353-AB761F7FF25C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3rdParty\ImGuizmo">
+      <UniqueIdentifier>{3E81F3E0-AA97-F176-F30E-7D985F64C2FE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="3rdParty\glm">
       <UniqueIdentifier>{6D560B5B-59B9-9AFF-023F-D3B5EE806682}</UniqueIdentifier>
     </Filter>
@@ -46,6 +49,9 @@
     <Filter Include="src\Platform\OpenGL">
       <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Platform\Utility">
+      <UniqueIdentifier>{6419A301-50A8-2CCB-F9C6-40C6E5343D71}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
@@ -60,6 +66,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3rdParty\ImGuizmo\ImGuizmo.h">
+      <Filter>3rdParty\ImGuizmo</Filter>
+    </ClInclude>
     <ClInclude Include="3rdParty\glm\glm\common.hpp">
       <Filter>3rdParty\glm\glm</Filter>
     </ClInclude>
@@ -1362,6 +1371,9 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Utility\PlatformUtility.h">
+      <Filter>src\Platform\Utility</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -1449,9 +1461,11 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\Utility\PlatformUtility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="3rdParty\ImGuizmo\ImGuizmo.cpp">
+      <Filter>3rdParty\ImGuizmo</Filter>
+    </ClCompile>
     <ClCompile Include="3rdParty\stb_image\stb_image.cpp">
       <Filter>3rdParty\stb_image</Filter>
     </ClCompile>
@@ -1496,6 +1510,9 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Utility\PlatformUtility.cpp">
+      <Filter>src\Platform\Utility</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
@@ -1563,6 +1580,5 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Utility\PlatformUtility.cpp" />
   </ItemGroup>
 </Project>

@@ -25,6 +25,7 @@ IncludeDir ["glm"] = "GenesisEngine/3rdParty/glm"
 IncludeDir ["EnTT"] = "GenesisEngine/3rdParty/EnTT/Include"
 IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
 IncludeDir ["yaml_cpp"] = "GenesisEngine/3rdParty/yaml-cpp/include"
+IncludeDir ["ImGuizmo"] = "GenesisEngine/3rdParty/ImGuizmo"
 
 
 
@@ -53,14 +54,16 @@ group ""
       pchsource "GenesisEngine/src/PCH.cpp"
 
       files
-        {
-            "%{prj.name}/src/**.h",
-            "%{prj.name}/src/**.cpp",
-			"%{prj.name}/3rdParty/stb_image/**.h",
-			"%{prj.name}/3rdParty/stb_image/**.cpp",
-			"%{prj.name}/3rdParty/glm/glm/**.hpp",
-			"%{prj.name}/3rdParty/glm/glm/**.inl"
-        }
+      {
+          "%{prj.name}/src/**.h",
+          "%{prj.name}/src/**.cpp",
+	      "%{prj.name}/3rdParty/stb_image/**.h",
+	      "%{prj.name}/3rdParty/stb_image/**.cpp",
+	      "%{prj.name}/3rdParty/glm/glm/**.hpp",
+	      "%{prj.name}/3rdParty/glm/glm/**.inl",
+	      "%{prj.name}/3rdParty/ImGuizmo/ImGuizmo.h",
+	      "%{prj.name}/3rdParty/ImGuizmo/ImGuizmo.cpp"
+      }
 	  
 	  defines 
 	  {
@@ -68,27 +71,32 @@ group ""
 	  }
 
       includedirs 
-        {
-            "%{prj.name}/src",
-            "%{prj.name}/3rdParty/spdlog/include",
-            "%{IncludeDir.GLFW}",
-            "%{IncludeDir.Glad}",
-			"%{IncludeDir.ImGui}",
-			"%{IncludeDir.glm}",
-			"%{IncludeDir.stb_image}",
-			"%{IncludeDir.EnTT}",
-			"%{IncludeDir.yaml_cpp}"
-        }
+      {
+          "%{prj.name}/src",
+          "%{prj.name}/3rdParty/spdlog/include",
+          "%{IncludeDir.GLFW}",
+          "%{IncludeDir.Glad}",
+	      "%{IncludeDir.ImGui}",
+	      "%{IncludeDir.glm}",
+	      "%{IncludeDir.stb_image}",
+	      "%{IncludeDir.EnTT}",
+	      "%{IncludeDir.yaml_cpp}",
+	      "%{IncludeDir.ImGuizmo}"
+      }
 
       links
-        { 
-          "GLFW",
-		  "Glad",
-		  "yaml-cpp",
-		  "ImGui",
-		  "opengl32.lib"
-		  
-        }
+      { 
+        "GLFW",
+	    "Glad",
+	    "yaml-cpp",
+	    "ImGui",
+	    "opengl32.lib"
+	  
+      }
+
+	  filter "files:GenesisEngine/3rdParty/ImGuizmo/**.cpp"
+	  flags  { "NoPCH" }
+
 
       filter "system:windows"
           systemversion "latest"
