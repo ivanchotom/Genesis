@@ -36,7 +36,7 @@ namespace GE {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class GENESIS_API Event
+	class  Event
 	{
 		friend class EventDispatcher;
 	public:
@@ -58,8 +58,8 @@ namespace GE {
 
 	class EventDispatcher
 	{
-		template<typename T>
-		using EventFn = std::function<bool(T&)>;
+		//template<typename T>
+		//using EventFn = std::function<bool(T&)>;
 
 	public:
 		EventDispatcher(Event& event)

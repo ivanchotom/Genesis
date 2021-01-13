@@ -287,7 +287,7 @@ public:
 	Sandbox()
 	{
 		//PushLayer(new ExampleLayer());
-		PushLayer(new Sandbox2D());
+		//PushLayer(new Sandbox2D());
 		//PushOverlay(new GE::ImGuiLayer());
 		//PushLayer(new GameLayer());
 	}

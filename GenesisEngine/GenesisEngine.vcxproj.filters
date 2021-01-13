@@ -40,6 +40,9 @@
     <Filter Include="src\Events">
       <UniqueIdentifier>{7162C20E-5D1A-045C-C621-DDB7B2F89E4C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Guizmo">
+      <UniqueIdentifier>{D7FE5C13-C3B6-9E60-2CBE-77BC18953951}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\ImGui">
       <UniqueIdentifier>{170E22B3-8378-D629-CCB6-87CF3860B47E}</UniqueIdentifier>
     </Filter>
@@ -1314,6 +1317,9 @@
     <ClInclude Include="src\Cameras\Camera.h">
       <Filter>src\Cameras</Filter>
     </ClInclude>
+    <ClInclude Include="src\Cameras\EditorCamera.h">
+      <Filter>src\Cameras</Filter>
+    </ClInclude>
     <ClInclude Include="src\Cameras\OrthographicCamera.h">
       <Filter>src\Cameras</Filter>
     </ClInclude>
@@ -1344,6 +1350,9 @@
     <ClInclude Include="src\Events\MouseCode.h">
       <Filter>src\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Guizmo\GuizmoMath.h">
+      <Filter>src\Guizmo</Filter>
+    </ClInclude>
     <ClInclude Include="src\ImGui\ImGuiLayer.h">
       <Filter>src\ImGui</Filter>
     </ClInclude>
@@ -1373,9 +1382,6 @@
     </ClInclude>
     <ClInclude Include="src\Platform\Utility\PlatformUtility.h">
       <Filter>src\Platform\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1461,8 +1467,6 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
-    <ClInclude Include="src\Guizmo\GuizmoMath.h" />
-    <ClInclude Include="src\Cameras\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\ImGuizmo\ImGuizmo.cpp">
@@ -1474,6 +1478,9 @@
     <ClCompile Include="src\Cameras\Camera.cpp">
       <Filter>src\Cameras</Filter>
     </ClCompile>
+    <ClCompile Include="src\Cameras\EditorCamera.cpp">
+      <Filter>src\Cameras</Filter>
+    </ClCompile>
     <ClCompile Include="src\Cameras\OrthographicCamera.cpp">
       <Filter>src\Cameras</Filter>
     </ClCompile>
@@ -1482,6 +1489,9 @@
     </ClCompile>
     <ClCompile Include="src\Cameras\SceneCamera.cpp">
       <Filter>src\Cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Guizmo\GuizmoMath.cpp">
+      <Filter>src\Guizmo</Filter>
     </ClCompile>
     <ClCompile Include="src\ImGui\ImGuiBuild.cpp">
       <Filter>src\ImGui</Filter>
@@ -1582,7 +1592,5 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
-    <ClCompile Include="src\Guizmo\GuizmoMath.cpp" />
-    <ClCompile Include="src\Cameras\EditorCamera.cpp" />
   </ItemGroup>
 </Project>

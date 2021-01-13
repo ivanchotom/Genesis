@@ -136,12 +136,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\2DGame\Random.h" />
-    <ClInclude Include="src\Layers\Sandbox2D.h" />
     <ClInclude Include="src\Testing\ParticleTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\2DGame\Random.cpp" />
-    <ClCompile Include="src\Layers\Sandbox2D.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
     <ClCompile Include="src\Testing\ParticleTest.cpp" />
   </ItemGroup>
