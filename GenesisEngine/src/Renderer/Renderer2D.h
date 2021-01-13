@@ -2,6 +2,7 @@
 
 #include "Cameras/OrthographicCamera.h"
 #include "Cameras/Camera.h"
+#include "Cameras/EditorCamera.h"
 
 #include "Texture.h"
 #include "SubTexture2D.h"
@@ -14,8 +15,9 @@ namespace GE {
 		static void Init();
 		static void Shutdown();
 
-		static void BeginScene(const OrthographicCamera& camera);
 		static void BeginScene(const Camera& camera, glm::mat4& transform);
+		static void BeginScene(const EditorCamera& camera);
+		static void BeginScene(const OrthographicCamera& camera);
 		static void EndScene();
 		static void Flush();
 
@@ -52,7 +54,8 @@ namespace GE {
 		static Statistics GetStats();
 	private:
 
-		static void FlushAndReset();
+		static void StartBatch();
+		static void NextBatch();
 	};
 
 }

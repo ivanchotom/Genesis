@@ -2,6 +2,8 @@
 #include "main/Engine.h"
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "Cameras/EditorCamera.h"
+
 namespace GE {
 	class EditorLayer : public Layer
 	{
@@ -29,6 +31,8 @@ namespace GE {
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
 		SceneHierarchyPanel m_SHPanel;
+
+		EditorCamera m_EditorCamera;
 
 	private:
 		bool m_PrimaryCamera = true;

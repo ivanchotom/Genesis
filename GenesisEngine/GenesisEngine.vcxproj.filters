@@ -1462,6 +1462,7 @@
       <Filter>src\main</Filter>
     </ClInclude>
     <ClInclude Include="src\Guizmo\GuizmoMath.h" />
+    <ClInclude Include="src\Cameras\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\ImGuizmo\ImGuizmo.cpp">
@@ -1582,5 +1583,6 @@
       <Filter>src\main</Filter>
     </ClCompile>
     <ClCompile Include="src\Guizmo\GuizmoMath.cpp" />
+    <ClCompile Include="src\Cameras\EditorCamera.cpp" />
   </ItemGroup>
 </Project>
