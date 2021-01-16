@@ -6,6 +6,7 @@
 
 #include "glm/glm.hpp"
 
+#include "glad/glad.h"
 #include "Entity.h"
 
 namespace GE {
@@ -80,7 +81,7 @@ namespace GE {
 			{
 				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color);
+				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color, (uint32_t)entity);
 			}
 
 			Renderer2D::EndScene();
@@ -89,17 +90,19 @@ namespace GE {
 
 	void Scene::OnUpdateEditor(Timestep ts, EditorCamera& camera)
 	{
-		Renderer2D::BeginScene(camera);
-
-		auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-		for (auto entity : group)
 		{
-			auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+			Renderer2D::BeginScene(camera);
 
-			Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color);
+			auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+			for (auto entity : group)
+			{
+				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+
+				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color, (uint32_t) entity);
+			}
+
+			Renderer2D::EndScene();
 		}
-
-		Renderer2D::EndScene();
 	}
 
 	void Scene::OnViewportResize(uint32_t width, uint32_t height)
@@ -118,6 +121,33 @@ namespace GE {
 				cameraComponent.Camera.SetViewportSize(width, height);
 			}
 		}
+	}
+
+	void Scene::DrawIDBuffer(Ref<FrameBuffer> target, EditorCamera& camera)
+	{
+		target->Bind();
+		//Render to ID buffer
+		{
+			Renderer2D::BeginScene(camera);
+
+			auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
+			for (auto entity : group)
+			{
+				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
+
+				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Color, (uint32_t)entity);
+			}
+
+			Renderer2D::EndScene();
+		}
+	}
+
+	int Scene::Pixel(int x, int y)
+	{
+		glReadBuffer(GL_COLOR_ATTACHMENT1);
+		int pixelData;
+		glReadPixels(x, y, 1, 1, GL_RED_INTEGER, GL_INT, &pixelData);
+		return pixelData;
 	}
 
 	GE::Entity Scene::GetPrimaryCameraEntity()

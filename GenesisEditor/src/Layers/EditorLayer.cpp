@@ -22,12 +22,13 @@ namespace GE {
 	{
 		GS_PROFILE_FUNCTION();
 
-		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
+		//m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
 
 		FrameBufferSpecification fbSpec;
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		m_FrameBuffer = FrameBuffer::Create(fbSpec);
+		m_Framebuffer = FrameBuffer::Create(fbSpec);
+		m_IDFramebuffer = FrameBuffer::Create(fbSpec);
 
 		m_ActiveScene = CreateRef<Scene>();
 
@@ -111,11 +112,12 @@ namespace GE {
 		GS_PROFILE_FUNCTION();
 
 		// Resize
-		if (FrameBufferSpecification spec = m_FrameBuffer->GetSpecification();
+		if (FrameBufferSpecification spec = m_Framebuffer->GetSpecification();
 			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f && // zero sized framebuffer is invalid
 			(spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y))
 		{
-			m_FrameBuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+			m_Framebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+			m_IDFramebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
 			m_CameraController.OnResize(m_ViewportSize.x, m_ViewportSize.y);
 			m_EditorCamera.SetViewportSize(m_ViewportSize.x, m_ViewportSize.y);
 			m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
@@ -133,15 +135,16 @@ namespace GE {
 		Renderer2D::ResetStats();
 		{
 			GS_PROFILE_SCOPE("Renderer Prep");
-			m_FrameBuffer->Bind();
+			m_Framebuffer->Bind();
 			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
+			m_Framebuffer->Bind();
 		}
 
+		//Update Scene
 		m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
-		
 
-		m_FrameBuffer->Unbind();
+		m_Framebuffer->Unbind();
 		
 	}
 
@@ -247,39 +250,12 @@ namespace GE {
 			m_SHPanel.OnImGuiRender();
 
 			ImGui::Begin("Stats");
-
 			auto stats = Renderer2D::GetStats();
 			ImGui::Text("Renderer2D Stats:");
 			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
 			ImGui::Text("Quads: %d", stats.QuadCount);
 			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-
-
-			//------------Legacy Reference----------
-			//if (m_SqareEntity)
-			//{
-			//	ImGui::Separator();
-			//	ImGui::Text("%s", m_SqareEntity.GetComponent<TagComponent>().Tag.c_str());
-			//
-			//	auto& squareColor = m_SqareEntity.GetComponent<SpriteRendererComponent>().Color;
-			//	ImGui::ColorEdit4("Square Color", glm::value_ptr(squareColor));
-			//	ImGui::Separator();
-			//}
-			//ImGui::DragFloat3("Camera Transform",
-			//	glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
-			//if (ImGui::Checkbox("Camera A", &m_PrimaryCamera))
-			//{
-			//	m_CameraEntity.GetComponent<CameraComponent>().Primary = m_PrimaryCamera;
-			//	m_SecondCamera.GetComponent<CameraComponent>().Primary = !m_PrimaryCamera;
-			//}
-			//
-			//{
-			//	auto& camera = m_SecondCamera.GetComponent<CameraComponent>().Camera;
-			//	float orthoSize = camera.GetOrthographicSize();
-			//	if (ImGui::DragFloat("Second Camera Ortho Size", &orthoSize))
-			//		camera.SetOrthographicSize(orthoSize);
-			//}
 			ImGui::End();
 
 
@@ -289,6 +265,7 @@ namespace GE {
 			//------------Debug----------------------------
 			//GE_CORE_WARN("Focused : {0}", ImGui::IsAnyWindowFocused());
 			//GE_CORE_WARN("Hovered : {0}", ImGui::IsAnyWindowHovered());
+			auto viewportOffset = ImGui::GetCursorPos(); // includes tab bar
 			m_ViewportFocused = ImGui::IsWindowFocused();
 			m_ViewportHovered = ImGui::IsWindowHovered();
 			Application::Get().GetImGuiLayer()->SetBlockEvents(!m_ViewportFocused && !m_ViewportHovered);
@@ -298,8 +275,17 @@ namespace GE {
 
 
 
-			uint32_t textureID = m_FrameBuffer->GetColorAttachmentRendererID();
+			uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
 			ImGui::Image((void*)textureID, ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
+
+			auto windowSize = ImGui::GetWindowSize();
+			ImVec2 minBound = ImGui::GetWindowPos();
+			minBound.x += viewportOffset.x;
+			minBound.y += viewportOffset.y;
+
+			ImVec2 maxBound = { minBound.x + windowSize.x, minBound.y + windowSize.y };
+			m_ViewportBounds[0] = { minBound.x, minBound.y };
+			m_ViewportBounds[1] = { maxBound.x, maxBound.y };
 
 			// Gizmos
 			Entity selectedEntity = m_SHPanel.GetSelectedEntity();
@@ -313,10 +299,16 @@ namespace GE {
 				ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y, windowWidth, windowHeight);
 
 				// Camera
-				auto cameraEntity = m_ActiveScene->GetPrimaryCameraEntity();
-				const auto& camera = cameraEntity.GetComponent<CameraComponent>().Camera;
-				const glm::mat4& cameraProjection = camera.GetProjection();
-				glm::mat4 cameraView = glm::inverse(cameraEntity.GetComponent<TransformComponent>().GetTransform());
+
+				//Editor Camera
+				const glm::mat4& cameraProjection = m_EditorCamera.GetProjection();
+				glm::mat4 cameraView = m_EditorCamera.GetViewMatrix();
+
+				// Rendering entieies from camera perspective 
+				//auto cameraEntity = m_ActiveScene->GetPrimaryCameraEntity();
+				//const auto& camera = cameraEntity.GetComponent<CameraComponent>().Camera;
+				//const glm::mat4& cameraProjection = camera.GetProjection();
+				//glm::mat4 cameraView = glm::inverse(cameraEntity.GetComponent<TransformComponent>().GetTransform());
 
 				// Entity transform
 				auto& tc = selectedEntity.GetComponent<TransformComponent>();
@@ -363,6 +355,23 @@ namespace GE {
 
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<KeyPressedEvent>(GE_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
+		dispatcher.Dispatch<MouseButtonPressedEvent>(GE_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
+
+
+
+		auto [mx, my] = ImGui::GetMousePos();
+		mx -= m_ViewportBounds[0].x;
+		my -= m_ViewportBounds[0].y;
+		auto viewportWidth = m_ViewportBounds[1].x - m_ViewportBounds[0].x;
+		auto viewportHeight = m_ViewportBounds[1].y - m_ViewportBounds[0].y;
+		my = viewportHeight - my;
+		int mouseX = (int)mx;
+		int mouseY = (int)my;
+		if (mouseX >= 0 && mouseY >= 0 && mouseX < viewportWidth && mouseY < viewportHeight)
+		{
+			int pixel = m_ActiveScene->Pixel(mx, my);
+			GE_CORE_WARN("ID = {0}", pixel);
+		}
 	}
 
 	bool EditorLayer::OnKeyPressed(KeyPressedEvent& e)

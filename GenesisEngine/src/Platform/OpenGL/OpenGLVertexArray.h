@@ -22,6 +22,7 @@ namespace GE {
 	private:
 		uint32_t m_RendererID;
 		std::vector<Ref<VertexBuffer>> m_VertexBuffers;
+		uint32_t m_VertexBufferIndex = 0;
 		Ref<IndexBuffer> m_IndexBuffer;
 	};
 

@@ -2,8 +2,10 @@
 
 #include "main/TimeStep.h"
 #include "Cameras/EditorCamera.h"
+#include "Renderer/Framebuffer.h"
 
 #include "entt.hpp"
+
 namespace GE {
 
 	class Entity;
@@ -21,6 +23,8 @@ namespace GE {
 		void OnUpdateRuntime(Timestep ts);
 
 		void OnViewportResize(uint32_t width, uint32_t height);
+		void DrawIDBuffer(Ref<FrameBuffer> target, EditorCamera& camera);
+		int Pixel(int x, int y);
 
 		Entity GetPrimaryCameraEntity();
 	private:
