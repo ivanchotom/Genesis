@@ -35,6 +35,7 @@ namespace GE {
 
 		EditorCamera m_EditorCamera;
 
+		Entity m_HoveredEntity;
 	private:
 		bool m_PrimaryCamera = true;
 
@@ -49,6 +50,7 @@ namespace GE {
 
 	private:
 		bool OnKeyPressed(KeyPressedEvent& e);
+		bool OnMouseButtonPressed(MouseButtonPressedEvent& e);
 
 		void NewScene();
 

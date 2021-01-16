@@ -144,6 +144,21 @@ namespace GE {
 		//Update Scene
 		m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
 
+		auto [mx, my] = ImGui::GetMousePos();
+		mx -= m_ViewportBounds[0].x;
+		my -= m_ViewportBounds[0].y;
+		auto viewportWidth = m_ViewportBounds[1].x - m_ViewportBounds[0].x;
+		auto viewportHeight = m_ViewportBounds[1].y - m_ViewportBounds[0].y;
+		my = viewportHeight - my;
+		int mouseX = (int)mx;
+		int mouseY = (int)my;
+		if (mouseX >= 0 && mouseY >= 0 && mouseX < viewportWidth && mouseY < viewportHeight)
+		{
+			int pixel = m_ActiveScene->Pixel(mx, my);
+			m_HoveredEntity = pixel == -1 ? Entity() : Entity((entt::entity)pixel, m_ActiveScene.get());
+			GE_CORE_WARN("ID = {0}", pixel);
+		}
+
 		m_Framebuffer->Unbind();
 		
 	}
@@ -256,6 +271,12 @@ namespace GE {
 			ImGui::Text("Quads: %d", stats.QuadCount);
 			ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 			ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+
+			std::string name = "Null";
+			if ((entt::entity)m_HoveredEntity != entt::null)
+				name = m_HoveredEntity.GetComponent<TagComponent>().Tag;
+			ImGui::Text("Rendered Entity: %s", name.c_str());
+
 			ImGui::End();
 
 
@@ -356,22 +377,7 @@ namespace GE {
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<KeyPressedEvent>(GE_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
 		dispatcher.Dispatch<MouseButtonPressedEvent>(GE_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
-
-
-
-		auto [mx, my] = ImGui::GetMousePos();
-		mx -= m_ViewportBounds[0].x;
-		my -= m_ViewportBounds[0].y;
-		auto viewportWidth = m_ViewportBounds[1].x - m_ViewportBounds[0].x;
-		auto viewportHeight = m_ViewportBounds[1].y - m_ViewportBounds[0].y;
-		my = viewportHeight - my;
-		int mouseX = (int)mx;
-		int mouseY = (int)my;
-		if (mouseX >= 0 && mouseY >= 0 && mouseX < viewportWidth && mouseY < viewportHeight)
-		{
-			int pixel = m_ActiveScene->Pixel(mx, my);
-			GE_CORE_WARN("ID = {0}", pixel);
-		}
+		
 	}
 
 	bool EditorLayer::OnKeyPressed(KeyPressedEvent& e)
@@ -428,6 +434,15 @@ namespace GE {
 		  	break;
 		  }
 		}
+	}
+
+	bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent& e)
+	{
+		if (e.GetMouseButton() == Mouse::ButtonLeft)
+		{
+			m_SHPanel.SetSelectedEntity(m_HoveredEntity);
+		}
+		return false;
 	}
 
 	void EditorLayer::NewScene()
