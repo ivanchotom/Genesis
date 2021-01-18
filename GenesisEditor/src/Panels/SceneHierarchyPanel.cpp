@@ -18,7 +18,7 @@ namespace GE {
 
 	void SceneHierarchyPanel::SetContext(const Ref<Scene>& context)
 	{
-		m_Cotext = context;
+		m_Context = context;
 		m_SelectionContext = {};
 	}
 
@@ -26,9 +26,9 @@ namespace GE {
 	{
 		ImGui::Begin("Scene Hierarchy");
 
-		m_Cotext->m_Registry.each([&](auto entityID)
+		m_Context->m_Registry.each([&](auto entityID)
 			{
-				Entity entity{ entityID, m_Cotext.get() };
+				Entity entity{ entityID, m_Context.get() };
 				DrawEntityNode(entity);
 			});
 
@@ -42,7 +42,19 @@ namespace GE {
 		{
 			if (ImGui::MenuItem("Create Empty Entity"))
 			{
-				m_Cotext->CreateEntity("Empty Entity");
+				m_SelectionContext = m_Context->CreateEntity("Empty Entity");
+			}
+			else if (ImGui::MenuItem("Create Camera"))
+			{
+				m_SelectionContext = m_Context->CreateEntity("Camera");
+				m_SelectionContext.AddComponent<CameraComponent>();
+				ImGui::CloseCurrentPopup();
+			}
+			else if (ImGui::MenuItem("Create Sprite"))
+			{
+				m_SelectionContext = m_Context->CreateEntity("Sprite");
+				m_SelectionContext.AddComponent<SpriteRendererComponent>();
+				ImGui::CloseCurrentPopup();
 			}
 
 			ImGui::EndPopup();
@@ -97,7 +109,7 @@ namespace GE {
 
 		if (entityDeleted)
 		{
-			m_Cotext->DestroyEntity(entity);
+			m_Context->DestroyEntity(entity);
 
 			if (m_SelectionContext == entity)
 			{

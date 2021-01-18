@@ -415,23 +415,27 @@ namespace GE {
 		  // Gizmos
 		  case GE_KEY_Q:
 		  {
-		  	m_GuizmoType = -1;
-		  	break;
+			  if (!ImGuizmo::IsUsing())
+				  m_GuizmoType = -1;
+			  break;
 		  }
 		  case GE_KEY_W:
 		  {
-		  	m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
-		  	break;
+			  if (!ImGuizmo::IsUsing())
+				  m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
+			  break;
 		  }
 		  case GE_KEY_E:
 		  {
-		  	m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
-		  	break;
+			  if (!ImGuizmo::IsUsing())
+				  m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+			  break;
 		  }
 		  case GE_KEY_R:
 		  {
-		  	m_GuizmoType = ImGuizmo::OPERATION::SCALE;
-		  	break;
+			  if (!ImGuizmo::IsUsing())
+				  m_GuizmoType = ImGuizmo::OPERATION::SCALE;
+			  break;
 		  }
 		}
 	}

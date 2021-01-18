@@ -24,7 +24,7 @@ namespace GE {
 		void DrawEntityNode(Entity entity);
 		void DrawComponents(Entity entity);
 
-		Ref<Scene> m_Cotext;
+		Ref<Scene> m_Context;
 		Entity m_SelectionContext;
 	};
 
