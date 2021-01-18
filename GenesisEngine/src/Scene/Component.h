@@ -8,6 +8,7 @@
 
 #include "Cameras/SceneCamera.h"
 #include "ScriptableEntity.h"
+#include "Renderer/Texture.h"
 
 //TODO : ADD MATERIAL COMPONENT
 
@@ -60,13 +61,27 @@ namespace GE {
 	struct SpriteRendererComponent
 	{
 		glm::vec4 Color { 1.0f, 1.0f, 1.0f, 1.0f };
+		Ref<Texture2D> Texture = NULL;
+		std::string TextureFilepath;
+		float TilingFactor = 1.0f;
 
 		SpriteRendererComponent() = default;
 		SpriteRendererComponent(const SpriteRendererComponent&) = default;
 		SpriteRendererComponent(const glm::vec4 & color)
 			: Color(color) {}
 
-
+		void SetTexture(std::string& filepath)
+		{
+			GE_CORE_WARN("{0}", filepath);
+			Texture = Texture2D::Create(filepath);
+			TextureFilepath = filepath;
+		}
+		void RemoveTexture()
+		{
+			Texture = NULL;
+			TextureFilepath.clear();
+			TilingFactor = 1.0f;
+		}
 	};
 
 	struct TagComponent

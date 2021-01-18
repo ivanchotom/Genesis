@@ -438,7 +438,7 @@ namespace GE {
 
 	bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent& e)
 	{
-		if (e.GetMouseButton() == Mouse::ButtonLeft)
+		if (e.GetMouseButton() == Mouse::ButtonLeft && !ImGuizmo::IsUsing() && !Input::IsKeyPressed(Key::LeftAlt))
 		{
 			m_SHPanel.SetSelectedEntity(m_HoveredEntity);
 		}
