@@ -26,6 +26,7 @@ IncludeDir ["EnTT"] = "GenesisEngine/3rdParty/EnTT/Include"
 IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
 IncludeDir ["yaml_cpp"] = "GenesisEngine/3rdParty/yaml-cpp/include"
 IncludeDir ["ImGuizmo"] = "GenesisEngine/3rdParty/ImGuizmo"
+IncludeDir ["Assimp"] = "GenesisEngine/3rdParty/assimp/include"
 
 
 
@@ -36,6 +37,7 @@ group "Dependencies"
       include "GenesisEngine/3rdParty/Glad"
       include "GenesisEngine/3rdParty/ImGui"
 	  include "GenesisEngine/3rdParty/yaml-cpp"
+	  include "GenesisEngine/3rdParty/assimp"
 	  
 group ""
 
@@ -62,7 +64,7 @@ group ""
 	      "%{prj.name}/3rdParty/glm/glm/**.hpp",
 	      "%{prj.name}/3rdParty/glm/glm/**.inl",
 	      "%{prj.name}/3rdParty/ImGuizmo/ImGuizmo.h",
-	      "%{prj.name}/3rdParty/ImGuizmo/ImGuizmo.cpp"
+		  "%{prj.name}/3rdParty/ImGuizmo/ImGuizmo.cpp"
       }
 	  
 	  defines 
@@ -81,7 +83,8 @@ group ""
 	      "%{IncludeDir.stb_image}",
 	      "%{IncludeDir.EnTT}",
 	      "%{IncludeDir.yaml_cpp}",
-	      "%{IncludeDir.ImGuizmo}"
+		  "%{IncludeDir.ImGuizmo}",
+		  "%{IncludeDir.Assimp}"
       }
 
       links
@@ -90,8 +93,7 @@ group ""
 	    "Glad",
 	    "yaml-cpp",
 	    "ImGui",
-	    "opengl32.lib"
-	  
+		"opengl32.lib"
       }
 
 	  filter "files:GenesisEngine/3rdParty/ImGuizmo/**.cpp"
@@ -205,7 +207,8 @@ project "GenesisEditor"
 
 	  links
 	  {
-	     "GenesisEngine"
+		 "GenesisEngine"
+
 	  }
 
 	  filter "system:windows"
@@ -216,12 +219,27 @@ project "GenesisEditor"
 		 runtime "Debug"
 		 symbols "on"
 
+		 links
+		 {
+			 "GenesisEngine/3rdParty/assimp/build/lib/Debug/assimp-vc142-mtd.lib"
+		 }
+
 	  filter "configurations:Release"
 	     defines "GS_RELEASE"
 		 runtime "Release"
 		 optimize "on"
 
+		 links
+		 {
+			 "GenesisEngine/3rdParty/assimp/build/lib/Release/assimp-vc142-mt.lib"
+		 }
+
 	  filter "configurations:Dist"
 	     defines "GS_DIST"
 		 runtime "Release"
 		 optimize "on"
+
+		 links
+		 {
+			 "GenesisEngine/3rdParty/assimp/build/lib/Release/assimp-vc142-mt.lib"
+		 }
