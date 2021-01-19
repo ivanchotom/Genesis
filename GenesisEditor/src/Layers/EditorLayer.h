@@ -25,6 +25,7 @@ namespace GE {
 		Ref<Shader> m_FlatColorShader;
 		Ref<FrameBuffer> m_Framebuffer;
 		Ref<FrameBuffer> m_IDFramebuffer;
+		Ref<Quad> m_Quad;
 
 		Ref<Texture2D> m_CheckerboardTexture;
 		Ref<Scene> m_ActiveScene;

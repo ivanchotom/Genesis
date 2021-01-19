@@ -81,7 +81,7 @@ namespace GE {
 			{
 				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
+				Quad::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
 			}
 
 			Renderer2D::EndScene();
@@ -98,7 +98,7 @@ namespace GE {
 			{
 				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
+				Quad::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
 			}
 
 			Renderer2D::EndScene();
@@ -135,7 +135,7 @@ namespace GE {
 			{
 				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
 
-				Renderer2D::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
+				Quad::DrawQuad(transform.GetTransform(), sprite.Texture, sprite.TilingFactor, sprite.Color, (uint32_t)entity);
 			}
 
 			Renderer2D::EndScene();

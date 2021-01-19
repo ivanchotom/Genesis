@@ -10,7 +10,6 @@ layout(location = 5) in int a_ObjectID;
    
 uniform mat4 u_ViewProjection;
 
-
 out vec4 v_Color;
 out vec2 v_TexCoord;
 out float v_TexIndex;

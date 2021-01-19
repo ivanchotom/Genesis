@@ -132,7 +132,7 @@ namespace GE {
 
 
 		// Render
-		Renderer2D::ResetStats();
+		Quad::ResetStats();
 		{
 			GS_PROFILE_SCOPE("Renderer Prep");
 			m_Framebuffer->Bind();
@@ -265,7 +265,7 @@ namespace GE {
 			m_SHPanel.OnImGuiRender();
 
 			ImGui::Begin("Stats");
-			auto stats = Renderer2D::GetStats();
+			auto stats = Quad::GetStats();
 			ImGui::Text("Renderer2D Stats:");
 			ImGui::Text("Draw Calls: %d", stats.DrawCalls);
 			ImGui::Text("Quads: %d", stats.QuadCount);

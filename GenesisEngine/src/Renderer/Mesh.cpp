@@ -80,8 +80,7 @@ namespace GE {
 			m_Vertices.push_back(vertex);
 		}
 
-		m_VertexBuffer.reset(VertexBuffer::Create());
-		m_VertexBuffer->SetData(m_Vertices.data(), m_Vertices.size() * sizeof(Vertex));
+		m_VertexBuffer = VertexBuffer::Create(m_Vertices.size() * sizeof(Vertex));
 
 		// Extract indices from model
 		m_Indices.reserve(mesh->mNumFaces);
@@ -91,8 +90,8 @@ namespace GE {
 			m_Indices.push_back({ mesh->mFaces[i].mIndices[0], mesh->mFaces[i].mIndices[1], mesh->mFaces[i].mIndices[2] });
 		}
 
-		m_IndexBuffer.reset(IndexBuffer::Create());
-		m_IndexBuffer->SetData(m_Indices.data(), m_Indices.size() * sizeof(Index));
+		m_IndexBuffer = IndexBuffer::Create((uint32_t*)m_Indices.data(), m_Indices.size() * sizeof(Index));
+		
 	}
 
 	Mesh::~Mesh()

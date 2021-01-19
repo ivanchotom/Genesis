@@ -1470,6 +1470,7 @@
     <ClInclude Include="src\main\TimeStep.h">
       <Filter>src\main</Filter>
     </ClInclude>
+    <ClInclude Include="src\Renderer\Primitives\Quad.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3rdParty\ImGuizmo\ImGuizmo.cpp">
@@ -1595,5 +1596,6 @@
     <ClCompile Include="src\main\Log.cpp">
       <Filter>src\main</Filter>
     </ClCompile>
+    <ClCompile Include="src\Renderer\Primitives\Quad.cpp" />
   </ItemGroup>
 </Project>
