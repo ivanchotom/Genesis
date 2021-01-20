@@ -24,6 +24,8 @@ namespace GE {
 		static void StartBatch();
 		static void NextBatch();
 
+
+		
 	 	//Ref<Quad> m_Quad;
 		//static void ResetStats();
 		//static Statistics GetStats();

@@ -7,13 +7,13 @@
 
 namespace GE {
 
-	
+    
 
 	void Renderer2D::Init()
 	{
 		GS_PROFILE_FUNCTION();
 
-		Quad::Create();
+		 Quad::Create();
 
 	}
 
