@@ -5,6 +5,7 @@
 #include <glm/glm.hpp>
 #include "main/Core.h"
 #include "Buffer.h"
+#include "VertexArray.h"
 
 
 namespace GE {
@@ -12,6 +13,7 @@ namespace GE {
 	class Mesh
 	{
 	public:
+		~Mesh();
 		struct Vertex
 		{
 			glm::vec3 Position;
@@ -19,6 +21,7 @@ namespace GE {
 			glm::vec3 Tangent;
 			glm::vec3 Binormal;
 			glm::vec2 Texcoord;
+			
 		};
 		static_assert(sizeof(Vertex) == 14 * sizeof(float));
 		static const int NumAttributes = 5;
@@ -30,9 +33,9 @@ namespace GE {
 		static_assert(sizeof(Index) == 3 * sizeof(uint32_t));
 
 		Mesh(const std::string& filename);
-		~Mesh();
+		//static Ref<Mesh> LoadMesh(const std::string& filename);
 
-		void Render();
+		void DrawMesh();
 
 		inline const std::string& GetFilePath() const { return m_FilePath; }
 	private:

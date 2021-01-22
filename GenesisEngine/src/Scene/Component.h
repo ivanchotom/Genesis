@@ -9,6 +9,7 @@
 #include "Cameras/SceneCamera.h"
 #include "ScriptableEntity.h"
 #include "Renderer/Texture.h"
+#include "Renderer/Mesh.h"
 
 //TODO : ADD MATERIAL COMPONENT
 
@@ -81,6 +82,23 @@ namespace GE {
 			Texture = NULL;
 			TextureFilepath.clear();
 			TilingFactor = 1.0f;
+		}
+	};
+
+	struct MeshRenderComponent
+	{
+		MeshRenderComponent() = default;
+		MeshRenderComponent(const MeshRenderComponent&) = default;
+		MeshRenderComponent(const std::string& filepath);
+		Mesh mesh;
+		void SetMesh(std::string& filepath)
+		{
+			mesh = Mesh::Mesh(filepath);
+		}
+
+		void RemoveMesh()
+		{
+			mesh.~Mesh();
 		}
 	};
 

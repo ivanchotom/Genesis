@@ -359,6 +359,11 @@ namespace GE {
 				DrawFloatControl("Tiling Factor", &component.TilingFactor, 200);
 		});
 
+		DrawComponent<MeshRenderComponent>("Mesh Render", entity, [](auto& component)
+		{
+
+		});
+
 		DrawComponent<CameraComponent>("Camera", entity, [](auto& component)
 		{
 			auto& camera = component.Camera; //Easier to read bellow

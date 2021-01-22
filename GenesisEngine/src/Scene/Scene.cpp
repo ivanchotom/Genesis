@@ -97,8 +97,16 @@ namespace GE {
 			for (auto entity : group)
 			{
 				auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
-
+			
 				Quad::DrawQuad(transform.GetTransform(), sprite.Texture, (uint32_t)entity, sprite.Color, sprite.TilingFactor);
+			}
+
+			auto group = m_Registry.group<TransformComponent>(entt::get<MeshRenderComponent>);
+			for (auto entity : group)
+			{
+				auto [transform, mesh] = group.get<TransformComponent, MeshRenderComponent>(entity);
+			
+				Mesh::DrawMesh(mesh);
 			}
 
 			Renderer2D::EndScene();
@@ -181,7 +189,7 @@ namespace GE {
 	template<>
 	void Scene::OnComponentAdded<CameraComponent>(Entity entity, CameraComponent& component)
 	{
-		component.Camera.SetViewportSize(m_ViewportWidth, m_ViewportHeight);
+		//component.Camera.SetViewportSize(m_ViewportWidth, m_ViewportHeight);  
 	}
 
 	template<>
@@ -193,11 +201,17 @@ namespace GE {
 	template<>
 	void Scene::OnComponentAdded<SpriteRendererComponent>(Entity entity, SpriteRendererComponent& component)
 	{
-
+		
 	}
 
 	template<>
 	void Scene::OnComponentAdded<NativeScriptComponent>(Entity entity, NativeScriptComponent& component)
+	{
+
+	}
+
+	template<>
+	void Scene::OnComponentAdded<MeshRenderComponent>(Entity entity, MeshRenderComponent& component)
 	{
 
 	}

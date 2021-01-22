@@ -25,6 +25,7 @@ namespace GE {
 		void OnViewportResize(uint32_t width, uint32_t height);
 		void DrawIDBuffer(Ref<FrameBuffer> target, EditorCamera& camera);
 		int Pixel(int x, int y);
+		
 
 		Entity GetPrimaryCameraEntity();
 	private:
@@ -36,7 +37,7 @@ namespace GE {
 
 		uint32_t m_ViewportWidth = 0, m_ViewportHeight = 0;
 
-		friend class Quad;
+		//friend class Quad;
 		friend class Renderer2D;
 		friend class Entity;
 		friend class SceneSerializer;
