@@ -24,7 +24,9 @@ namespace GE {
 
 		//m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
 
+
 		FrameBufferSpecification fbSpec;
+		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8,FramebufferTextureFormat::R32I, FramebufferTextureFormat::Depth };
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
 		m_Framebuffer = FrameBuffer::Create(fbSpec);
