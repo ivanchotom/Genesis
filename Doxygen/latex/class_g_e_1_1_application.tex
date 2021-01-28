@@ -1,0 +1,77 @@
+\hypertarget{class_g_e_1_1_application}{}\doxysection{GE\+::Application Class Reference}
+\label{class_g_e_1_1_application}\index{GE::Application@{GE::Application}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a2c6c76f4c8218232a19e802d5ffc1a93}\label{class_g_e_1_1_application_a2c6c76f4c8218232a19e802d5ffc1a93}} 
+{\bfseries Application} (const std\+::string \&name=\char`\"{}Genesis\char`\"{})
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a818fd70b7013d9a6e4a46878b16014ce}\label{class_g_e_1_1_application_a818fd70b7013d9a6e4a46878b16014ce}} 
+void {\bfseries Run} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a5bdddff0c75c59c245af5b68b37148ad}\label{class_g_e_1_1_application_a5bdddff0c75c59c245af5b68b37148ad}} 
+void {\bfseries On\+Event} (\mbox{\hyperlink{class_g_e_1_1_event}{Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a3177b9a1e3b0f4ea6d07db84fb3841d3}\label{class_g_e_1_1_application_a3177b9a1e3b0f4ea6d07db84fb3841d3}} 
+void {\bfseries Push\+Layer} (\mbox{\hyperlink{class_g_e_1_1_layer}{Layer}} $\ast$layer)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a16553d2441377b7f759e857d193fba42}\label{class_g_e_1_1_application_a16553d2441377b7f759e857d193fba42}} 
+void {\bfseries Push\+Overlay} (\mbox{\hyperlink{class_g_e_1_1_layer}{Layer}} $\ast$layer)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a38150f1267ef6697fff8fa86b645b6e7}\label{class_g_e_1_1_application_a38150f1267ef6697fff8fa86b645b6e7}} 
+\mbox{\hyperlink{class_g_e_1_1_window}{Window}} \& {\bfseries Get\+Window} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_ab4b638aeb711b7d863104992f328afc1}\label{class_g_e_1_1_application_ab4b638aeb711b7d863104992f328afc1}} 
+void {\bfseries Close} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a05d4feb45c346b69926cfe1af58fcbcb}\label{class_g_e_1_1_application_a05d4feb45c346b69926cfe1af58fcbcb}} 
+\mbox{\hyperlink{class_g_e_1_1_im_gui_layer}{Im\+Gui\+Layer}} $\ast$ {\bfseries Get\+Im\+Gui\+Layer} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a434b12e1385fb6b3b55ad2c868aa7d22}\label{class_g_e_1_1_application_a434b12e1385fb6b3b55ad2c868aa7d22}} 
+static \mbox{\hyperlink{class_g_e_1_1_application}{Application}} \& {\bfseries Get} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a3af133cb076e3fe14f818c61fe8b8a47}\label{class_g_e_1_1_application_a3af133cb076e3fe14f818c61fe8b8a47}} 
+bool {\bfseries On\+Window\+Close} (\mbox{\hyperlink{class_g_e_1_1_window_close_event}{Window\+Close\+Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a8a16b2cb74a186bdabf6dcc40e57d016}\label{class_g_e_1_1_application_a8a16b2cb74a186bdabf6dcc40e57d016}} 
+bool {\bfseries On\+Window\+Resize} (\mbox{\hyperlink{class_g_e_1_1_window_resize_event}{Window\+Resize\+Event}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_acd58aaea5245cdd5ce3fbedce996d18b}\label{class_g_e_1_1_application_acd58aaea5245cdd5ce3fbedce996d18b}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_g_e_1_1_window}{Window}} $>$ {\bfseries m\+\_\+\+Window}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_ad825ec8242fce5c590ef6e39c44ccded}\label{class_g_e_1_1_application_ad825ec8242fce5c590ef6e39c44ccded}} 
+\mbox{\hyperlink{class_g_e_1_1_im_gui_layer}{Im\+Gui\+Layer}} $\ast$ {\bfseries m\+\_\+\+Im\+Gui\+Layer}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a3be2343b0f02f33e726fb29c52a18dff}\label{class_g_e_1_1_application_a3be2343b0f02f33e726fb29c52a18dff}} 
+bool {\bfseries m\+\_\+\+Running} = true
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a79c21d65ad0aecaad3823b0c66514ff4}\label{class_g_e_1_1_application_a79c21d65ad0aecaad3823b0c66514ff4}} 
+bool {\bfseries m\+\_\+\+Minimized} = false
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_acda9b1ff31b304ae083eeed25e395ccf}\label{class_g_e_1_1_application_acda9b1ff31b304ae083eeed25e395ccf}} 
+\mbox{\hyperlink{class_g_e_1_1_layer_stack}{Layer\+Stack}} {\bfseries m\+\_\+\+Layer\+Stack}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_a5c159f13c918923e27153b0dea779cb7}\label{class_g_e_1_1_application_a5c159f13c918923e27153b0dea779cb7}} 
+float {\bfseries m\+\_\+\+Last\+Frame\+Time} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_application_af0db22e0493df2a16afefb7f4dccfb98}\label{class_g_e_1_1_application_af0db22e0493df2a16afefb7f4dccfb98}} 
+static \mbox{\hyperlink{class_g_e_1_1_application}{Application}} $\ast$ {\bfseries s\+\_\+\+Instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/main/Application.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/main/Application.\+cpp\end{DoxyCompactItemize}

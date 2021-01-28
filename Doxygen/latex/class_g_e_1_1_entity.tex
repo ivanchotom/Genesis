@@ -1,0 +1,53 @@
+\hypertarget{class_g_e_1_1_entity}{}\doxysection{GE\+::Entity Class Reference}
+\label{class_g_e_1_1_entity}\index{GE::Entity@{GE::Entity}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a8d803b3e5ea69e509d0ee134aec27541}\label{class_g_e_1_1_entity_a8d803b3e5ea69e509d0ee134aec27541}} 
+{\bfseries Entity} (entt\+::entity handle, \mbox{\hyperlink{class_g_e_1_1_scene}{Scene}} $\ast$scene)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a5f51f37566e594db75c07b5098af7bea}\label{class_g_e_1_1_entity_a5f51f37566e594db75c07b5098af7bea}} 
+{\bfseries Entity} (const \mbox{\hyperlink{class_g_e_1_1_entity}{Entity}} \&other)=default
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a226f4f81b2b5ffe39d6ed7797a0c89d3}\label{class_g_e_1_1_entity_a226f4f81b2b5ffe39d6ed7797a0c89d3}} 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\T \& {\bfseries Add\+Component} (Args \&\&... args)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_aea6519de918bc6ea967e9cff9699ceec}\label{class_g_e_1_1_entity_aea6519de918bc6ea967e9cff9699ceec}} 
+{\footnotesize template$<$typename T $>$ }\\T \& {\bfseries Get\+Component} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a01ec445879769471fe92aa172c74d465}\label{class_g_e_1_1_entity_a01ec445879769471fe92aa172c74d465}} 
+{\footnotesize template$<$typename T $>$ }\\bool {\bfseries Has\+Component} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a543fd0621db7ac1393d9c35cd8ddbe01}\label{class_g_e_1_1_entity_a543fd0621db7ac1393d9c35cd8ddbe01}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Remove\+Component} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a95853d1a3d0e58fed07f1caf150c359b}\label{class_g_e_1_1_entity_a95853d1a3d0e58fed07f1caf150c359b}} 
+{\bfseries operator entt\+::entity} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a1d5400059bb31a71f8c0d5018bbd3235}\label{class_g_e_1_1_entity_a1d5400059bb31a71f8c0d5018bbd3235}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{class_g_e_1_1_entity}{Entity}} \&other) const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a04ceeacf3b105fd7a0ec82f5ed9c08c2}\label{class_g_e_1_1_entity_a04ceeacf3b105fd7a0ec82f5ed9c08c2}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{class_g_e_1_1_entity}{Entity}} \&other) const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a6f06c7a40b031c2403505a2cc81e2d42}\label{class_g_e_1_1_entity_a6f06c7a40b031c2403505a2cc81e2d42}} 
+{\bfseries operator bool} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a195e79d9b6ceafec7ce28f8e9ae77d0d}\label{class_g_e_1_1_entity_a195e79d9b6ceafec7ce28f8e9ae77d0d}} 
+{\bfseries operator uint32\+\_\+t} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a68e0221974374723550ad615f6cdbda6}\label{class_g_e_1_1_entity_a68e0221974374723550ad615f6cdbda6}} 
+entt\+::entity {\bfseries m\+\_\+\+Entity\+Handle} \{ entt\+::null \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_entity_a3aa4d7ed3d4262ce942af6e70bd4a757}\label{class_g_e_1_1_entity_a3aa4d7ed3d4262ce942af6e70bd4a757}} 
+\mbox{\hyperlink{class_g_e_1_1_scene}{Scene}} $\ast$ {\bfseries m\+\_\+\+Scene} = nullptr
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Scene/Entity.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Scene/Entity.\+cpp\end{DoxyCompactItemize}

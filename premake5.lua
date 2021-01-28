@@ -26,7 +26,7 @@ IncludeDir ["EnTT"] = "GenesisEngine/3rdParty/EnTT/Include"
 IncludeDir ["stb_image"] = "GenesisEngine/3rdParty/stb_image"
 IncludeDir ["yaml_cpp"] = "GenesisEngine/3rdParty/yaml-cpp/include"
 IncludeDir ["ImGuizmo"] = "GenesisEngine/3rdParty/ImGuizmo"
-IncludeDir ["Assimp"] = "GenesisEngine/3rdParty/assimp/include"
+
 
 
 
@@ -37,7 +37,6 @@ group "Dependencies"
       include "GenesisEngine/3rdParty/Glad"
       include "GenesisEngine/3rdParty/ImGui"
 	  include "GenesisEngine/3rdParty/yaml-cpp"
-	  include "GenesisEngine/3rdParty/assimp"
 	  
 group ""
 
@@ -83,8 +82,7 @@ group ""
 	      "%{IncludeDir.stb_image}",
 	      "%{IncludeDir.EnTT}",
 	      "%{IncludeDir.yaml_cpp}",
-		  "%{IncludeDir.ImGuizmo}",
-		  "%{IncludeDir.Assimp}"
+		  "%{IncludeDir.ImGuizmo}"
       }
 
       links
@@ -111,57 +109,6 @@ group ""
       }
 
 
-	  filter "configurations:Debug"
-	     defines "GS_DEBUG"
-		 runtime "Debug"
-		 symbols "on"
-
-	  filter "configurations:Release"
-	     defines "GS_RELEASE"
-		 runtime "Release"
-		 optimize "on"
-
-	  filter "configurations:Dist"
-	     defines "GS_DIST"
-		 runtime "Release"
-		 optimize "on"
-
-
-project "GenesisSandbox"
-      location "GenesisSandbox"
-	  kind "ConsoleApp"
-	  language "C++"
-	  cppdialect "C++17"
-	  staticruntime "on"
-	  
-	  targetdir ("bin/"  .. outputdir .. "/%{prj.name}")
-	  objdir ("bin-init/"  .. outputdir .. "/%{prj.name}")
-
-
-	  files
-	  {
-			"%{prj.name}/src/**.h",
-			"%{prj.name}/src/**.cpp"
-	  }
-
-	  includedirs
-	  {
-            "GenesisEngine/3rdParty/spdlog/include",
-            "GenesisEngine/src",
-			"GenesisSandbox/src",
-			"GenesisEngine/3rdParty",
-			"%{IncludeDir.glm}",
-			"%{IncludeDir.EnTT}"
-	  }
-
-	  links
-	  {
-	     "GenesisEngine"
-	  }
-
-	  filter "system:windows"
-		  systemversion "latest"
-	  
 	  filter "configurations:Debug"
 	     defines "GS_DEBUG"
 		 runtime "Debug"
@@ -219,27 +166,13 @@ project "GenesisEditor"
 		 runtime "Debug"
 		 symbols "on"
 
-		 links
-		 {
-			 "GenesisEngine/3rdParty/assimp/build/lib/Debug/assimp-vc142-mtd.lib"
-		 }
 
 	  filter "configurations:Release"
 	     defines "GS_RELEASE"
 		 runtime "Release"
 		 optimize "on"
 
-		 links
-		 {
-			 "GenesisEngine/3rdParty/assimp/build/lib/Release/assimp-vc142-mt.lib"
-		 }
-
 	  filter "configurations:Dist"
 	     defines "GS_DIST"
 		 runtime "Release"
 		 optimize "on"
-
-		 links
-		 {
-			 "GenesisEngine/3rdParty/assimp/build/lib/Release/assimp-vc142-mt.lib"
-		 }

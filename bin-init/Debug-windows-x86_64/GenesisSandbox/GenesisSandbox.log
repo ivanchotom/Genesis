@@ -1,0 +1,16 @@
+﻿  Level.cpp
+  ParticleSystem.cpp
+  Player.cpp
+  Random.cpp
+  2DGameLayer.cpp
+D:\Work\Genesis\GenesisSandbox\src\2DGame\Player.h(27,70): warning C4244: 'return': conversion from 'float' to 'uint32_t', possible loss of data (compiling source file src\2DGame\Player.cpp)
+D:\Work\Genesis\GenesisSandbox\src\2DGame\Player.h(27,70): warning C4244: 'return': conversion from 'float' to 'uint32_t', possible loss of data (compiling source file src\2DGame\Level.cpp)
+D:\Work\Genesis\GenesisSandbox\src\2DGame\Player.h(27,70): warning C4244: 'return': conversion from 'float' to 'uint32_t', possible loss of data (compiling source file src\Layers\2DGameLayer.cpp)
+  Sandbox2D.cpp
+  SandboxApp.cpp
+  ParticleTest.cpp
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(49,47): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(118,44): error C3695: 'glm::vec<2,float,glm::packed_highp>': cannot decompose a type containing an anonymous union or struct
+D:\Work\Genesis\GenesisEngine\3rdParty\glm\glm\detail\type_vec2.hpp(68,10): message : see declaration of 'glm::vec<2,float,glm::packed_highp>::<unnamed-tag>' (compiling source file src\Layers\Sandbox2D.cpp)
+D:\Work\Genesis\GenesisSandbox\src\Layers\Sandbox2D.cpp(118,44): error C3448: the number of identifiers must match the number of array elements or members in a structured binding declaration
+D:\Work\Genesis\GenesisEngine\3rdParty\glm\glm\detail\type_vec2.hpp(68,3): message : see declaration of 'glm::vec<2,float,glm::packed_highp>::s' (compiling source file src\Layers\Sandbox2D.cpp)

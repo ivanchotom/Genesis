@@ -9,12 +9,16 @@
 
 namespace GE {
 
+	/// Editor Camera class
+
+
 	class EditorCamera : public Camera
 	{
 	public:
 
 
 		EditorCamera() = default;
+		/// Constructor for the Editor camera
 		EditorCamera(float fov, float aspectRatio, float nearClip, float farClip);
 
 		void OnUpdate(Timestep ts);

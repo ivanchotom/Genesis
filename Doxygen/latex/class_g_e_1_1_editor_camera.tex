@@ -1,0 +1,150 @@
+\hypertarget{class_g_e_1_1_editor_camera}{}\doxysection{GE\+::Editor\+Camera Class Reference}
+\label{class_g_e_1_1_editor_camera}\index{GE::EditorCamera@{GE::EditorCamera}}
+
+
+Editor \mbox{\hyperlink{class_g_e_1_1_camera}{Camera}} class.  
+
+
+
+
+{\ttfamily \#include $<$Editor\+Camera.\+h$>$}
+
+Inheritance diagram for GE\+::Editor\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_e_1_1_editor_camera}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a8ffbb8658caf1a935819f1c06e17221d}\label{class_g_e_1_1_editor_camera_a8ffbb8658caf1a935819f1c06e17221d}} 
+\mbox{\hyperlink{class_g_e_1_1_editor_camera_a8ffbb8658caf1a935819f1c06e17221d}{Editor\+Camera}} (float fov, float aspect\+Ratio, float near\+Clip, float far\+Clip)
+\begin{DoxyCompactList}\small\item\em Constructor for the Editor camera. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a82fbe14f318eb3667ca465e724313ecc}\label{class_g_e_1_1_editor_camera_a82fbe14f318eb3667ca465e724313ecc}} 
+void {\bfseries On\+Update} (\mbox{\hyperlink{class_g_e_1_1_timestep}{Timestep}} ts)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_abb20bf40435bbba288fe30adc3b6e7c3}\label{class_g_e_1_1_editor_camera_abb20bf40435bbba288fe30adc3b6e7c3}} 
+void {\bfseries On\+Event} (\mbox{\hyperlink{class_g_e_1_1_event}{Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a767b511fe9725d7805841a80dea8f4c0}\label{class_g_e_1_1_editor_camera_a767b511fe9725d7805841a80dea8f4c0}} 
+void {\bfseries Set\+Distance} (float distance)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a09b2bdb501fd06a0c583170a5f6c0f47}\label{class_g_e_1_1_editor_camera_a09b2bdb501fd06a0c583170a5f6c0f47}} 
+float {\bfseries Get\+Distance} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a8b9498fdb82614ff3118fafcc967a3be}\label{class_g_e_1_1_editor_camera_a8b9498fdb82614ff3118fafcc967a3be}} 
+void {\bfseries Set\+Viewport\+Size} (float width, float height)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_af9651d405508cb90dcd4934bc6d1fd33}\label{class_g_e_1_1_editor_camera_af9651d405508cb90dcd4934bc6d1fd33}} 
+const glm\+::mat4 \& {\bfseries Get\+View\+Matrix} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aeaf36496c6bb256f85d23b472e7e645e}\label{class_g_e_1_1_editor_camera_aeaf36496c6bb256f85d23b472e7e645e}} 
+glm\+::mat4 {\bfseries Get\+View\+Projection} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a2509bcb72dd66f6eb87afe928156c468}\label{class_g_e_1_1_editor_camera_a2509bcb72dd66f6eb87afe928156c468}} 
+const glm\+::vec3 \& {\bfseries Get\+Position} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a21155f04a63fd55121842d2334429e81}\label{class_g_e_1_1_editor_camera_a21155f04a63fd55121842d2334429e81}} 
+glm\+::vec3 {\bfseries Get\+Up\+Direction} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a37b5b3cfdcc797202278a54f9421898b}\label{class_g_e_1_1_editor_camera_a37b5b3cfdcc797202278a54f9421898b}} 
+glm\+::vec3 {\bfseries Get\+Right\+Direction} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a5aa09bc8835f3822fc8cd2535e82c714}\label{class_g_e_1_1_editor_camera_a5aa09bc8835f3822fc8cd2535e82c714}} 
+glm\+::vec3 {\bfseries Get\+Forward\+Direction} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aeeb4a78ac5d48cef9a6795ef9ae17cb5}\label{class_g_e_1_1_editor_camera_aeeb4a78ac5d48cef9a6795ef9ae17cb5}} 
+glm\+::quat {\bfseries Get\+Orientation} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a51117fe0e5ae175440b4d5230fc768e3}\label{class_g_e_1_1_editor_camera_a51117fe0e5ae175440b4d5230fc768e3}} 
+float {\bfseries Get\+Pitch} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_acc7b66c96b4f417af8a51f275d74cdb8}\label{class_g_e_1_1_editor_camera_acc7b66c96b4f417af8a51f275d74cdb8}} 
+float {\bfseries Get\+Yaw} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aa5f049c4a62508f2fde05a9642fc5300}\label{class_g_e_1_1_editor_camera_aa5f049c4a62508f2fde05a9642fc5300}} 
+void {\bfseries Update\+Projection} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_ae2a8efc16c558f5497a63f506be970ed}\label{class_g_e_1_1_editor_camera_ae2a8efc16c558f5497a63f506be970ed}} 
+void {\bfseries Update\+View} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aa32b2f457335bfa54405b8878ed86165}\label{class_g_e_1_1_editor_camera_aa32b2f457335bfa54405b8878ed86165}} 
+bool {\bfseries On\+Mouse\+Scroll} (\mbox{\hyperlink{class_g_e_1_1_mouse_scrolled_event}{Mouse\+Scrolled\+Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a52d062ae67b26ff4a5f14cea1bcd5bbe}\label{class_g_e_1_1_editor_camera_a52d062ae67b26ff4a5f14cea1bcd5bbe}} 
+void {\bfseries Mouse\+Pan} (const glm\+::vec2 \&delta)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a634e8fc6e570cea52da38ce7926c1c25}\label{class_g_e_1_1_editor_camera_a634e8fc6e570cea52da38ce7926c1c25}} 
+void {\bfseries Mouse\+Rotate} (const glm\+::vec2 \&delta)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aa80cb712d3c7a40678530caef3a37c0f}\label{class_g_e_1_1_editor_camera_aa80cb712d3c7a40678530caef3a37c0f}} 
+void {\bfseries Mouse\+Zoom} (float delta)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_aa888676bdd35ddd17f98c6cfd8889e40}\label{class_g_e_1_1_editor_camera_aa888676bdd35ddd17f98c6cfd8889e40}} 
+glm\+::vec3 {\bfseries Calculate\+Position} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a13ae21caa0fac1ef94c2cbde941fddb4}\label{class_g_e_1_1_editor_camera_a13ae21caa0fac1ef94c2cbde941fddb4}} 
+std\+::pair$<$ float, float $>$ {\bfseries Pan\+Speed} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_ab9d7292c4bef82ae20b047c7317f3612}\label{class_g_e_1_1_editor_camera_ab9d7292c4bef82ae20b047c7317f3612}} 
+float {\bfseries Rotation\+Speed} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_ac6e3a42fce592b271a63869dd19d1e3e}\label{class_g_e_1_1_editor_camera_ac6e3a42fce592b271a63869dd19d1e3e}} 
+float {\bfseries Zoom\+Speed} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_afa67b57b55b2568327980d2485c4648d}\label{class_g_e_1_1_editor_camera_afa67b57b55b2568327980d2485c4648d}} 
+float {\bfseries m\+\_\+\+FOV} = 45.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_afc8d5da5fed378b56b06cab8a9e4153d}\label{class_g_e_1_1_editor_camera_afc8d5da5fed378b56b06cab8a9e4153d}} 
+float {\bfseries m\+\_\+\+Aspect\+Ratio} = 1.\+778f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a0601e0eddda2336b87a96886031bda6f}\label{class_g_e_1_1_editor_camera_a0601e0eddda2336b87a96886031bda6f}} 
+float {\bfseries m\+\_\+\+Near\+Clip} = 0.\+1f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a1452f1a0633b34b7d43fa98be38cb3f1}\label{class_g_e_1_1_editor_camera_a1452f1a0633b34b7d43fa98be38cb3f1}} 
+float {\bfseries m\+\_\+\+Far\+Clip} = 1000.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_ae474c3481e9b0cfae872b3290f08fe2a}\label{class_g_e_1_1_editor_camera_ae474c3481e9b0cfae872b3290f08fe2a}} 
+glm\+::mat4 {\bfseries m\+\_\+\+View\+Matrix}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a77fb381343435cac54910992efd17aee}\label{class_g_e_1_1_editor_camera_a77fb381343435cac54910992efd17aee}} 
+glm\+::vec3 {\bfseries m\+\_\+\+Position} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a6bb34eff76464e3de6101c67bcc28749}\label{class_g_e_1_1_editor_camera_a6bb34eff76464e3de6101c67bcc28749}} 
+glm\+::vec3 {\bfseries m\+\_\+\+Focal\+Point} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a4013d8c5e05382e310d8a68ee6306bfc}\label{class_g_e_1_1_editor_camera_a4013d8c5e05382e310d8a68ee6306bfc}} 
+glm\+::vec2 {\bfseries m\+\_\+\+Initial\+Mouse\+Position} = \{ 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a81ac81fcacea57cf448c61aa5e9ae149}\label{class_g_e_1_1_editor_camera_a81ac81fcacea57cf448c61aa5e9ae149}} 
+float {\bfseries m\+\_\+\+Distance} = 10.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_ad600f992fbcde3a60347a9fd5b5c1f82}\label{class_g_e_1_1_editor_camera_ad600f992fbcde3a60347a9fd5b5c1f82}} 
+float {\bfseries m\+\_\+\+Pitch} = 0.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a62869421509fd13daf5dc5dc711374fa}\label{class_g_e_1_1_editor_camera_a62869421509fd13daf5dc5dc711374fa}} 
+float {\bfseries m\+\_\+\+Yaw} = 0.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_accf714ed39db056bdf7f686641c39660}\label{class_g_e_1_1_editor_camera_accf714ed39db056bdf7f686641c39660}} 
+float {\bfseries m\+\_\+\+Viewport\+Width} = 1280
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_editor_camera_a8e10648f8a9ad83fe56c07847d990940}\label{class_g_e_1_1_editor_camera_a8e10648f8a9ad83fe56c07847d990940}} 
+float {\bfseries m\+\_\+\+Viewport\+Height} = 720
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Editor \mbox{\hyperlink{class_g_e_1_1_camera}{Camera}} class. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Editor\+Camera.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Editor\+Camera.\+cpp\end{DoxyCompactItemize}

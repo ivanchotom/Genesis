@@ -1,0 +1,68 @@
+\hypertarget{class_g_e_1_1_windows_window}{}\doxysection{GE\+::Windows\+Window Class Reference}
+\label{class_g_e_1_1_windows_window}\index{GE::WindowsWindow@{GE::WindowsWindow}}
+Inheritance diagram for GE\+::Windows\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_e_1_1_windows_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_e_1_1_windows_window_1_1_window_data}{Window\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a27c3671a6c123ad6060cb9edaeaf075c}\label{class_g_e_1_1_windows_window_a27c3671a6c123ad6060cb9edaeaf075c}} 
+{\bfseries Windows\+Window} (const \mbox{\hyperlink{struct_g_e_1_1_window_props}{Window\+Props}} \&props)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_abe9ea5eb2d5f92e8b5b2feea0bdd47f9}\label{class_g_e_1_1_windows_window_abe9ea5eb2d5f92e8b5b2feea0bdd47f9}} 
+void {\bfseries On\+Update} () override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a4c379858652764b4b3ef9ad69f9741b7}\label{class_g_e_1_1_windows_window_a4c379858652764b4b3ef9ad69f9741b7}} 
+unsigned int {\bfseries Get\+Width} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_aa5a21a315d6fce37b0c7df5767b29c87}\label{class_g_e_1_1_windows_window_aa5a21a315d6fce37b0c7df5767b29c87}} 
+unsigned int {\bfseries Get\+Height} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a6b514e79f6588919710eba775c5657b8}\label{class_g_e_1_1_windows_window_a6b514e79f6588919710eba775c5657b8}} 
+void {\bfseries Set\+Event\+Callback} (const Event\+Callback\+Fn \&callback) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a0f7c322213edd8178fb628044887bae3}\label{class_g_e_1_1_windows_window_a0f7c322213edd8178fb628044887bae3}} 
+void {\bfseries Set\+VSync} (bool enabled) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_ade67e4a58491e8d50d9aca627ebb4d86}\label{class_g_e_1_1_windows_window_ade67e4a58491e8d50d9aca627ebb4d86}} 
+bool {\bfseries Is\+VSync} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a57339c49eaa344d78c48634684737b0a}\label{class_g_e_1_1_windows_window_a57339c49eaa344d78c48634684737b0a}} 
+virtual void $\ast$ {\bfseries Get\+Native\+Window} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_ae12e7b2bc9548b931f4eab3120b216d2}\label{class_g_e_1_1_windows_window_ae12e7b2bc9548b931f4eab3120b216d2}} 
+virtual void {\bfseries Init} (const \mbox{\hyperlink{struct_g_e_1_1_window_props}{Window\+Props}} \&props)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_a86a84da3df9de8cc458b44dd0f343485}\label{class_g_e_1_1_windows_window_a86a84da3df9de8cc458b44dd0f343485}} 
+virtual void {\bfseries Shutdown} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_ab1c24d5730e2a48dca58d14829a2b3a3}\label{class_g_e_1_1_windows_window_ab1c24d5730e2a48dca58d14829a2b3a3}} 
+\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}} $\ast$ {\bfseries m\+\_\+\+Window}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_ab729d01eccde3075240fe568c9d0ac13}\label{class_g_e_1_1_windows_window_ab729d01eccde3075240fe568c9d0ac13}} 
+Scope$<$ \mbox{\hyperlink{class_g_e_1_1_graphics_context}{Graphics\+Context}} $>$ {\bfseries m\+\_\+\+Context}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_windows_window_ac703b663b486c8ff9b4f430943f330c8}\label{class_g_e_1_1_windows_window_ac703b663b486c8ff9b4f430943f330c8}} 
+\mbox{\hyperlink{struct_g_e_1_1_windows_window_1_1_window_data}{Window\+Data}} {\bfseries m\+\_\+\+Data}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Windows/Windows\+Window.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Windows/Windows\+Window.\+cpp\end{DoxyCompactItemize}

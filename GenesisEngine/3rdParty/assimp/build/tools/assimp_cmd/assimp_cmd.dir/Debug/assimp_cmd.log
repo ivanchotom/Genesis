@@ -1,8 +1,0 @@
-﻿  Building Custom Rule D:/Work/Genesis/GenesisEngine/3rdParty/assimp/tools/assimp_cmd/CMakeLists.txt
-  CompareDump.cpp
-  ImageExtractor.cpp
-  Main.cpp
-  WriteDump.cpp
-  Info.cpp
-  Export.cpp
-  assimp_cmd.vcxproj -> D:\Work\Genesis\GenesisEngine\3rdParty\assimp\build\bin\Debug\assimpd.exe

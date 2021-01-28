@@ -1,0 +1,108 @@
+\hypertarget{class_g_e_1_1_open_g_l_shader}{}\doxysection{GE\+::Open\+GLShader Class Reference}
+\label{class_g_e_1_1_open_g_l_shader}\index{GE::OpenGLShader@{GE::OpenGLShader}}
+Inheritance diagram for GE\+::Open\+GLShader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_e_1_1_open_g_l_shader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_aa81f099f6741ff046327c36fe4f6bbf6}\label{class_g_e_1_1_open_g_l_shader_aa81f099f6741ff046327c36fe4f6bbf6}} 
+{\bfseries Open\+GLShader} (const std\+::string \&filepath)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a2ed575827f7eaf95894d8f0e562028f1}\label{class_g_e_1_1_open_g_l_shader_a2ed575827f7eaf95894d8f0e562028f1}} 
+{\bfseries Open\+GLShader} (const std\+::string \&name, const std\+::string \&vertex\+Src, const std\+::string \&fragment\+Src)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_aa2bcbea0b8329a4c66e281de470e5063}\label{class_g_e_1_1_open_g_l_shader_aa2bcbea0b8329a4c66e281de470e5063}} 
+virtual void {\bfseries Bind} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ab9b26a539f330554c6a895687220f2aa}\label{class_g_e_1_1_open_g_l_shader_ab9b26a539f330554c6a895687220f2aa}} 
+virtual void {\bfseries Unbind} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_aadae1aadcb3bce757168b5df810fad5d}\label{class_g_e_1_1_open_g_l_shader_aadae1aadcb3bce757168b5df810fad5d}} 
+virtual void {\bfseries Set\+Float3} (const std\+::string \&name, const glm\+::vec3 \&value) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a1abfff041fcfe6eab247f74c747adc10}\label{class_g_e_1_1_open_g_l_shader_a1abfff041fcfe6eab247f74c747adc10}} 
+virtual void {\bfseries Set\+Float4} (const std\+::string \&name, const glm\+::vec4 \&value) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a2aff8a0323d8a2fc7ba01b2c4a678821}\label{class_g_e_1_1_open_g_l_shader_a2aff8a0323d8a2fc7ba01b2c4a678821}} 
+virtual void {\bfseries Set\+Float} (const std\+::string \&name, float value) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a8c81e4fe9019766c3004a412be56658d}\label{class_g_e_1_1_open_g_l_shader_a8c81e4fe9019766c3004a412be56658d}} 
+virtual void {\bfseries Set\+Mat4} (const std\+::string \&name, const glm\+::mat4 \&value) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a538cc1026f8ee52abc64a760fa978f6c}\label{class_g_e_1_1_open_g_l_shader_a538cc1026f8ee52abc64a760fa978f6c}} 
+virtual void {\bfseries Set\+Int} (const std\+::string \&name, int value) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a9ddb16993ef3eef967da6225b9e20eaf}\label{class_g_e_1_1_open_g_l_shader_a9ddb16993ef3eef967da6225b9e20eaf}} 
+virtual void {\bfseries Set\+Int\+Array} (const std\+::string \&name, int $\ast$values, uint32\+\_\+t count) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a4784110c5bc437fc907414f355473740}\label{class_g_e_1_1_open_g_l_shader_a4784110c5bc437fc907414f355473740}} 
+virtual const std\+::string \& {\bfseries Get\+Name} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ada5cd8e9dbb53f9208978e059b835f6f}\label{class_g_e_1_1_open_g_l_shader_ada5cd8e9dbb53f9208978e059b835f6f}} 
+void {\bfseries Upload\+Uniform\+Mat3} (const std\+::string \&name, const glm\+::mat3 \&matrix)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a34a3d612dd7ce6e832e59aafed54358c}\label{class_g_e_1_1_open_g_l_shader_a34a3d612dd7ce6e832e59aafed54358c}} 
+void {\bfseries Upload\+Uniform\+Mat4} (const std\+::string \&name, const glm\+::mat4 \&matrix)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_af512fe7673bb3e3234c5c6b6f418aac5}\label{class_g_e_1_1_open_g_l_shader_af512fe7673bb3e3234c5c6b6f418aac5}} 
+void {\bfseries Upload\+Uniform\+Int} (const std\+::string \&name, int value)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ae2fdb096e022592964b05e59179b1d66}\label{class_g_e_1_1_open_g_l_shader_ae2fdb096e022592964b05e59179b1d66}} 
+void {\bfseries Upload\+Uniform\+Int\+Array} (const std\+::string \&name, int $\ast$values, uint32\+\_\+t count)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a07da2ff8ec966acdf889c0f7dba42f9d}\label{class_g_e_1_1_open_g_l_shader_a07da2ff8ec966acdf889c0f7dba42f9d}} 
+void {\bfseries Upload\+Uniform\+Float} (const std\+::string \&name, float values)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_aa99e2f08869f83a45983a26d4575ba23}\label{class_g_e_1_1_open_g_l_shader_aa99e2f08869f83a45983a26d4575ba23}} 
+void {\bfseries Upload\+Uniform\+Float2} (const std\+::string \&name, const glm\+::vec2 \&value)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ab8e29da2afe4d412848f2669b6a4539c}\label{class_g_e_1_1_open_g_l_shader_ab8e29da2afe4d412848f2669b6a4539c}} 
+void {\bfseries Upload\+Uniform\+Float3} (const std\+::string \&name, const glm\+::vec3 \&value)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ae54ebb3be23d82c9a57886a1fe268e42}\label{class_g_e_1_1_open_g_l_shader_ae54ebb3be23d82c9a57886a1fe268e42}} 
+void {\bfseries Upload\+Uniform\+Float4} (const std\+::string \&name, const glm\+::vec4 \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_afb8184c7e9ef39202259149693962705}\label{class_g_e_1_1_open_g_l_shader_afb8184c7e9ef39202259149693962705}} 
+std\+::string {\bfseries Read\+File} (const std\+::string \&filepath)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_af4644085ef482fa567a8eba8f0a731ea}\label{class_g_e_1_1_open_g_l_shader_af4644085ef482fa567a8eba8f0a731ea}} 
+std\+::unordered\+\_\+map$<$ GLenum, std\+::string $>$ {\bfseries Pre\+Process} (const std\+::string \&source)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_ab9b52b66983c0ff0960b4c3c3b69a8ca}\label{class_g_e_1_1_open_g_l_shader_ab9b52b66983c0ff0960b4c3c3b69a8ca}} 
+void {\bfseries Compile} (const std\+::unordered\+\_\+map$<$ GLenum, std\+::string $>$ \&shader\+Sources)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a50f7a6b33136d2b49f356ee0f9551fad}\label{class_g_e_1_1_open_g_l_shader_a50f7a6b33136d2b49f356ee0f9551fad}} 
+void {\bfseries Legacy\+Compile} (const std\+::string \&vertex\+Src, const std\+::string \&fragment\+Src)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a979babf64eba32d6549f84f558ff2fca}\label{class_g_e_1_1_open_g_l_shader_a979babf64eba32d6549f84f558ff2fca}} 
+static GLenum {\bfseries Shader\+Type\+From\+String} (const std\+::string \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_a8a72351c84ced5444a02a591cc9f404b}\label{class_g_e_1_1_open_g_l_shader_a8a72351c84ced5444a02a591cc9f404b}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Renderer\+ID}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_afb134d970a53fef8fe07b0c5e317a434}\label{class_g_e_1_1_open_g_l_shader_afb134d970a53fef8fe07b0c5e317a434}} 
+bool {\bfseries m\+\_\+\+Is\+Compute} = false
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_shader_af97f9866bfd3eb1ffa4489d565382bfe}\label{class_g_e_1_1_open_g_l_shader_af97f9866bfd3eb1ffa4489d565382bfe}} 
+std\+::string {\bfseries m\+\_\+\+Name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLShader.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLShader.\+cpp\end{DoxyCompactItemize}

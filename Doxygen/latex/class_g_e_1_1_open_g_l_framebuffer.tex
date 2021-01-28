@@ -1,0 +1,60 @@
+\hypertarget{class_g_e_1_1_open_g_l_framebuffer}{}\doxysection{GE\+::Open\+GLFramebuffer Class Reference}
+\label{class_g_e_1_1_open_g_l_framebuffer}\index{GE::OpenGLFramebuffer@{GE::OpenGLFramebuffer}}
+Inheritance diagram for GE\+::Open\+GLFramebuffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_e_1_1_open_g_l_framebuffer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_adf6e5cf83624a881d862558118465113}\label{class_g_e_1_1_open_g_l_framebuffer_adf6e5cf83624a881d862558118465113}} 
+{\bfseries Open\+GLFramebuffer} (const \mbox{\hyperlink{struct_g_e_1_1_frame_buffer_specification}{Frame\+Buffer\+Specification}} \&spec)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_aa0940de4624c7dcf8d7f37d73dffc436}\label{class_g_e_1_1_open_g_l_framebuffer_aa0940de4624c7dcf8d7f37d73dffc436}} 
+void {\bfseries Invalidate} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a109a588234c0e99df88f6ab520b98e7a}\label{class_g_e_1_1_open_g_l_framebuffer_a109a588234c0e99df88f6ab520b98e7a}} 
+virtual void {\bfseries Bind} () override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a8c3debad9e7e3ce39d5b8a3d39e6b3b5}\label{class_g_e_1_1_open_g_l_framebuffer_a8c3debad9e7e3ce39d5b8a3d39e6b3b5}} 
+virtual void {\bfseries Unbind} () override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_ab5b4f239717c2a9a651ab5757f6ad878}\label{class_g_e_1_1_open_g_l_framebuffer_ab5b4f239717c2a9a651ab5757f6ad878}} 
+virtual void {\bfseries Resize} (uint32\+\_\+t width, uint32\+\_\+t height) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a4f80dbcfcd17f4bf6c7c2b0b904d4cac}\label{class_g_e_1_1_open_g_l_framebuffer_a4f80dbcfcd17f4bf6c7c2b0b904d4cac}} 
+virtual uint32\+\_\+t {\bfseries Get\+Color\+Attachment\+Renderer\+ID} (uint32\+\_\+t index=0) const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a57065420aebcdee4add2e38e7ef4fa15}\label{class_g_e_1_1_open_g_l_framebuffer_a57065420aebcdee4add2e38e7ef4fa15}} 
+virtual const \mbox{\hyperlink{struct_g_e_1_1_frame_buffer_specification}{Frame\+Buffer\+Specification}} \& {\bfseries Get\+Specification} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_ac8fed4213dd6b30e77617cd9d9e88970}\label{class_g_e_1_1_open_g_l_framebuffer_ac8fed4213dd6b30e77617cd9d9e88970}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Renderer\+ID} = 0
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a7cd8ceb7b24ff28c9da59e73763bf6e6}\label{class_g_e_1_1_open_g_l_framebuffer_a7cd8ceb7b24ff28c9da59e73763bf6e6}} 
+\mbox{\hyperlink{struct_g_e_1_1_frame_buffer_specification}{Frame\+Buffer\+Specification}} {\bfseries m\+\_\+\+Specification}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a5d43f49b93ed24ef8b5208812a147a2f}\label{class_g_e_1_1_open_g_l_framebuffer_a5d43f49b93ed24ef8b5208812a147a2f}} 
+std\+::vector$<$ \mbox{\hyperlink{struct_g_e_1_1_framebuffer_texture_specification}{Framebuffer\+Texture\+Specification}} $>$ {\bfseries m\+\_\+\+Color\+Attachment\+Specifications}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_af7563a5919ac8ef42207bb923e45ddee}\label{class_g_e_1_1_open_g_l_framebuffer_af7563a5919ac8ef42207bb923e45ddee}} 
+\mbox{\hyperlink{struct_g_e_1_1_framebuffer_texture_specification}{Framebuffer\+Texture\+Specification}} {\bfseries m\+\_\+\+Depth\+Attachment\+Specification} = Framebuffer\+Texture\+Format\+::\+None
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a9cfcbed0f5addb52cc24b34d85ed5ff5}\label{class_g_e_1_1_open_g_l_framebuffer_a9cfcbed0f5addb52cc24b34d85ed5ff5}} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries m\+\_\+\+Color\+Attachments}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_framebuffer_a36e1a1b83d54f927401107ae98f8c4f4}\label{class_g_e_1_1_open_g_l_framebuffer_a36e1a1b83d54f927401107ae98f8c4f4}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Depth\+Attachment} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLFramebuffer.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLFramebuffer.\+cpp\end{DoxyCompactItemize}

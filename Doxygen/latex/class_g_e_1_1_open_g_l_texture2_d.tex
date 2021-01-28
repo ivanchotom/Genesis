@@ -1,0 +1,63 @@
+\hypertarget{class_g_e_1_1_open_g_l_texture2_d}{}\doxysection{GE\+::Open\+GLTexture2D Class Reference}
+\label{class_g_e_1_1_open_g_l_texture2_d}\index{GE::OpenGLTexture2D@{GE::OpenGLTexture2D}}
+Inheritance diagram for GE\+::Open\+GLTexture2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_g_e_1_1_open_g_l_texture2_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a0545f3032940747e1c2f1f9a33003aee}\label{class_g_e_1_1_open_g_l_texture2_d_a0545f3032940747e1c2f1f9a33003aee}} 
+{\bfseries Open\+GLTexture2D} (uint32\+\_\+t width, uint32\+\_\+t height)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a37dd7a340cb5a5c34d2b111917285318}\label{class_g_e_1_1_open_g_l_texture2_d_a37dd7a340cb5a5c34d2b111917285318}} 
+{\bfseries Open\+GLTexture2D} (const std\+::string \&path)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a175c355f7e1319c5f5e485fd9b7962db}\label{class_g_e_1_1_open_g_l_texture2_d_a175c355f7e1319c5f5e485fd9b7962db}} 
+virtual uint32\+\_\+t {\bfseries Get\+Width} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a65a74c4e54b06564ec95c24563307acd}\label{class_g_e_1_1_open_g_l_texture2_d_a65a74c4e54b06564ec95c24563307acd}} 
+virtual uint32\+\_\+t {\bfseries Get\+Height} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_ac0f75046ffd9d0424cd86db19a6332bb}\label{class_g_e_1_1_open_g_l_texture2_d_ac0f75046ffd9d0424cd86db19a6332bb}} 
+virtual uint32\+\_\+t {\bfseries Get\+Renderer\+ID} () const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a0d516e006437786613ec935b51c2578b}\label{class_g_e_1_1_open_g_l_texture2_d_a0d516e006437786613ec935b51c2578b}} 
+virtual void {\bfseries Set\+Data} (void $\ast$data, uint32\+\_\+t size) override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_aedd8762bf3d9d723a2c7f343cd63f5ac}\label{class_g_e_1_1_open_g_l_texture2_d_aedd8762bf3d9d723a2c7f343cd63f5ac}} 
+virtual void {\bfseries Bind} (uint32\+\_\+t slot=0) const override
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_ae270b011717e1b057dfaeb4579e2eb6b}\label{class_g_e_1_1_open_g_l_texture2_d_ae270b011717e1b057dfaeb4579e2eb6b}} 
+virtual bool {\bfseries operator==} (const \mbox{\hyperlink{class_g_e_1_1_texture}{Texture}} \&other) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a631a1c726e2060fe4874957a35217ad7}\label{class_g_e_1_1_open_g_l_texture2_d_a631a1c726e2060fe4874957a35217ad7}} 
+std\+::string {\bfseries m\+\_\+\+Path}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a42dcd5d3f7cd8736bf4858c067c9c301}\label{class_g_e_1_1_open_g_l_texture2_d_a42dcd5d3f7cd8736bf4858c067c9c301}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Width}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a8d6f9852e6a7bb939a6c0a87c8f493cd}\label{class_g_e_1_1_open_g_l_texture2_d_a8d6f9852e6a7bb939a6c0a87c8f493cd}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Height}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a63b795fbe06dd95dc89960ca83f6258d}\label{class_g_e_1_1_open_g_l_texture2_d_a63b795fbe06dd95dc89960ca83f6258d}} 
+uint32\+\_\+t {\bfseries m\+\_\+\+Renderer\+ID}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_ac3355612581420e0708509ba3d47b69e}\label{class_g_e_1_1_open_g_l_texture2_d_ac3355612581420e0708509ba3d47b69e}} 
+GLenum {\bfseries m\+\_\+\+Internal\+Format}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_open_g_l_texture2_d_a23a6cde81c76cf48101646ee0a9dcbe4}\label{class_g_e_1_1_open_g_l_texture2_d_a23a6cde81c76cf48101646ee0a9dcbe4}} 
+GLenum {\bfseries m\+\_\+\+Data\+Format}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLTexture.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Platform/\+Open\+GL/Open\+GLTexture.\+cpp\end{DoxyCompactItemize}

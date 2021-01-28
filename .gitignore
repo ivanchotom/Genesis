@@ -1,6 +1,3 @@
-# Binaries
-bin/
-bin-init
 
 #Visual studio
 .vs
@@ -8,6 +5,3 @@ bin-init
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
-
-#Benchmark
-.json

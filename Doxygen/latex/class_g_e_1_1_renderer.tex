@@ -1,0 +1,40 @@
+\hypertarget{class_g_e_1_1_renderer}{}\doxysection{GE\+::Renderer Class Reference}
+\label{class_g_e_1_1_renderer}\index{GE::Renderer@{GE::Renderer}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_e_1_1_renderer_1_1_scene_data}{Scene\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a106fd09aeb05651d2496c8bc8e2a55cc}\label{class_g_e_1_1_renderer_a106fd09aeb05651d2496c8bc8e2a55cc}} 
+static void {\bfseries Init} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a842bf0f56bd54e3026067a9602c0a0b3}\label{class_g_e_1_1_renderer_a842bf0f56bd54e3026067a9602c0a0b3}} 
+static void {\bfseries On\+Window\+Resize} (uint32\+\_\+t width, uint32\+\_\+t height)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_aa2b83d13ce9d06aaf486b7a9404273e7}\label{class_g_e_1_1_renderer_aa2b83d13ce9d06aaf486b7a9404273e7}} 
+static void {\bfseries Begin\+Scene} (\mbox{\hyperlink{class_g_e_1_1_orthographic_camera}{Orthographic\+Camera}} \&camera)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a93fd4ec922dc6099a5a2c69115609d93}\label{class_g_e_1_1_renderer_a93fd4ec922dc6099a5a2c69115609d93}} 
+static void {\bfseries End\+Scene} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a9687c3297ce7f2783d73927f61d0000d}\label{class_g_e_1_1_renderer_a9687c3297ce7f2783d73927f61d0000d}} 
+static void {\bfseries Submit} (const Ref$<$ \mbox{\hyperlink{class_g_e_1_1_shader}{Shader}} $>$ \&shader, const Ref$<$ \mbox{\hyperlink{class_g_e_1_1_vertex_array}{Vertex\+Array}} $>$ \&vertex\+Array, const glm\+::mat4 \&transform=glm\+::mat4(1.\+0f))
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_ab7f679859905a6523c7c380efbab9189}\label{class_g_e_1_1_renderer_ab7f679859905a6523c7c380efbab9189}} 
+static Renderer\+API\+::\+API {\bfseries Get\+API} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_ae87d6298d09c2a6033da45429d3edeaa}\label{class_g_e_1_1_renderer_ae87d6298d09c2a6033da45429d3edeaa}} 
+static Scope$<$ \mbox{\hyperlink{struct_g_e_1_1_renderer_1_1_scene_data}{Scene\+Data}} $>$ {\bfseries s\+\_\+\+Scene\+Data} = Create\+Scope$<$\mbox{\hyperlink{struct_g_e_1_1_renderer_1_1_scene_data}{Renderer\+::\+Scene\+Data}}$>$()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Renderer/Renderer.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Renderer/Renderer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{class_g_e_1_1_orthographic_camera_controller}{}\doxysection{GE\+::Orthographic\+Camera\+Controller Class Reference}
+\label{class_g_e_1_1_orthographic_camera_controller}\index{GE::OrthographicCameraController@{GE::OrthographicCameraController}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_ad0a86e8ddfd443f19c2032762fa89d39}\label{class_g_e_1_1_orthographic_camera_controller_ad0a86e8ddfd443f19c2032762fa89d39}} 
+{\bfseries Orthographic\+Camera\+Controller} (float aspect\+Ratio, bool rotation=false)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a560578680617267f2b9fdb181df96bc2}\label{class_g_e_1_1_orthographic_camera_controller_a560578680617267f2b9fdb181df96bc2}} 
+void {\bfseries On\+Update} (\mbox{\hyperlink{class_g_e_1_1_timestep}{Timestep}} ts)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a0596f7ea8a9d9f6fb12068d4cbb958a8}\label{class_g_e_1_1_orthographic_camera_controller_a0596f7ea8a9d9f6fb12068d4cbb958a8}} 
+void {\bfseries On\+Event} (\mbox{\hyperlink{class_g_e_1_1_event}{Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a8571d4e4f70dae7b98e470fb239786fc}\label{class_g_e_1_1_orthographic_camera_controller_a8571d4e4f70dae7b98e470fb239786fc}} 
+void {\bfseries On\+Resize} (float width, float height)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_af787c77135ede0d0d5bbdd76aacc3029}\label{class_g_e_1_1_orthographic_camera_controller_af787c77135ede0d0d5bbdd76aacc3029}} 
+\mbox{\hyperlink{class_g_e_1_1_orthographic_camera}{Orthographic\+Camera}} \& {\bfseries Get\+Camera} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a168b2f48868434d5f2cf944ae733990d}\label{class_g_e_1_1_orthographic_camera_controller_a168b2f48868434d5f2cf944ae733990d}} 
+const \mbox{\hyperlink{class_g_e_1_1_orthographic_camera}{Orthographic\+Camera}} \& {\bfseries Get\+Camera} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a3ef987243a11c635c437e811ec0602ee}\label{class_g_e_1_1_orthographic_camera_controller_a3ef987243a11c635c437e811ec0602ee}} 
+float {\bfseries Get\+Zoom\+Level} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a7af1b4b758fc090fabc508f1ad18eeb3}\label{class_g_e_1_1_orthographic_camera_controller_a7af1b4b758fc090fabc508f1ad18eeb3}} 
+void {\bfseries Set\+Zoom\+Level} (float level)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a192c116359f4773350677038f4d7a087}\label{class_g_e_1_1_orthographic_camera_controller_a192c116359f4773350677038f4d7a087}} 
+const \mbox{\hyperlink{struct_g_e_1_1_orthographic_camera_bounds}{Orthographic\+Camera\+Bounds}} \& {\bfseries Get\+Bounds} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_ad1a5825f5647a3bac3803177fb1096b2}\label{class_g_e_1_1_orthographic_camera_controller_ad1a5825f5647a3bac3803177fb1096b2}} 
+void {\bfseries Calculate\+View} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a58acd5113d37b108d13ca8e2a02ee5de}\label{class_g_e_1_1_orthographic_camera_controller_a58acd5113d37b108d13ca8e2a02ee5de}} 
+bool {\bfseries On\+Mouse\+Scrolled} (\mbox{\hyperlink{class_g_e_1_1_mouse_scrolled_event}{Mouse\+Scrolled\+Event}} \&e)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_ab05cee63f549ec254853845d438d8c8e}\label{class_g_e_1_1_orthographic_camera_controller_ab05cee63f549ec254853845d438d8c8e}} 
+bool {\bfseries On\+Window\+Resized} (\mbox{\hyperlink{class_g_e_1_1_window_resize_event}{Window\+Resize\+Event}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a7e844e8a5cb28330442aa12f01e979ec}\label{class_g_e_1_1_orthographic_camera_controller_a7e844e8a5cb28330442aa12f01e979ec}} 
+float {\bfseries m\+\_\+\+Aspect\+Ratio}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a6bc21a109917169ba9a49f4906ce52ef}\label{class_g_e_1_1_orthographic_camera_controller_a6bc21a109917169ba9a49f4906ce52ef}} 
+float {\bfseries m\+\_\+\+Zoom\+Level} = 1.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_abc7fa31af6fb0f8e233d08779bd874ef}\label{class_g_e_1_1_orthographic_camera_controller_abc7fa31af6fb0f8e233d08779bd874ef}} 
+\mbox{\hyperlink{struct_g_e_1_1_orthographic_camera_bounds}{Orthographic\+Camera\+Bounds}} {\bfseries m\+\_\+\+Bounds}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_ab7b4e6c992c08db44ac727f177318372}\label{class_g_e_1_1_orthographic_camera_controller_ab7b4e6c992c08db44ac727f177318372}} 
+\mbox{\hyperlink{class_g_e_1_1_orthographic_camera}{Orthographic\+Camera}} {\bfseries m\+\_\+\+Camera}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_aad9769825b0d58cf408227d82e129a49}\label{class_g_e_1_1_orthographic_camera_controller_aad9769825b0d58cf408227d82e129a49}} 
+bool {\bfseries m\+\_\+\+Rotation}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a339d37d8a8eb4bd426a66232df080763}\label{class_g_e_1_1_orthographic_camera_controller_a339d37d8a8eb4bd426a66232df080763}} 
+glm\+::vec3 {\bfseries m\+\_\+\+Camera\+Position} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a78d3a6ab62e708e503780f2b2c4b8074}\label{class_g_e_1_1_orthographic_camera_controller_a78d3a6ab62e708e503780f2b2c4b8074}} 
+float {\bfseries m\+\_\+\+Camera\+Rotation} = 0.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_ab4a3ee93017c92fcd3ff3f188391807f}\label{class_g_e_1_1_orthographic_camera_controller_ab4a3ee93017c92fcd3ff3f188391807f}} 
+float {\bfseries m\+\_\+\+Camera\+Translation\+Speed} = 5.\+0f
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_controller_a0bb8684297948aad3d9ca3db698ca529}\label{class_g_e_1_1_orthographic_camera_controller_a0bb8684297948aad3d9ca3db698ca529}} 
+float {\bfseries m\+\_\+\+Camera\+Rotation\+Speed} = 180.\+0f
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Orthographic\+Camera\+Controller.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Orthographic\+Camera\+Controller.\+cpp\end{DoxyCompactItemize}

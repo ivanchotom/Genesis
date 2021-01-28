@@ -1,0 +1,62 @@
+\hypertarget{class_g_e_1_1_orthographic_camera}{}\doxysection{GE\+::Orthographic\+Camera Class Reference}
+\label{class_g_e_1_1_orthographic_camera}\index{GE::OrthographicCamera@{GE::OrthographicCamera}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_ac26259633e97ec93d1db2b03402f6bbf}\label{class_g_e_1_1_orthographic_camera_ac26259633e97ec93d1db2b03402f6bbf}} 
+{\bfseries Orthographic\+Camera} (float left, float right, float bottom, float top)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a2938bcf1551bb083fc30bf58c997fa3e}\label{class_g_e_1_1_orthographic_camera_a2938bcf1551bb083fc30bf58c997fa3e}} 
+void {\bfseries Set\+Projection} (float left, float right, float bottom, float top)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a126af6808e59eab383411c55aac4a5f6}\label{class_g_e_1_1_orthographic_camera_a126af6808e59eab383411c55aac4a5f6}} 
+const glm\+::vec3 \& {\bfseries Get\+Position} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a03399ad04bf077847b737927319ed9b3}\label{class_g_e_1_1_orthographic_camera_a03399ad04bf077847b737927319ed9b3}} 
+void {\bfseries Set\+Position} (const glm\+::vec3 \&position)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a5e043b28af0b7585442841f8b3ec3f41}\label{class_g_e_1_1_orthographic_camera_a5e043b28af0b7585442841f8b3ec3f41}} 
+float {\bfseries Get\+Rotation} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a0a5edc4e72e1ae8a11526735a0f1fe8f}\label{class_g_e_1_1_orthographic_camera_a0a5edc4e72e1ae8a11526735a0f1fe8f}} 
+void {\bfseries Set\+Rotation} (float rotation)
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a7837546cfa2a41e44d8efe408e9ab04b}\label{class_g_e_1_1_orthographic_camera_a7837546cfa2a41e44d8efe408e9ab04b}} 
+const glm\+::mat4 \& {\bfseries Get\+Projection\+Matrix} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a3c525999ed7f2889e0c7d69278964d7d}\label{class_g_e_1_1_orthographic_camera_a3c525999ed7f2889e0c7d69278964d7d}} 
+const glm\+::mat4 \& {\bfseries Get\+View\+Matrix} () const
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a9ec1aabe6f35a0daccec50b6a23dd4f3}\label{class_g_e_1_1_orthographic_camera_a9ec1aabe6f35a0daccec50b6a23dd4f3}} 
+const glm\+::mat4 \& {\bfseries Get\+View\+Projection\+Matrix} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_af2b0af163799e247d54125b86f995f7e}\label{class_g_e_1_1_orthographic_camera_af2b0af163799e247d54125b86f995f7e}} 
+void {\bfseries Recalculate\+View\+Matrix} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a3c2f1ad1d78a195c8477b0af868aeee7}\label{class_g_e_1_1_orthographic_camera_a3c2f1ad1d78a195c8477b0af868aeee7}} 
+glm\+::mat4 {\bfseries m\+\_\+\+Projection\+Matrix}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a5ea5e7873d80f6c1e90556ffeb75b499}\label{class_g_e_1_1_orthographic_camera_a5ea5e7873d80f6c1e90556ffeb75b499}} 
+glm\+::mat4 {\bfseries m\+\_\+\+View\+Matrix}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_a977a1a787d5a6c5b49e2da0b8d9abf91}\label{class_g_e_1_1_orthographic_camera_a977a1a787d5a6c5b49e2da0b8d9abf91}} 
+glm\+::mat4 {\bfseries m\+\_\+\+View\+Projection\+Matrix}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_ad2168c43dc045ed1e59385760be919e0}\label{class_g_e_1_1_orthographic_camera_ad2168c43dc045ed1e59385760be919e0}} 
+glm\+::vec3 {\bfseries m\+\_\+\+Position} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_orthographic_camera_ab605d6ca10ea5b009d5c118dcce58c9e}\label{class_g_e_1_1_orthographic_camera_ab605d6ca10ea5b009d5c118dcce58c9e}} 
+float {\bfseries m\+\_\+\+Rotation} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Orthographic\+Camera.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Cameras/Orthographic\+Camera.\+cpp\end{DoxyCompactItemize}

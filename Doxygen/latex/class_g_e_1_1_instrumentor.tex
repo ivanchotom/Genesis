@@ -1,0 +1,55 @@
+\hypertarget{class_g_e_1_1_instrumentor}{}\doxysection{GE\+::Instrumentor Class Reference}
+\label{class_g_e_1_1_instrumentor}\index{GE::Instrumentor@{GE::Instrumentor}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a760f9589447b005997c20524cd99fefc}\label{class_g_e_1_1_instrumentor_a760f9589447b005997c20524cd99fefc}} 
+{\bfseries Instrumentor} (const \mbox{\hyperlink{class_g_e_1_1_instrumentor}{Instrumentor}} \&)=delete
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a5f8ccc920bfc7196e5a5860d00ba3c03}\label{class_g_e_1_1_instrumentor_a5f8ccc920bfc7196e5a5860d00ba3c03}} 
+{\bfseries Instrumentor} (\mbox{\hyperlink{class_g_e_1_1_instrumentor}{Instrumentor}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_ad321c00dde3a003e9dfa5c380cf8ed43}\label{class_g_e_1_1_instrumentor_ad321c00dde3a003e9dfa5c380cf8ed43}} 
+void {\bfseries Begin\+Session} (const std\+::string \&name, const std\+::string \&filepath=\char`\"{}results.\+json\char`\"{})
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_ac853e1f37b38ca2e3b9e030f7b34aa8c}\label{class_g_e_1_1_instrumentor_ac853e1f37b38ca2e3b9e030f7b34aa8c}} 
+void {\bfseries End\+Session} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a36bb130fe2777896d295528779538a08}\label{class_g_e_1_1_instrumentor_a36bb130fe2777896d295528779538a08}} 
+void {\bfseries Write\+Profile} (const \mbox{\hyperlink{struct_g_e_1_1_profile_result}{Profile\+Result}} \&result)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a308869b84bf89b2334acf8a90b468a7e}\label{class_g_e_1_1_instrumentor_a308869b84bf89b2334acf8a90b468a7e}} 
+static \mbox{\hyperlink{class_g_e_1_1_instrumentor}{Instrumentor}} \& {\bfseries Get} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a78d7739ab07e32702c890306b65079f3}\label{class_g_e_1_1_instrumentor_a78d7739ab07e32702c890306b65079f3}} 
+void {\bfseries Write\+Header} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_afbe37591d437567b1df741cf613ae20b}\label{class_g_e_1_1_instrumentor_afbe37591d437567b1df741cf613ae20b}} 
+void {\bfseries Write\+Footer} ()
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a179431b77748d4f4f155253d8cd448e6}\label{class_g_e_1_1_instrumentor_a179431b77748d4f4f155253d8cd448e6}} 
+void {\bfseries Internal\+End\+Session} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a66268b6922c65b046eecb70c11ac98b1}\label{class_g_e_1_1_instrumentor_a66268b6922c65b046eecb70c11ac98b1}} 
+std\+::mutex {\bfseries m\+\_\+\+Mutex}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_a3e16aa81b911c348a312f1b8a15c9176}\label{class_g_e_1_1_instrumentor_a3e16aa81b911c348a312f1b8a15c9176}} 
+\mbox{\hyperlink{struct_g_e_1_1_instrumentation_session}{Instrumentation\+Session}} $\ast$ {\bfseries m\+\_\+\+Current\+Session}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_instrumentor_affa4ac33a6b2cfa5b2e68724aefaaf46}\label{class_g_e_1_1_instrumentor_affa4ac33a6b2cfa5b2e68724aefaaf46}} 
+std\+::ofstream {\bfseries m\+\_\+\+Output\+Stream}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Code\+Debug/Instrumentor.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{class_g_e_1_1_renderer_a_p_i}{}\doxysection{GE\+::Renderer\+API Class Reference}
+\label{class_g_e_1_1_renderer_a_p_i}\index{GE::RendererAPI@{GE::RendererAPI}}
+Inheritance diagram for GE\+::Renderer\+API\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_e_1_1_renderer_a_p_i}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_a3154ac3adaafccb6611e3ed3789ab67c}\label{class_g_e_1_1_renderer_a_p_i_a3154ac3adaafccb6611e3ed3789ab67c}} 
+enum class {\bfseries API} \{ {\bfseries None} = 0
+, {\bfseries Open\+GL} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_a825b48f0233e90d5525ba2289f84ce20}\label{class_g_e_1_1_renderer_a_p_i_a825b48f0233e90d5525ba2289f84ce20}} 
+virtual void {\bfseries Init} ()=0
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_aeee6f96b1b5f7448f2082f54c2a8a14d}\label{class_g_e_1_1_renderer_a_p_i_aeee6f96b1b5f7448f2082f54c2a8a14d}} 
+virtual void {\bfseries Set\+Clear\+Color} (const glm\+::vec4 \&color)=0
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_ad1effbe083906e61411966453a21b667}\label{class_g_e_1_1_renderer_a_p_i_ad1effbe083906e61411966453a21b667}} 
+virtual void {\bfseries Set\+Viewport} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t width, uint32\+\_\+t height)=0
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_ac9963c01f1c736503d7141254d6ac530}\label{class_g_e_1_1_renderer_a_p_i_ac9963c01f1c736503d7141254d6ac530}} 
+virtual void {\bfseries Clear} ()=0
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_a08f731c5b56acb2d8066c84cad8e1f1d}\label{class_g_e_1_1_renderer_a_p_i_a08f731c5b56acb2d8066c84cad8e1f1d}} 
+virtual void {\bfseries Draw\+Indexed} (const Ref$<$ \mbox{\hyperlink{class_g_e_1_1_vertex_array}{Vertex\+Array}} $>$ \&vertex\+Array, uint32\+\_\+t index\+Count=0)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_a5d3ef311a32e6fc77f01c9dae6ae1801}\label{class_g_e_1_1_renderer_a_p_i_a5d3ef311a32e6fc77f01c9dae6ae1801}} 
+static API {\bfseries Get\+API} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_e_1_1_renderer_a_p_i_a41e4d337476806dd2c45c6344c793a45}\label{class_g_e_1_1_renderer_a_p_i_a41e4d337476806dd2c45c6344c793a45}} 
+static API {\bfseries s\+\_\+\+API} = Renderer\+API\+::\+API\+::\+Open\+GL
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Renderer/Renderer\+API.\+h\item 
+D\+:/\+Work/\+Genesis/\+Genesis\+Engine/src/\+Renderer/Renderer\+API.\+cpp\end{DoxyCompactItemize}
